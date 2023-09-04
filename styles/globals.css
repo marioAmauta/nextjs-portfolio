@@ -3,25 +3,68 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --app-bg-color: #f5f5f5;
+  --app-text-color: #333;
+
+  --select-bg-color: #fff;
+  --select-text-color: var(--app-text-color);
+
+  --navbar-bg-color: var(--app-bg-color);
+
+  --toggle-bar-bg-color: var(--app-text-color);
+  --header-height: 4rem;
+
+  --bg-blurred-color: #00000080;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root.dark {
+  --app-bg-color: #333;
+  --app-text-color: #fff;
+
+  --select-bg-color: #666;
+  --select-text-color: var(--app-text-color);
+
+  --navbar-bg-color: var(--app-bg-color);
+
+  --toggle-bar-bg-color: var(--app-text-color);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* * {
+  outline: 1px solid red;
+} */
+
+#toggle-button::before,
+#toggle-button::after {
+  content: '';
+  position: absolute;
+  width: 1.6rem;
+  height: 0.125rem;
+  background-color: var(--toggle-bar-bg-color);
+  border-radius: 0.1rem;
+}
+
+#toggle-button::before {
+  transform: translateY(-5px);
+  transition: 300ms;
+}
+
+#toggle-button::after {
+  transform: translateY(5px);
+  transition: 500ms;
+}
+
+#toggle-button.active::before {
+  transform: translateY(0px) rotate(45deg);
+}
+
+#toggle-button.active::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+
+#bg-blurred.active {
+  width: 100%;
+}
+
+#mobile-menu.active {
+  right: 0;
 }
