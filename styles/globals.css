@@ -6,7 +6,7 @@
   --app-bg-color: #f5f5f5;
   --app-text-color: #333;
 
-  --select-bg-color: #fff;
+  --select-bg-color: lightgray;
   --select-text-color: var(--app-text-color);
 
   --navbar-bg-color: var(--app-bg-color);
@@ -67,4 +67,20 @@
 
 #mobile-menu.active {
   right: 0;
+}
+
+select {
+  background-color: unset;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+label.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--select-bg-color);
+  border-radius: 50%;
 }

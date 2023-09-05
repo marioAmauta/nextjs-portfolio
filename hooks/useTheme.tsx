@@ -1,37 +1,30 @@
-import { THEME_SELECT_DATA } from '@/lib/constants';
+import { THEME_INPUT_DATA } from '@/lib/constants';
 import { ChangeEvent, useEffect, useState } from 'react';
 
 export function useTheme() {
-  const [themeStatus, setThemeStatus] = useState('system');
+  const [theme, setTheme] = useState('');
 
-  function handleThemeChange(event: ChangeEvent<HTMLSelectElement>) {
-    const theme = event.target.value;
+  function onThemeChange(event: ChangeEvent<HTMLFormElement>) {
+    setTheme(event.target.value);
 
-    if (theme === 'system') {
+    if (event.target.value === THEME_INPUT_DATA.system.value) {
       localStorage.removeItem('theme');
-      setThemeStatus('system');
-    } else if (theme === 'light') {
-      localStorage.theme = 'light';
-      setThemeStatus('light');
-    } else if (theme === 'dark') {
-      localStorage.theme = 'dark';
-      setThemeStatus('dark');
+    } else if (event.target.value === THEME_INPUT_DATA.light.value) {
+      localStorage.theme = THEME_INPUT_DATA.light.value;
+    } else if (event.target.value === THEME_INPUT_DATA.dark.value) {
+      localStorage.theme = THEME_INPUT_DATA.dark.value;
     }
   }
 
   useEffect(() => {
+    setTheme(localStorage.theme || 'system');
+
     function checkDarkMode(isDarkMode: boolean) {
-      const $rootElement = document.documentElement;
-
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && isDarkMode)) {
-        $rootElement.classList.add('dark');
-        setThemeStatus('dark');
+        document.documentElement.classList.add('dark');
       } else {
-        $rootElement.classList.remove('dark');
-        setThemeStatus('light');
+        document.documentElement.classList.remove('dark');
       }
-
-      setThemeStatus(localStorage.theme || 'system');
     }
 
     const prefersColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -42,11 +35,7 @@ export function useTheme() {
 
     return () =>
       prefersColorScheme.removeEventListener('change', ({ matches }) => checkDarkMode(matches));
-  }, [themeStatus]);
+  }, [theme]);
 
-  return {
-    ...THEME_SELECT_DATA,
-    themeStatus,
-    handleThemeChange
-  };
+  return { theme, onThemeChange };
 }

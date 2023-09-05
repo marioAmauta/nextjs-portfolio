@@ -1,10 +1,10 @@
 export const ELEMENT_IDS = {
-  themeSelectId: 'theme-select',
+  themeSelectId: 'themeSelect',
   toggleButtonId: 'toggle-button',
   mobileMenuId: 'mobile-menu',
   bgBlurredId: 'bg-blurred',
   mainHeaderId: 'main-header',
-  languageSelectId: 'language-select'
+  languageSelectId: 'languageSelect'
 };
 
 export const PAGE_LINKS = {
@@ -28,23 +28,25 @@ export const PAGE_LINKS = {
   ]
 };
 
-export const THEME_SELECT_DATA = {
-  themeId: ELEMENT_IDS.themeSelectId,
-  themeLabel: 'Theme',
-  themeOptions: [
-    {
-      value: 'system',
-      label: 'System'
-    },
-    {
-      value: 'light',
-      label: 'Light'
-    },
-    {
-      value: 'dark',
-      label: 'Dark'
-    }
-  ]
+export const THEME_INPUT_DATA = {
+  light: {
+    type: 'radio',
+    name: 'theme-options',
+    id: 'light-theme',
+    value: 'light'
+  },
+  system: {
+    type: 'radio',
+    name: 'theme-options',
+    id: 'system-theme',
+    value: 'system'
+  },
+  dark: {
+    type: 'radio',
+    name: 'theme-options',
+    id: 'dark-palette',
+    value: 'dark'
+  }
 };
 
 export const LANGUAGE_SELECT_DATA = {
