@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ELEMENT_IDS } from '@/lib/constants';
 import { Menu } from './Menu';
 import { useMobileMenu } from '@/hooks/useMobileMenu';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
   useMobileMenu();
@@ -12,7 +13,8 @@ export function Header() {
       className='
         flex justify-between items-center
         p-4
-        shadow-sm 
+        border-b border-[--border-color]
+        sticky top-0 z-30
       '
     >
       <Link
@@ -23,7 +25,10 @@ export function Header() {
       >
         Mario Programador
       </Link>
-      <Menu />
+      <div className='flex justify-center items-center gap-4 md:flex-row-reverse md:gap-10'>
+        <LanguageSwitcher />
+        <Menu />
+      </div>
     </header>
   );
 }

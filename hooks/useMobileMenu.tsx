@@ -15,11 +15,7 @@ export function useMobileMenu() {
           toggleElements.forEach(element =>
             document.getElementById(element)?.classList.toggle('active')
           );
-        } else if (event.target.id === ELEMENT_IDS.bgBlurredId) {
-          toggleElements.forEach(element =>
-            document.getElementById(element)?.classList.remove('active')
-          );
-        } else if (event.target.tagName === 'A') {
+        } else if (event.target.id === ELEMENT_IDS.bgBlurredId || event.target.tagName === 'A') {
           toggleElements.forEach(element =>
             document.getElementById(element)?.classList.remove('active')
           );

@@ -4,8 +4,6 @@ import { ToggleButton } from './ToggleButton';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Navbar, NavbarItem } from './Navbar';
 import { BlurredBackground } from './BlurredBackground';
-import { LanguageSwitcher } from './LanguageSwitcher';
-import { ThemeSwitcher } from './ThemeSwitcher';
 
 export function Menu() {
   const { translations } = useLanguage();
@@ -20,12 +18,6 @@ export function Menu() {
             <Link href={link.path}>{translations.navBar[link.name]}</Link>
           </NavbarItem>
         ))}
-        <NavbarItem>
-          <LanguageSwitcher />
-        </NavbarItem>
-        <NavbarItem>
-          <ThemeSwitcher />
-        </NavbarItem>
       </Navbar>
     </>
   );

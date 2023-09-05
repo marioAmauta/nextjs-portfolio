@@ -9,6 +9,8 @@
   --select-bg-color: lightgray;
   --select-text-color: var(--app-text-color);
 
+  --border-color: #ccc;
+
   --navbar-bg-color: var(--app-bg-color);
 
   --toggle-bar-bg-color: var(--app-text-color);
@@ -23,6 +25,8 @@
 
   --select-bg-color: #666;
   --select-text-color: var(--app-text-color);
+
+  --border-color: #555;
 
   --navbar-bg-color: var(--app-bg-color);
 
@@ -78,9 +82,6 @@ input[type='radio'] {
 }
 
 label.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--select-bg-color);
   border-radius: 50%;
 }

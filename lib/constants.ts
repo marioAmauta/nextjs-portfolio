@@ -55,11 +55,11 @@ export const LANGUAGE_SELECT_DATA = {
   languageOptions: [
     {
       value: 'en',
-      label: 'En'
+      label: 'EN'
     },
     {
       value: 'es',
-      label: 'Es'
+      label: 'ES'
     }
   ]
 };
