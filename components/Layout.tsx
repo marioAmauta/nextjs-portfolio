@@ -21,13 +21,7 @@ export function Layout({ children }: { children: ReactNode }) {
         />
       </Head>
       <Header />
-      <main
-        className='
-          p-4
-        '
-      >
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
     </div>
   );

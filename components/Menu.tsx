@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PAGE_LINKS } from '@/lib/constants';
+import { NAVBAR_LINKS } from '@/lib/constants';
 import { ToggleButton } from './ToggleButton';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Navbar, NavbarItem } from './Navbar';
@@ -13,7 +13,7 @@ export function Menu() {
       <ToggleButton />
       <BlurredBackground />
       <Navbar>
-        {PAGE_LINKS.NAVBAR_LINKS.map(link => (
+        {NAVBAR_LINKS.map(link => (
           <NavbarItem key={link.name}>
             <Link href={link.path}>{translations.navBar[link.name]}</Link>
           </NavbarItem>

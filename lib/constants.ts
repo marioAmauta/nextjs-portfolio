@@ -7,26 +7,36 @@ export const ELEMENT_IDS = {
   languageSelectId: 'languageSelect'
 };
 
-export const PAGE_LINKS = {
-  NAVBAR_LINKS: [
-    {
-      name: 'home',
-      path: '/'
-    },
-    {
-      name: 'myProjects',
-      path: '/projects'
-    },
-    {
-      name: 'about',
-      path: '/about'
-    },
-    {
-      name: 'contact',
-      path: '/contact'
-    }
-  ]
-};
+export const CONTACT_LINKS = [
+  {
+    href: 'https://github.com/marioAmauta',
+    label: 'Github'
+  },
+  {
+    href: 'https://www.linkedin.com/in/marioamauta/',
+    label: 'Linkedin'
+  }
+];
+
+export const NAVBAR_LINKS = [
+  {
+    name: 'home',
+    path: '/'
+  },
+  {
+    name: 'about',
+    path: '/about'
+  },
+  {
+    name: 'myProjects',
+    path: '/projects'
+  },
+
+  {
+    name: 'contact',
+    path: '/contact'
+  }
+];
 
 export const THEME_INPUT_DATA = {
   light: {

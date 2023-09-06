@@ -15,6 +15,8 @@ export function Header() {
         p-4
         border-b border-[--border-color]
         sticky top-0 z-30
+        bg-[--app-bg-color]
+        h-[--header-height]
       '
     >
       <Link
