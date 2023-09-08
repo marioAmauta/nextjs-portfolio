@@ -7,8 +7,8 @@ export const en = {
       title: "I'm Mario",
       subtitle: ['Software Developer', '&', 'Entrepreneur'],
       description: [
-        'Passionate about Technology and Growing Businesses',
-        'Always Improving my Skills to make your dreams a reality'
+        'Passionate about technology and growing businesses',
+        'Always improving my skills to make the website of your dreams come true'
       ]
     },
     about: {
@@ -16,7 +16,8 @@ export const en = {
       description: [
         "I'm a self-taught software developer who loves to learn new things and be improving every day.",
         'Currently focused on web development working with React, Next.js, Tailwindcss, and other technologies.'
-      ]
+      ],
+      buttonLabel: 'More about me'
     }
   },
   navBar: {

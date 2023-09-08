@@ -21,7 +21,7 @@ export function Navbar({ children }: { children: ReactNode }) {
       className='
           bg-[--navbar-bg-color]
           pt-28 pr-12 md:p-0
-          w-[50%] md:w-auto
+          w-[50%] md:w-auto min-h-screen md:min-h-full
           fixed -right-full top-0 bottom-0 md:static 
           transition-all duration-300 md:transition-none
           flex flex-col items-end gap-8 md:flex-row md:justify-center md:items-center md:gap-6

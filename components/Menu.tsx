@@ -15,7 +15,14 @@ export function Menu() {
       <Navbar>
         {NAVBAR_LINKS.map(link => (
           <NavbarItem key={link.name}>
-            <Link href={link.path}>{translations.navBar[link.name]}</Link>
+            <Link
+              href={link.path}
+              className='
+                w-max
+              '
+            >
+              {translations.navBar[link.name]}
+            </Link>
           </NavbarItem>
         ))}
       </Navbar>

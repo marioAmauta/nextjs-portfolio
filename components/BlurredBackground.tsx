@@ -7,7 +7,7 @@ export function BlurredBackground() {
       className='
         md:hidden
         fixed inset-0
-        w-0
+        w-0 min-h-screen
         transition duration-100
         backdrop-blur-sm bg-[--bg-blurred-color]
       '

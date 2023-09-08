@@ -1,4 +1,4 @@
-import { LinkButton } from '@/components/Buttons';
+import { ContactLinkButton, LinkButton } from '@/components/Buttons';
 import { HeroSection, RegularSection } from '@/components/Sections';
 import { Title } from '@/components/Titles';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -21,7 +21,7 @@ export default function IndexPage() {
         </h1>
         <h2
           className='
-            text-2xl font-semibold
+            text-3xl text-center font-semibold
             flex flex-col items-center gap-2
           '
         >
@@ -33,8 +33,8 @@ export default function IndexPage() {
           {indexPage.hero.description.map((text: string, index: number) => (
             <p
               className='
-            text-base font-semibold
-            '
+                text-lg font-semibold
+              '
               key={index}
             >
               {text}
@@ -47,7 +47,7 @@ export default function IndexPage() {
           '
         >
           {CONTACT_LINKS.map(({ href, label }) => (
-            <LinkButton
+            <ContactLinkButton
               key={href}
               href={href}
               label={label}
@@ -57,14 +57,20 @@ export default function IndexPage() {
       </HeroSection>
       <RegularSection>
         <Title titleType='h2'>{indexPage.about.title}</Title>
-        {indexPage.about.description.map((text: string, index: number) => (
-          <p
-            className='my-4'
-            key={index}
-          >
-            {text}
-          </p>
-        ))}
+        <div className='flex flex-col gap-8'>
+          {indexPage.about.description.map((text: string, index: number) => (
+            <p
+              className='text-lg'
+              key={index}
+            >
+              {text}
+            </p>
+          ))}
+          <LinkButton
+            href='/about'
+            label={indexPage.about.buttonLabel}
+          />
+        </div>
       </RegularSection>
     </>
   );

@@ -11,12 +11,12 @@ export function Header() {
     <header
       id={ELEMENT_IDS.mainHeaderId}
       className='
-        flex justify-between items-center
-        p-4
         border-b border-[--border-color]
-        sticky top-0 z-30
         bg-[--app-bg-color]
+        sticky top-0 z-30
+        flex justify-between items-center
         h-[--header-height]
+        p-4 lg:px-36
       '
     >
       <Link

@@ -1,12 +1,16 @@
 import { ReactNode } from 'react';
 
-export function HeroSection({ children }: { children: ReactNode }) {
+type SectionProps = {
+  children: ReactNode;
+};
+
+export function HeroSection({ children }: SectionProps) {
   return (
     <section
       className='
         flex flex-col justify-evenly items-center
         h-[calc(100svh-var(--header-height))]
-        px-4
+        px-4 lg:px-36
       '
     >
       {children}
@@ -14,11 +18,11 @@ export function HeroSection({ children }: { children: ReactNode }) {
   );
 }
 
-export function RegularSection({ children }: { children: ReactNode }) {
+export function RegularSection({ children }: SectionProps) {
   return (
     <section
       className='
-        px-4 py-16
+        px-4 py-16 lg:px-36
       '
     >
       {children}
