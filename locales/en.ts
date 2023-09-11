@@ -34,8 +34,9 @@ export const en = {
       projectsData: [
         {
           title: PROJECTS_DATA.markdownPreviewer.title,
-          description:
-            'This is one of my "Frontend libraries" certification projects I made at freeCodeCamp',
+          description: [
+            'In this project you can type Markdown code and get as a result the Preview and HTML code that you can copy to your clipboard with just a click'
+          ],
           image: PROJECTS_DATA.markdownPreviewer.images.desktop,
           title2: 'Technologies I Used',
           technologies: [
@@ -50,11 +51,11 @@ export const en = {
           ],
           links: [
             {
-              label: 'Source Code',
+              label: 'Code',
               href: PROJECTS_DATA.markdownPreviewer.links.sourceCode
             },
             {
-              label: 'Live Demo',
+              label: 'Demo',
               href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
             }
           ]
@@ -62,8 +63,9 @@ export const en = {
         {
           title: PROJECTS_DATA.randomQuoteMachine.title,
 
-          description:
-            'This is one of my "Frontend libraries" certification projects I made at freeCodeCamp',
+          description: [
+            'This is a project where you can get a Random Quote clicking a "New Quote" button and tweet it if you want with just a click on the Twitter icon'
+          ],
           image: PROJECTS_DATA.randomQuoteMachine.images.desktop,
           title2: 'Technologies I Used',
           technologies: [
@@ -75,11 +77,11 @@ export const en = {
           ],
           links: [
             {
-              label: 'Source Code',
+              label: 'Code',
               href: PROJECTS_DATA.randomQuoteMachine.links.sourceCode
             },
             {
-              label: 'Live Demo',
+              label: 'Demo',
               href: PROJECTS_DATA.randomQuoteMachine.links.liveDemo
             }
           ]

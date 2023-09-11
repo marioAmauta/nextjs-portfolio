@@ -1,10 +1,10 @@
 import { LinkWithLabel } from '@/pages';
 import Image from 'next/image';
-import Link from 'next/link';
+import { ContactLinkButton, TechLinkButton } from './Buttons';
 
 export type ProjectCardProps = {
   title: string;
-  description: string;
+  description: string[];
   image: string;
   title2: string;
   technologies: LinkWithLabel[];
@@ -24,16 +24,16 @@ export function ProjectCard({
       key={title}
       className='
         bg-[--project-card-bg-color]
-        p-4
+        p-4 mx-auto
         rounded-md
         shadow-md
         flex flex-col gap-4
-        w-full max-w-sm
+        w-full max-w-lg
       '
     >
       <h3
         className='
-        text-2xl font-semibold
+        text-2xl font-bold
         '
       >
         {title}
@@ -45,55 +45,48 @@ export function ProjectCard({
         height={200}
         className='
         rounded-md
+        w-full
         '
       />
-      <p>{description}</p>
+      {description.map((text: string, index: number) => (
+        <p key={index}>{text}</p>
+      ))}
       <section
         className='
         flex justify-center gap-8
+        my-auto
       '
       >
-        {links.map(link => (
-          <Link
-            target='_blank'
-            rel='noopener noreferrer'
-            key={link.href}
-            href={link.href}
-            className=''
-          >
-            {link.label}
-          </Link>
-        ))}
-      </section>
-      <h4
-        className='
-        text-xl font-semibold
-      '
-      >
-        {title2}
-      </h4>
-      <section
-        className='
-        flex flex-wrap gap-2
-        '
-      >
-        {technologies.map(({ label, href }) => (
-          <Link
+        {links.map(({ label, href }) => (
+          <ContactLinkButton
             key={href}
             href={href}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='
-              bg-zinc-600
-              text-white
-              px-2 py-1
-              rounded-2xl
-            '
-          >
-            {label}
-          </Link>
+            label={label}
+          />
         ))}
       </section>
+      <footer>
+        <h4
+          className='
+            text-xl font-semibold mb-4
+          '
+        >
+          {title2}
+        </h4>
+        <section
+          className='
+          flex flex-wrap gap-2
+          '
+        >
+          {technologies.map(({ label, href }) => (
+            <TechLinkButton
+              key={href}
+              href={href}
+              label={label}
+            />
+          ))}
+        </section>
+      </footer>
     </article>
   );
 }

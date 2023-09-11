@@ -87,8 +87,7 @@ export default function IndexPage() {
           <DescriptionParagraph text={indexPage.projects.description} />
           <div
             className='
-              flex justify-center flex-wrap gap-6
-              w-full
+              grid grid-cols-1 md:grid-cols-2 gap-12
             '
           >
             {indexPage.projects.projectsData.map((project: ProjectCardProps) => (

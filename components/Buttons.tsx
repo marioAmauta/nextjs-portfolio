@@ -35,10 +35,28 @@ export function ContactLinkButton({ href, label }: LinkButtonProps) {
         transition-colors duration-300
         bg-[--btn-bg-color]
         px-4 py-2
-        w-28
         rounded-lg
         shadow
         text-center text-lg font-semibold
+      '
+    >
+      {label}
+    </Link>
+  );
+}
+
+export function TechLinkButton({ label, href }: LinkButtonProps) {
+  return (
+    <Link
+      key={href}
+      href={href}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='
+      bg-zinc-600
+      text-white
+        px-2 py-1
+        rounded-2xl
       '
     >
       {label}

@@ -29,8 +29,9 @@ export const es = {
         {
           title: PROJECTS_DATA.markdownPreviewer.title,
 
-          description:
-            'Este es uno de mis proyectos de certificación "Librerías de Frontend" que hice en freeCodeCamp',
+          description: [
+            'En este proyecto puedes escribir código Markdown y obtener como resultado la Vista previa y el código HTML que puedes copiar a tu portapapeles con solo un clic'
+          ],
           image: PROJECTS_DATA.markdownPreviewer.images.desktop,
           title2: 'Tecnologías que usé',
           technologies: [
@@ -45,11 +46,11 @@ export const es = {
           ],
           links: [
             {
-              label: 'Código fuente',
+              label: 'Código',
               href: PROJECTS_DATA.markdownPreviewer.links.sourceCode
             },
             {
-              label: 'Demo en Vivo',
+              label: 'Demo',
               href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
             }
           ]
@@ -57,8 +58,9 @@ export const es = {
         {
           title: PROJECTS_DATA.randomQuoteMachine.title,
 
-          description:
-            'Este es uno de mis proyectos de certificación "Librerías de Frontend" que hice en freeCodeCamp',
+          description: [
+            'Este es un proyecto donde puedes obtener una Cita aleatoria haciendo clic en el botón "New Quote" y Twittearla si lo deseas con solo hacer clic en el ícono de Twitter'
+          ],
           image: PROJECTS_DATA.randomQuoteMachine.images.desktop,
           title2: 'Tecnologías que usé',
           technologies: [
@@ -70,11 +72,11 @@ export const es = {
           ],
           links: [
             {
-              label: 'Código fuente',
+              label: 'Código',
               href: PROJECTS_DATA.randomQuoteMachine.links.sourceCode
             },
             {
-              label: 'Demo en Vivo',
+              label: 'Demo',
               href: PROJECTS_DATA.randomQuoteMachine.links.liveDemo
             }
           ]
