@@ -3,15 +3,13 @@ import Link from 'next/link';
 type LinkButtonProps = {
   href: string;
   label: string;
-  openNewTab?: boolean;
 };
 
-export function LinkButton({ href, label, openNewTab }: LinkButtonProps) {
+export function LinkButton({ href, label }: LinkButtonProps) {
   return (
     <Link
       href={href}
-      target={openNewTab ? '_blank' : '_self'}
-      rel='noopener noreferrer'
+      scroll={false}
       className='
         transition-colors duration-300
         bg-[--btn-bg-color]
@@ -27,12 +25,12 @@ export function LinkButton({ href, label, openNewTab }: LinkButtonProps) {
   );
 }
 
-type ContactLinkButtonProps = Omit<LinkButtonProps, 'openNewTab'>;
-
-export function ContactLinkButton({ href, label }: ContactLinkButtonProps) {
+export function ContactLinkButton({ href, label }: LinkButtonProps) {
   return (
     <Link
       href={href}
+      target='_blank'
+      rel='noopener noreferrer'
       className='
         transition-colors duration-300
         bg-[--btn-bg-color]

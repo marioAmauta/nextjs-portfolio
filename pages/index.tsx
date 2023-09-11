@@ -1,8 +1,19 @@
 import { ContactLinkButton, LinkButton } from '@/components/Buttons';
-import { HeroSection, RegularSection } from '@/components/Sections';
+import { ProjectCard, ProjectCardProps } from '@/components/ProjectCard';
+import {
+  DescriptionParagraph,
+  DescriptionSection,
+  HeroSection,
+  RegularSection
+} from '@/components/Sections';
 import { Title } from '@/components/Titles';
 import { useLanguage } from '@/hooks/useLanguage';
 import { CONTACT_LINKS } from '@/lib/constants';
+
+export type LinkWithLabel = {
+  label: string;
+  href: string;
+};
 
 export default function IndexPage() {
   const {
@@ -57,20 +68,41 @@ export default function IndexPage() {
       </HeroSection>
       <RegularSection>
         <Title titleType='h2'>{indexPage.about.title}</Title>
-        <div className='flex flex-col gap-8'>
+        <DescriptionSection>
           {indexPage.about.description.map((text: string, index: number) => (
-            <p
-              className='text-lg'
+            <DescriptionParagraph
               key={index}
-            >
-              {text}
-            </p>
+              text={text}
+            />
           ))}
           <LinkButton
             href='/about'
             label={indexPage.about.buttonLabel}
           />
-        </div>
+        </DescriptionSection>
+      </RegularSection>
+      <RegularSection>
+        <Title titleType='h2'>{indexPage.projects.title}</Title>
+        <DescriptionSection>
+          <DescriptionParagraph text={indexPage.projects.description} />
+          <div
+            className='
+              flex justify-center flex-wrap gap-6
+              w-full
+            '
+          >
+            {indexPage.projects.projectsData.map((project: ProjectCardProps) => (
+              <ProjectCard
+                key={project.title}
+                {...project}
+              />
+            ))}
+          </div>
+          <LinkButton
+            href='/projects'
+            label={indexPage.projects.buttonLabel}
+          />
+        </DescriptionSection>
       </RegularSection>
     </>
   );

@@ -29,3 +29,23 @@ export function RegularSection({ children }: SectionProps) {
     </section>
   );
 }
+
+export function DescriptionSection({ children }: SectionProps) {
+  return (
+    <div
+      className='
+        flex flex-col gap-8
+      '
+    >
+      {children}
+    </div>
+  );
+}
+
+type DescriptionParagraphProps = {
+  text: string;
+};
+
+export function DescriptionParagraph({ text }: DescriptionParagraphProps) {
+  return <p className='text-lg'>{text}</p>;
+}

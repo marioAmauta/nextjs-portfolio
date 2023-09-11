@@ -21,13 +21,15 @@
 
   --link-btn-bg-color: #bdbdbd;
   --link-btn-text-color: #fff;
+
+  --project-card-bg-color: var(--btn-bg-color);
 }
 
 :root.dark {
   --app-bg-color: #333;
   --app-text-color: #fff;
 
-  --btn-bg-color: #777;
+  --btn-bg-color: #555;
   --btn-text-color: var(--app-text-color);
 
   --border-color: #555;

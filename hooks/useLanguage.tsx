@@ -10,7 +10,7 @@ export function useLanguage() {
 
   function changeLanguage(event: ChangeEvent<HTMLSelectElement>) {
     const locale = event.target.value;
-    router.push(router.pathname, router.asPath, { locale });
+    router.replace(router.pathname, router.asPath, { locale, scroll: false });
   }
 
   return { locale, translations, changeLanguage };

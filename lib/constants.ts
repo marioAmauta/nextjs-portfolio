@@ -73,3 +73,63 @@ export const LANGUAGE_SELECT_DATA = {
     }
   ]
 };
+
+export const TECHNOLOGIES = {
+  html: {
+    label: 'HTML',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/HTML'
+  },
+  css: {
+    label: 'CSS',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/CSS'
+  },
+  javascript: {
+    label: 'JavaScript',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+  },
+  react: {
+    label: 'React',
+    href: 'https://react.dev/'
+  },
+  propTypes: {
+    label: 'Prop-Types',
+    href: 'https://www.npmjs.com/package/prop-types'
+  },
+  dompurify: {
+    label: 'Dompurify',
+    href: 'https://www.npmjs.com/package/dompurify'
+  },
+  marked: {
+    label: 'Marked',
+    href: 'https://www.npmjs.com/package/marked'
+  },
+  vite: {
+    label: 'Vite',
+    href: 'https://vitejs.dev/'
+  }
+};
+
+export const PROJECTS_DATA = {
+  markdownPreviewer: {
+    title: 'Markdown Previewer',
+    images: {
+      desktop: '/images/markdown-previewer-desktop.png',
+      mobile: '/images/markdown-previewer-mobile.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/markdown-previewer',
+      liveDemo: 'https://markdown-previewer-marioprogramador.vercel.app/'
+    }
+  },
+  randomQuoteMachine: {
+    title: 'Random Quote Machine',
+    images: {
+      desktop: '/images/random-quote-machine-desktop.png',
+      mobile: '/images/random-quote-machine-mobile.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/random-quote-machine',
+      liveDemo: 'https://random-quote-machine-marioamauta.vercel.app/'
+    }
+  }
+};

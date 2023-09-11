@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faDesktop, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { THEME_INPUT_DATA } from '@/lib/constants';
 import { useTheme } from '@/hooks/useTheme';
+import { ThemeIcons } from './Icons';
 
 export function ThemeSwitcher() {
   const { theme, onThemeChange } = useTheme();
@@ -33,9 +32,7 @@ export function ThemeSwitcher() {
             type={type}
             value={value}
           />
-          <FontAwesomeIcon
-            icon={value === 'light' ? faSun : value === 'system' ? faDesktop : faMoon}
-          />
+          <ThemeIcons theme={value} />
         </label>
       ))}
     </form>
