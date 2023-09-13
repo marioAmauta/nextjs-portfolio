@@ -1,7 +1,7 @@
 import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const en = {
-  constructionLabel: 'Project under construction',
+  constructionLabel: 'Website under construction',
   metaTags: {
     description: 'Web apps developer'
   },
