@@ -19,11 +19,25 @@ export function useTheme() {
   useEffect(() => {
     setTheme(localStorage.theme || 'system');
 
+    const metaThemeColor = {
+      selector: 'meta[name="theme-color"]',
+      content: {
+        light: '#f5f5f5',
+        dark: '#333'
+      }
+    };
+
     function checkDarkMode(isDarkMode: boolean) {
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && isDarkMode)) {
         document.documentElement.classList.add('dark');
+        document
+          .querySelector(metaThemeColor.selector)
+          ?.setAttribute('content', metaThemeColor.content.dark);
       } else {
         document.documentElement.classList.remove('dark');
+        document
+          .querySelector(metaThemeColor.selector)
+          ?.setAttribute('content', metaThemeColor.content.light);
       }
     }
 

@@ -1,6 +1,8 @@
-import { ContactLinkButton, LinkButton } from '@/components/Buttons';
+import { LinkButton } from '@/components/Buttons';
+import { ContactForm } from '@/components/ContactForm';
 import { ProjectCard, ProjectCardProps } from '@/components/ProjectCard';
 import {
+  ContactButtons,
   DescriptionParagraph,
   DescriptionSection,
   HeroSection,
@@ -8,7 +10,6 @@ import {
 } from '@/components/Sections';
 import { Title } from '@/components/Titles';
 import { useLanguage } from '@/hooks/useLanguage';
-import { CONTACT_LINKS } from '@/lib/constants';
 
 export type LinkWithLabel = {
   label: string;
@@ -52,19 +53,7 @@ export default function IndexPage() {
             </p>
           ))}
         </div>
-        <div
-          className='
-            flex gap-10
-          '
-        >
-          {CONTACT_LINKS.map(({ href, label }) => (
-            <ContactLinkButton
-              key={href}
-              href={href}
-              label={label}
-            />
-          ))}
-        </div>
+        <ContactButtons />
       </HeroSection>
       <RegularSection>
         <Title titleType='h2'>{indexPage.about.title}</Title>
@@ -87,7 +76,7 @@ export default function IndexPage() {
           <DescriptionParagraph text={indexPage.projects.description} />
           <div
             className='
-              grid grid-cols-1 md:grid-cols-2 gap-12
+              grid grid-cols-1 md:grid-rows-2 gap-12
             '
           >
             {indexPage.projects.projectsData.map((project: ProjectCardProps) => (
@@ -102,6 +91,13 @@ export default function IndexPage() {
             label={indexPage.projects.buttonLabel}
           />
         </DescriptionSection>
+      </RegularSection>
+      <RegularSection>
+        <Title titleType='h2'>{indexPage.contact.title}</Title>
+        <DescriptionParagraph text={indexPage.contact.description} />
+        <ContactButtons />
+        <DescriptionParagraph text={indexPage.contact.paragraph} />
+        <ContactForm />
       </RegularSection>
     </>
   );

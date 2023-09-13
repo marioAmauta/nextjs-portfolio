@@ -1,13 +1,14 @@
 import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const es = {
+  constructionLabel: 'Proyecto en construcción',
   metaTags: {
     description: 'Desarrollador de aplicaciones web'
   },
   indexPage: {
     hero: {
       title: 'Soy Mario',
-      subtitle: ['Desarrollador de Software', '&', 'Emprendedor'],
+      subtitle: ['Desarrollador de Software'],
       description: [
         'Apasionado de la tecnología y de hacer crecer negocios',
         'Siempre mejorando mis habilidades para hacer realidad el sitio web de tus sueños'
@@ -83,6 +84,12 @@ export const es = {
         }
       ],
       buttonLabel: 'Ver todos los proyectos'
+    },
+    contact: {
+      title: 'Contacto',
+      description: 'Encuentrame en las siguientes plataformas',
+      paragraph: 'O envíame un correo',
+      buttonLabel: 'Enviar correo '
     }
   },
   navBar: {

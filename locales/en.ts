@@ -1,6 +1,7 @@
 import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const en = {
+  constructionLabel: 'Project under construction',
   metaTags: {
     description: 'Web apps developer'
   },
@@ -13,7 +14,7 @@ export const en = {
   indexPage: {
     hero: {
       title: "I'm Mario",
-      subtitle: ['Software Developer', '&', 'Entrepreneur'],
+      subtitle: ['Software Developer'],
       description: [
         'Passionate about technology and growing businesses',
         'Always improving my skills to make the website of your dreams come true'
@@ -91,11 +92,9 @@ export const en = {
     },
     contact: {
       title: 'Contact Me',
-      description: [
-        'If you want to contact me, you can send me an email to',
-        'Or you can send me a message on my social networks'
-      ],
-      buttonLabel: 'Send me an email'
+      description: 'Find me on the following platforms',
+      paragraph: 'Or send me an email',
+      buttonLabel: 'Send email'
     }
   }
 };

@@ -4,33 +4,43 @@ import { Menu } from './Menu';
 import { useMobileMenu } from '@/hooks/useMobileMenu';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
-export function Header() {
+export function Header({ constructionLabel }: { constructionLabel: string }) {
   useMobileMenu();
 
   return (
-    <header
-      id={ELEMENT_IDS.mainHeaderId}
+    <div
       className='
-        border-b border-[--border-color]
-        bg-[--app-bg-color]
         sticky top-0 z-30
-        flex justify-between items-center
-        h-[--header-height]
-        p-4 lg:px-36
+        bg-[--app-bg-color]
       '
     >
-      <Link
-        href='/'
+      <div className='text-center border-b border-[--border-color]'>{constructionLabel}</div>
+      <header
+        id={ELEMENT_IDS.mainHeaderId}
         className='
-          text-xl font-light
+          border-b border-[--border-color]
+          flex justify-between items-center
+          h-[--header-height]
+          p-4 lg:px-36 2xl:px-96
         '
       >
-        Mario Programador
-      </Link>
-      <div className='flex justify-center items-center gap-4 md:flex-row-reverse md:gap-10'>
-        <LanguageSwitcher />
-        <Menu />
-      </div>
-    </header>
+        <Link
+          href='/'
+          className='
+            text-xl font-light
+          '
+        >
+          Mario Programador
+        </Link>
+        <div
+          className='
+            flex justify-center items-center gap-4 md:flex-row-reverse md:gap-10
+          '
+        >
+          <LanguageSwitcher />
+          <Menu />
+        </div>
+      </header>
+    </div>
   );
 }

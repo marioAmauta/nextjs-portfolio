@@ -28,65 +28,78 @@ export function ProjectCard({
         rounded-md
         shadow-md
         flex flex-col gap-4
-        w-full max-w-lg
+        w-full
       '
     >
       <h3
         className='
-        text-2xl font-bold
+          text-2xl font-bold
         '
       >
         {title}
       </h3>
-      <Image
-        src={image}
-        alt={title}
-        width={400}
-        height={200}
+      <div
         className='
-        rounded-md
-        w-full
+          flex flex-col gap-4 sm:grid sm:grid-cols-2
         '
-      />
-      {description.map((text: string, index: number) => (
-        <p key={index}>{text}</p>
-      ))}
-      <section
-        className='
-        flex justify-center gap-8
-        my-auto
-      '
       >
-        {links.map(({ label, href }) => (
-          <ContactLinkButton
-            key={href}
-            href={href}
-            label={label}
-          />
-        ))}
-      </section>
-      <footer>
-        <h4
+        <Image
+          src={image}
+          alt={title}
+          width={400}
+          height={200}
           className='
-            text-xl font-semibold mb-4
+            rounded-md
+            w-full
+            mx-auto
+          '
+        />
+        <div
+          className='
+            flex flex-col justify-center gap-4 xl:-mt-4
           '
         >
-          {title2}
-        </h4>
-        <section
-          className='
-          flex flex-wrap gap-2
-          '
-        >
-          {technologies.map(({ label, href }) => (
-            <TechLinkButton
-              key={href}
-              href={href}
-              label={label}
-            />
+          {description.map((text: string, index: number) => (
+            <p key={index}>{text}</p>
           ))}
-        </section>
-      </footer>
+          <section
+            className='
+              flex justify-center gap-8 md:my-4
+            '
+          >
+            {links.map(({ label, href }) => (
+              <ContactLinkButton
+                key={href}
+                href={href}
+                label={label}
+              />
+            ))}
+          </section>
+          <footer>
+            <h4
+              className='
+                text-xl font-semibold
+                mb-4
+              '
+            >
+              {title2}
+            </h4>
+            <section
+              className='
+                flex flex-wrap gap-2
+              '
+            >
+              {technologies.map(({ label, href }) => (
+                <TechLinkButton
+                  key={href}
+                  href={href}
+                  label={label}
+                />
+              ))}
+            </section>
+          </footer>
+        </div>
+      </div>
     </article>
   );
 }

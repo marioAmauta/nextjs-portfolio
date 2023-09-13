@@ -19,8 +19,12 @@ export function Layout({ children }: { children: ReactNode }) {
           name='description'
           content={translations.metaTags.description}
         />
+        <meta
+          name='theme-color'
+          content=''
+        />
       </Head>
-      <Header />
+      <Header constructionLabel={translations.constructionLabel} />
       <main>{children}</main>
       <Footer />
     </div>

@@ -1,4 +1,6 @@
+import { CONTACT_LINKS } from '@/lib/constants';
 import { ReactNode } from 'react';
+import { ContactLinkButton } from './Buttons';
 
 type SectionProps = {
   children: ReactNode;
@@ -10,7 +12,7 @@ export function HeroSection({ children }: SectionProps) {
       className='
         flex flex-col justify-evenly items-center
         h-[calc(100svh-var(--header-height))]
-        px-4 lg:px-36
+        px-4 lg:px-36 2xl:px-96
       '
     >
       {children}
@@ -22,7 +24,7 @@ export function RegularSection({ children }: SectionProps) {
   return (
     <section
       className='
-        px-4 py-16 lg:px-36
+        px-4 py-20 lg:px-36 2xl:px-96
       '
     >
       {children}
@@ -48,4 +50,30 @@ type DescriptionParagraphProps = {
 
 export function DescriptionParagraph({ text }: DescriptionParagraphProps) {
   return <p className='text-lg'>{text}</p>;
+}
+
+export function ButtonsContainer({ children }: SectionProps) {
+  return (
+    <div
+      className='
+        flex gap-10
+      '
+    >
+      {children}
+    </div>
+  );
+}
+
+export function ContactButtons() {
+  return (
+    <ButtonsContainer>
+      {CONTACT_LINKS.map(({ href, label }) => (
+        <ContactLinkButton
+          key={href}
+          href={href}
+          label={label}
+        />
+      ))}
+    </ButtonsContainer>
+  );
 }
