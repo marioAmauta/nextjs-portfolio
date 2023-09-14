@@ -9,7 +9,7 @@ export function ThemeSwitcher() {
     <form
       id='theme-palette'
       className='
-        flex gap-4
+        flex gap-2
         w-min
         mx-auto
       '

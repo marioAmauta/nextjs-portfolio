@@ -34,7 +34,7 @@ export function Header({ constructionLabel }: { constructionLabel: string }) {
         </Link>
         <div
           className='
-            flex justify-center items-center gap-4 md:flex-row-reverse md:gap-10
+            flex justify-center items-center gap-4 md:flex-row-reverse md:gap-6
           '
         >
           <LanguageSwitcher />

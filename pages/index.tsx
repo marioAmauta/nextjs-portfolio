@@ -1,5 +1,4 @@
 import { LinkButton } from '@/components/Buttons';
-import { ContactForm } from '@/components/ContactForm';
 import { ProjectCard, ProjectCardProps } from '@/components/ProjectCard';
 import {
   ContactButtons,
@@ -95,9 +94,24 @@ export default function IndexPage() {
       <RegularSection>
         <Title titleType='h2'>{indexPage.contact.title}</Title>
         <DescriptionParagraph text={indexPage.contact.description} />
-        <ContactButtons />
+        <div
+          className='
+            my-12
+          '
+        >
+          <ContactButtons />
+        </div>
         <DescriptionParagraph text={indexPage.contact.paragraph} />
-        <ContactForm />
+        <div
+          className='
+            my-12
+          '
+        >
+          <LinkButton
+            href='/contact'
+            label={indexPage.contact.buttonLabel}
+          />
+        </div>
       </RegularSection>
     </>
   );

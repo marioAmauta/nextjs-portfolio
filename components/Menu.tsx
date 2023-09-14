@@ -4,6 +4,7 @@ import { ToggleButton } from './ToggleButton';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Navbar, NavbarItem } from './Navbar';
 import { BlurredBackground } from './BlurredBackground';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 export function Menu() {
   const { translations } = useLanguage();
@@ -25,6 +26,13 @@ export function Menu() {
             </Link>
           </NavbarItem>
         ))}
+        <div
+          className='
+            absolute bottom-[20vh] inset-x-0 md:static 
+          '
+        >
+          <ThemeSwitcher />
+        </div>
       </Navbar>
     </>
   );

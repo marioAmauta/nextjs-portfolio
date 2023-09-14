@@ -1,5 +1,3 @@
-import { ThemeSwitcher } from './ThemeSwitcher';
-
 export function Footer() {
   return (
     <footer
@@ -8,7 +6,7 @@ export function Footer() {
         border-t border-[--border-color]
       '
     >
-      <ThemeSwitcher />
+      Footer Section
     </footer>
   );
 }

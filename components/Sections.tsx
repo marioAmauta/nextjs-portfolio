@@ -24,7 +24,7 @@ export function RegularSection({ children }: SectionProps) {
   return (
     <section
       className='
-        px-4 py-20 lg:px-36 2xl:px-96
+        px-4 py-14 lg:px-36 2xl:px-96
       '
     >
       {children}
@@ -56,7 +56,7 @@ export function ButtonsContainer({ children }: SectionProps) {
   return (
     <div
       className='
-        flex gap-10
+        flex gap-10 w-min mx-auto
       '
     >
       {children}
