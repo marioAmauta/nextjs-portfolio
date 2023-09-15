@@ -5,6 +5,12 @@ export const es = {
   metaTags: {
     description: 'Desarrollador de aplicaciones web'
   },
+  navBar: {
+    home: 'Inicio',
+    about: 'Sobre Mi',
+    myProjects: 'Proyectos',
+    contact: 'Contacto'
+  },
   indexPage: {
     hero: {
       title: 'Soy Mario',
@@ -92,21 +98,8 @@ export const es = {
       buttonLabel: 'Enviar correo '
     }
   },
-  navBar: {
-    home: 'Inicio',
-    about: 'Sobre Mi',
-    myProjects: 'Proyectos',
-    contact: 'Contacto'
-  },
-  languageLabel: 'Idioma',
-  languageSelect: {
-    en: 'Inglés',
-    es: 'Español'
-  },
-  themeLabel: 'Tema',
-  themeSelect: {
-    system: 'Sistema',
-    light: 'Claro',
-    dark: 'Oscuro'
+  aboutPage: {
+    title: 'Sobre Mi',
+    description: 'En esta sección me extiendo un poco mas sobre mi'
   }
 };

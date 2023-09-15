@@ -8,38 +8,11 @@ type Title = {
 export function Title({ children, titleType }: Title) {
   switch (titleType) {
     case 'hero':
-      return (
-        <h1
-          className='
-            text-5xl font-bold
-          '
-        >
-          {children}
-        </h1>
-      );
+      return <h1 className='text-5xl font-bold'>{children}</h1>;
     case 'h1':
-      return (
-        <h1
-          className='
-            text-5xl font-bold
-            mb-10
-          '
-        >
-          {children}
-        </h1>
-      );
+      return <h1 className='text-5xl font-bold mb-10'>{children}</h1>;
     case 'h2':
-      return (
-        <h2
-          className='
-            text-4xl
-            font-bold
-            mb-10
-          '
-        >
-          {children}
-        </h2>
-      );
+      return <h2 className='text-4xl font-bold mb-10 '>{children}</h2>;
     case 'h3':
       return <h3 className='text-3xl font-bold'>{children}</h3>;
     case 'h4':

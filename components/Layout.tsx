@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Header } from './Header';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Footer } from './Footer';
+import { BackArrowButton } from './Buttons';
 
 export function Layout({ children }: { children: ReactNode }) {
   const { translations } = useLanguage();
@@ -26,6 +27,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </Head>
       <Header constructionLabel={translations.constructionLabel} />
       <main>{children}</main>
+      <BackArrowButton />
       <Footer />
     </div>
   );

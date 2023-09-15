@@ -3,13 +3,20 @@ import { ELEMENT_IDS } from '@/lib/constants';
 import { Menu } from './Menu';
 import { useMobileMenu } from '@/hooks/useMobileMenu';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { useHideHeader } from '@/hooks/useHideHeader';
 
 export function Header({ constructionLabel }: { constructionLabel: string }) {
+  const tempHeaderId = 'temporal-header';
+
+  useHideHeader({ headerId: tempHeaderId });
+
   useMobileMenu();
 
   return (
     <div
+      id={tempHeaderId}
       className='
+        transition-all duration-300
         sticky top-0 z-30
         bg-[--app-bg-color]
       '
@@ -27,7 +34,7 @@ export function Header({ constructionLabel }: { constructionLabel: string }) {
         <Link
           href='/'
           className='
-            text-xl font-light
+            text-xl
           '
         >
           Mario Programador

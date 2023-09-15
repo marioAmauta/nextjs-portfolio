@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { BackArrowIcon } from './Icons';
+import { useRouter } from 'next/router';
 
 type LinkButtonProps = {
   href: string;
@@ -18,6 +20,7 @@ export function LinkButton({ href, label }: LinkButtonProps) {
         rounded-lg
         shadow
         text-center text-lg font-semibold
+        block
       '
     >
       {label}
@@ -34,6 +37,7 @@ export function ContactLinkButton({ href, label }: LinkButtonProps) {
       className='
         transition-colors duration-300
         bg-[--btn-bg-color]
+        w-28
         px-4 py-2
         rounded-lg
         shadow
@@ -61,5 +65,32 @@ export function TechLinkButton({ label, href }: LinkButtonProps) {
     >
       {label}
     </Link>
+  );
+}
+
+export function BackArrowButton() {
+  const router = useRouter();
+
+  function handleClick() {
+    router.back();
+  }
+
+  if (router.pathname === '/') {
+    return null;
+  }
+
+  return (
+    <button
+      onClick={handleClick}
+      className='
+        fixed bottom-4 right-4
+        bg-[--btn-bg-color]
+        h-10 w-10
+        border border-[--border-color] rounded-full
+        shadow-xl
+      '
+    >
+      <BackArrowIcon />
+    </button>
   );
 }

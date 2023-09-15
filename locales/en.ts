@@ -96,5 +96,9 @@ export const en = {
       paragraph: 'Or send me an email',
       buttonLabel: 'Send email'
     }
+  },
+  aboutPage: {
+    title: 'About Me',
+    description: 'In this section I extend'
   }
 };
