@@ -79,15 +79,19 @@
   right: 0;
 }
 
+body.active {
+  position: fixed;
+}
+
+label.active {
+  background-color: var(--btn-bg-color);
+  border-radius: 50%;
+}
+
 select {
   background-color: unset;
 }
 
 input[type='radio'] {
   display: none;
-}
-
-label.active {
-  background-color: var(--btn-bg-color);
-  border-radius: 50%;
 }
