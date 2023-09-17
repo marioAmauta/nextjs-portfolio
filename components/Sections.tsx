@@ -56,7 +56,7 @@ export function ButtonsContainer({ children }: SectionProps) {
   return (
     <div
       className='
-        flex gap-10 w-min mx-auto
+        flex justify-center gap-10
       '
     >
       {children}

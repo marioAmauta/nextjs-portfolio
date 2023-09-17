@@ -80,7 +80,7 @@
 }
 
 body.active {
-  position: fixed;
+  overflow: hidden;
 }
 
 label.active {

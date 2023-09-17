@@ -83,11 +83,12 @@ export function BackArrowButton() {
     <button
       onClick={handleClick}
       className='
-        fixed bottom-4 right-4
+        fixed bottom-10 right-8
         bg-[--btn-bg-color]
         h-10 w-10
+        z-50
         border border-[--border-color] rounded-full
-        shadow-xl
+        shadow
       '
     >
       <BackArrowIcon />
