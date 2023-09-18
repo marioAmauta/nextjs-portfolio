@@ -20,10 +20,7 @@ export function Layout({ children }: { children: ReactNode }) {
           name='description'
           content={translations.metaTags.description}
         />
-        <meta
-          name='theme-color'
-          content=''
-        />
+        <meta name='theme-color' />
       </Head>
       <Header constructionLabel={translations.constructionLabel} />
       <main>{children}</main>
