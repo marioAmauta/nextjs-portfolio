@@ -14,37 +14,49 @@ export function useTheme() {
   }
 
   useEffect(() => {
-    setTheme(localStorage.theme || 'system');
+    function setDarkMode(isDarkMode: boolean) {
+      setTheme(localStorage.theme || 'system');
 
-    function checkDarkMode(isDarkMode: boolean) {
+      const $html = document.documentElement;
+
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && isDarkMode)) {
-        document.documentElement.classList.add('dark');
+        $html.classList.add('dark');
       } else {
-        document.documentElement.classList.remove('dark');
+        $html.classList.remove('dark');
       }
     }
 
     const prefersColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    checkDarkMode(prefersColorScheme.matches);
+    setDarkMode(prefersColorScheme.matches);
 
-    prefersColorScheme.addEventListener('change', ({ matches }) => checkDarkMode(matches));
+    prefersColorScheme.addEventListener('change', ({ matches }) => setDarkMode(matches));
 
     return () =>
-      prefersColorScheme.removeEventListener('change', ({ matches }) => checkDarkMode(matches));
+      prefersColorScheme.removeEventListener('change', ({ matches }) => setDarkMode(matches));
   }, [theme]);
 
   useEffect(() => {
-    const metaThemeColors = {
-      selector: 'meta[name="theme-color"]',
-      light: '#f5f5f5',
-      dark: '#333',
-      system: ''
-    };
+    function setMetaThemeColor(isDarkMode: boolean) {
+      const metaThemeColors = {
+        light: '#f5f5f5',
+        dark: '#333',
+        system: isDarkMode ? '#333' : '#f5f5f5'
+      };
 
-    document
-      .querySelector(metaThemeColors.selector)
-      ?.setAttribute('content', metaThemeColors[theme as keyof typeof metaThemeColors]);
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute('content', metaThemeColors[theme as keyof typeof metaThemeColors]);
+    }
+
+    const prefersColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    setMetaThemeColor(prefersColorScheme.matches);
+
+    prefersColorScheme.addEventListener('change', ({ matches }) => setMetaThemeColor(matches));
+
+    return () =>
+      prefersColorScheme.removeEventListener('change', ({ matches }) => setMetaThemeColor(matches));
   });
 
   return { theme, onThemeChange };
