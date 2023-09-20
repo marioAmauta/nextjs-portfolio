@@ -1,48 +1,46 @@
 import Link from 'next/link';
-import { BackArrowIcon } from './Icons';
-import { useRouter } from 'next/router';
 
 type LinkButtonProps = {
   href: string;
   label: string;
+  margin?: string;
 };
 
-export function LinkButton({ href, label }: LinkButtonProps) {
+export function LinkButton({ href, label, margin }: LinkButtonProps) {
   return (
     <Link
       href={href}
-      scroll={false}
-      className='
+      className={`
         transition-colors duration-300
         bg-[--btn-bg-color]
-        px-4 py-2
+        px-4 py-2 ${margin ? margin : ''}
         w-max
         rounded-lg
         shadow
         text-center text-lg font-semibold
         block
-      '
+      `}
     >
       {label}
     </Link>
   );
 }
 
-export function ContactLinkButton({ href, label }: LinkButtonProps) {
+export function ContactLinkButton({ href, label, margin }: LinkButtonProps) {
   return (
     <Link
       href={href}
       target='_blank'
       rel='noopener noreferrer'
-      className='
+      className={`
         transition-colors duration-300
         bg-[--btn-bg-color]
         w-28
-        px-4 py-2
+        px-4 py-2 ${margin ? margin : ''}
         rounded-lg
         shadow
         text-center text-lg font-semibold
-      '
+      `}
     >
       {label}
     </Link>
@@ -57,41 +55,13 @@ export function TechLinkButton({ label, href }: LinkButtonProps) {
       target='_blank'
       rel='noopener noreferrer'
       className='
-      bg-zinc-600
-      text-white
+        bg-[--btn-bg-color]
+        text-[--app-text-color]
         px-2 py-1
         rounded-2xl
       '
     >
       {label}
     </Link>
-  );
-}
-
-export function BackArrowButton() {
-  const router = useRouter();
-
-  function handleClick() {
-    router.back();
-  }
-
-  if (router.pathname === '/') {
-    return null;
-  }
-
-  return (
-    <button
-      onClick={handleClick}
-      className='
-        fixed bottom-10 right-8
-        bg-[--btn-bg-color]
-        h-10 w-10
-        z-50
-        border border-[--border-color] rounded-full
-        shadow
-      '
-    >
-      <BackArrowIcon />
-    </button>
   );
 }

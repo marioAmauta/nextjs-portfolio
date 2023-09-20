@@ -2,7 +2,7 @@ import { LANGUAGE_SELECT_DATA } from '@/lib/constants';
 import { useLanguage } from '@/hooks/useLanguage';
 
 export function LanguageSwitcher() {
-  const { locale, translations, changeLanguage } = useLanguage();
+  const { locale, changeLanguage } = useLanguage();
 
   return (
     <label

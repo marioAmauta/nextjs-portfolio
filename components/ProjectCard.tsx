@@ -21,10 +21,9 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <article
-      key={title}
       className='
         bg-[--project-card-bg-color]
-        p-4 mx-auto
+        p-6 mx-auto
         rounded-md
         shadow-md
         flex flex-col gap-4
@@ -33,7 +32,7 @@ export function ProjectCard({
     >
       <h3
         className='
-          text-2xl font-bold
+          text-2xl text-center font-bold pb-2
         '
       >
         {title}
@@ -52,11 +51,13 @@ export function ProjectCard({
             rounded-md
             w-full
             mx-auto
+            shadow-2xl
+            mb-2 md:mb-0
           '
         />
         <div
           className='
-            flex flex-col justify-center gap-4 xl:-mt-4
+            flex flex-col justify-center gap-6
           '
         >
           {description.map((text: string, index: number) => (
@@ -64,7 +65,7 @@ export function ProjectCard({
           ))}
           <section
             className='
-              flex justify-center gap-8 md:my-4
+              flex justify-center gap-8 
             '
           >
             {links.map(({ label, href }) => (
@@ -79,7 +80,7 @@ export function ProjectCard({
             <h4
               className='
                 text-xl font-semibold
-                mb-4
+                pb-6
               '
             >
               {title2}

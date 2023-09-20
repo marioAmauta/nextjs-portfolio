@@ -5,6 +5,7 @@ import {
   DescriptionParagraph,
   DescriptionSection,
   HeroSection,
+  ProjectSection,
   RegularSection
 } from '@/components/Sections';
 import { Title } from '@/components/Titles';
@@ -23,35 +24,17 @@ export default function IndexPage() {
   return (
     <>
       <HeroSection>
-        <h1
-          className='
-            text-5xl font-bold
-          '
-        >
-          {indexPage.hero.title}
-        </h1>
-        <h2
-          className='
-            text-3xl text-center font-semibold
-            flex flex-col items-center gap-2
-          '
-        >
-          {indexPage.hero.subtitle.map((text: string, index: number) => (
-            <span key={index}>{text}</span>
-          ))}
-        </h2>
-        <div className='flex flex-col gap-4 text-center'>
+        <Title titleType='hero'>{indexPage.hero.title}</Title>
+        <Title titleType='heroSubtitle'>{indexPage.hero.subtitle}</Title>
+        <DescriptionSection gap='gap-4'>
           {indexPage.hero.description.map((text: string, index: number) => (
-            <p
-              className='
-                text-lg font-semibold
-              '
+            <DescriptionParagraph
               key={index}
-            >
-              {text}
-            </p>
+              text={text}
+              fontWeight='font-semibold'
+            />
           ))}
-        </div>
+        </DescriptionSection>
         <ContactButtons />
       </HeroSection>
       <RegularSection>
@@ -72,19 +55,18 @@ export default function IndexPage() {
       <RegularSection>
         <Title titleType='h2'>{indexPage.projects.title}</Title>
         <DescriptionSection>
-          <DescriptionParagraph text={indexPage.projects.description} />
-          <div
-            className='
-              grid grid-cols-1 md:grid-rows-2 gap-12
-            '
-          >
+          <DescriptionParagraph
+            text={indexPage.projects.description}
+            fontWeight='font-semibold'
+          />
+          <ProjectSection>
             {indexPage.projects.projectsData.map((project: ProjectCardProps) => (
               <ProjectCard
                 key={project.title}
                 {...project}
               />
             ))}
-          </div>
+          </ProjectSection>
           <LinkButton
             href='/projects'
             label={indexPage.projects.buttonLabel}
@@ -93,25 +75,15 @@ export default function IndexPage() {
       </RegularSection>
       <RegularSection>
         <Title titleType='h2'>{indexPage.contact.title}</Title>
-        <DescriptionParagraph text={indexPage.contact.description} />
-        <div
-          className='
-            my-12
-          '
-        >
-          <ContactButtons />
-        </div>
-        <DescriptionParagraph text={indexPage.contact.paragraph} />
-        <div
-          className='
-            my-12
-          '
-        >
+        <DescriptionSection>
+          <DescriptionParagraph text={indexPage.contact.description} />
+          <ContactButtons buttonsMargin='my-12' />
+          <DescriptionParagraph text={indexPage.contact.paragraph} />
           <LinkButton
             href='/contact'
             label={indexPage.contact.buttonLabel}
           />
-        </div>
+        </DescriptionSection>
       </RegularSection>
     </>
   );

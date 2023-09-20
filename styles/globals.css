@@ -22,7 +22,7 @@
   --link-btn-bg-color: #bdbdbd;
   --link-btn-text-color: #fff;
 
-  --project-card-bg-color: var(--btn-bg-color);
+  --project-card-bg-color: #c4c4c4;
 }
 
 :root.dark {
@@ -37,6 +37,8 @@
   --navbar-bg-color: var(--app-bg-color);
 
   --toggle-bar-bg-color: var(--app-text-color);
+
+  --project-card-bg-color: #666;
 }
 
 /* * {

@@ -4,6 +4,7 @@ import { ContactLinkButton } from './Buttons';
 
 type SectionProps = {
   children: ReactNode;
+  margin?: string;
 };
 
 export function HeroSection({ children }: SectionProps) {
@@ -11,8 +12,9 @@ export function HeroSection({ children }: SectionProps) {
     <section
       className='
         flex flex-col justify-evenly items-center
+        text-center
         h-[calc(100svh-var(--header-height))]
-        px-4 lg:px-36 2xl:px-96
+        -mt-4
       '
     >
       {children}
@@ -24,7 +26,7 @@ export function RegularSection({ children }: SectionProps) {
   return (
     <section
       className='
-        px-4 py-14 lg:px-36 2xl:px-96
+        py-16
       '
     >
       {children}
@@ -32,12 +34,29 @@ export function RegularSection({ children }: SectionProps) {
   );
 }
 
-export function DescriptionSection({ children }: SectionProps) {
+export function ParagraphsSection({ children }: SectionProps) {
   return (
     <div
       className='
-        flex flex-col gap-8
+        flex flex-col gap-8 py-4
       '
+    >
+      {children}
+    </div>
+  );
+}
+
+type DescriptionSectionProps = {
+  children: ReactNode;
+  gap?: string;
+};
+
+export function DescriptionSection({ children, gap }: DescriptionSectionProps) {
+  return (
+    <div
+      className={`
+        flex flex-col ${gap ? gap : 'gap-8'}
+      `}
     >
       {children}
     </div>
@@ -46,10 +65,11 @@ export function DescriptionSection({ children }: SectionProps) {
 
 type DescriptionParagraphProps = {
   text: string;
+  fontWeight?: string;
 };
 
-export function DescriptionParagraph({ text }: DescriptionParagraphProps) {
-  return <p className='text-lg'>{text}</p>;
+export function DescriptionParagraph({ text, fontWeight }: DescriptionParagraphProps) {
+  return <p className={`text-lg ${fontWeight ? fontWeight : ''}`}>{text}</p>;
 }
 
 export function ButtonsContainer({ children }: SectionProps) {
@@ -64,7 +84,7 @@ export function ButtonsContainer({ children }: SectionProps) {
   );
 }
 
-export function ContactButtons() {
+export function ContactButtons({ buttonsMargin }: { buttonsMargin?: string }) {
   return (
     <ButtonsContainer>
       {CONTACT_LINKS.map(({ href, label }) => (
@@ -72,8 +92,22 @@ export function ContactButtons() {
           key={href}
           href={href}
           label={label}
+          margin={buttonsMargin}
         />
       ))}
     </ButtonsContainer>
+  );
+}
+
+export function ProjectSection({ children }: SectionProps) {
+  return (
+    <section
+      className='
+        grid grid-cols-1 md:grid-flow-row gap-20
+        py-4
+      '
+    >
+      {children}
+    </section>
   );
 }

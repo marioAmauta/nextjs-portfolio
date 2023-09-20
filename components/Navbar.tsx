@@ -20,7 +20,7 @@ export function Navbar({ children }: { children: ReactNode }) {
       id={ELEMENT_IDS.mobileMenuId}
       className='
           bg-[--navbar-bg-color] md:bg-transparent
-          pt-32 pr-12 md:p-0
+          pt-[15vh] pr-12 md:p-0
           w-[50%] md:w-auto min-h-screen md:min-h-full
           fixed -right-full top-0 bottom-0 md:static 
           transition-all duration-300 md:transition-none

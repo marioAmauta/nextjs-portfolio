@@ -28,7 +28,7 @@ export function Menu() {
         ))}
         <div
           className='
-            absolute bottom-[20vh] inset-x-0 md:static md:pl-4
+            absolute bottom-[25vh] inset-x-0 md:static md:pl-4
           '
         >
           <ThemeSwitcher />

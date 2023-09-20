@@ -109,12 +109,22 @@ export const TECHNOLOGIES = {
   }
 };
 
-export const PROJECTS_DATA = {
+export type ProjectData = {
+  title: string;
+  images: {
+    desktop: string;
+  };
+  links: {
+    sourceCode: string;
+    liveDemo: string;
+  };
+};
+
+export const PROJECTS_DATA: Record<string, ProjectData> = {
   markdownPreviewer: {
     title: 'Markdown Previewer',
     images: {
-      desktop: '/images/markdown-previewer-desktop.png',
-      mobile: '/images/markdown-previewer-mobile.png'
+      desktop: '/images/markdown-previewer-desktop.png'
     },
     links: {
       sourceCode: 'https://github.com/marioAmauta/markdown-previewer',
@@ -124,12 +134,41 @@ export const PROJECTS_DATA = {
   randomQuoteMachine: {
     title: 'Random Quote Machine',
     images: {
-      desktop: '/images/random-quote-machine-desktop.png',
-      mobile: '/images/random-quote-machine-mobile.png'
+      desktop: '/images/random-quote-machine-desktop.png'
     },
     links: {
       sourceCode: 'https://github.com/marioAmauta/random-quote-machine',
       liveDemo: 'https://random-quote-machine-marioamauta.vercel.app/'
+    }
+  },
+  javaScriptDocumentation: {
+    title: 'JavaScript Documentation',
+    images: {
+      desktop: '/images/javascript-documentation-desktop.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/javascript-documentation',
+      liveDemo: 'https://marioamauta.github.io/javascript-documentation/'
+    }
+  },
+  theSaxophoneCorner: {
+    title: 'The Saxophone Corner',
+    images: {
+      desktop: '/images/saxophone-landing-page-desktop.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/saxophone-landing-page',
+      liveDemo: 'https://marioamauta.github.io/saxophone-landing-page/'
+    }
+  },
+  surveyForm: {
+    title: 'Survey Form',
+    images: {
+      desktop: '/images/survey-form-desktop.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/survey-form',
+      liveDemo: 'https://marioamauta.github.io/survey-form/'
     }
   }
 };

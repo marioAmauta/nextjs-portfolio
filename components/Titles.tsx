@@ -2,15 +2,18 @@ import { ReactNode } from 'react';
 
 type Title = {
   children: ReactNode;
-  titleType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'hero';
+  titleType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'hero' | 'heroSubtitle';
+  padding?: string;
 };
 
-export function Title({ children, titleType }: Title) {
+export function Title({ children, titleType, padding }: Title) {
   switch (titleType) {
     case 'hero':
       return <h1 className='text-5xl font-bold'>{children}</h1>;
+    case 'heroSubtitle':
+      return <h2 className='text-3xl font-semibold'>{children}</h2>;
     case 'h1':
-      return <h1 className='text-5xl font-bold mb-10'>{children}</h1>;
+      return <h1 className={`text-5xl font-bold ${padding ? padding : 'py-10'}`}>{children}</h1>;
     case 'h2':
       return <h2 className='text-4xl font-bold mb-10 '>{children}</h2>;
     case 'h3':
