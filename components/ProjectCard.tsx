@@ -52,7 +52,7 @@ export function ProjectCard({
             w-full
             mx-auto
             shadow-2xl
-            mb-2 md:mb-0
+            mb-2 sm:my-auto
           '
         />
         <div

@@ -6,7 +6,7 @@
   --app-bg-color: #f5f5f5;
   --app-text-color: #333;
 
-  --btn-bg-color: lightgray;
+  --btn-bg-color: #cccccc;
   --btn-text-color: var(--app-text-color);
 
   --border-color: #ccc;
@@ -23,6 +23,9 @@
   --link-btn-text-color: #fff;
 
   --project-card-bg-color: #c4c4c4;
+
+  --input-bg-color: #fff;
+  --placeholder-text-color: #afafaf;
 }
 
 :root.dark {
@@ -39,6 +42,9 @@
   --toggle-bar-bg-color: var(--app-text-color);
 
   --project-card-bg-color: #666;
+
+  --input-bg-color: #777;
+  --placeholder-text-color: #bdbdbd;
 }
 
 /* * {

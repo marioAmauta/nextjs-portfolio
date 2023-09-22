@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { ArrowUpIcon } from './Icons';
+import { useScrollToTop } from '@/hooks/useScrollToTop';
 
 type LinkButtonProps = {
   href: string;
@@ -63,5 +65,25 @@ export function TechLinkButton({ label, href }: LinkButtonProps) {
     >
       {label}
     </Link>
+  );
+}
+
+export function ArrowUpButton() {
+  const { isVisible, scrollToTop } = useScrollToTop();
+
+  return (
+    <button
+      className={`
+        ${isVisible ? 'fixed' : 'hidden'} bottom-8 right-8
+        bg-[--btn-bg-color]
+        px-4 py-2
+        rounded-full
+        shadow-xl
+        text-center text-lg font-semibold text-[--app-text-color]     
+      `}
+      onClick={scrollToTop}
+    >
+      <ArrowUpIcon />
+    </button>
   );
 }

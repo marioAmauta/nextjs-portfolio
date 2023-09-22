@@ -5,49 +5,40 @@ import { useMobileMenu } from '@/hooks/useMobileMenu';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useHideHeader } from '@/hooks/useHideHeader';
 
-export function Header({ constructionLabel }: { constructionLabel: string }) {
-  const tempHeaderId = 'temporal-header';
-
-  useHideHeader({ headerId: tempHeaderId });
+export function Header() {
+  useHideHeader({ headerId: ELEMENT_IDS.mainHeaderId });
 
   useMobileMenu();
 
   return (
-    <div
-      id={tempHeaderId}
+    <header
+      id={ELEMENT_IDS.mainHeaderId}
       className='
-        transition-all duration-300
-        sticky top-0 z-30
-        bg-[--app-bg-color]
-      '
-    >
-      <div className='text-center border-b border-[--border-color]'>{constructionLabel}</div>
-      <header
-        id={ELEMENT_IDS.mainHeaderId}
-        className='
+          transition-all duration-300
+          sticky top-0 z-30
+          bg-[--app-bg-color]
           border-b border-[--border-color]
           flex justify-between items-center
           h-[--header-height]
           p-4 lg:px-36 2xl:px-96
         '
-      >
-        <Link
-          href='/'
-          className='
+    >
+      <Link
+        href='/'
+        className='
             text-xl
           '
-        >
-          Mario Programador
-        </Link>
-        <div
-          className='
+      >
+        Mario Programador
+      </Link>
+      <div
+        className='
             flex justify-center items-center gap-4 md:flex-row-reverse md:gap-6
           '
-        >
-          <LanguageSwitcher />
-          <Menu />
-        </div>
-      </header>
-    </div>
+      >
+        <LanguageSwitcher />
+        <Menu />
+      </div>
+    </header>
   );
 }

@@ -1,7 +1,19 @@
 import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const es = {
-  constructionLabel: 'Sitio web en construcción',
+  madeWithLove: 'Hecho con ❤️ por Mario Programador',
+  contactForm: {
+    title: 'Envíame un mensaje',
+    name: 'Nombre',
+    namePlaceholder: 'Tu nombre',
+    email: 'Correo electrónico',
+    emailPlaceholder: 'hola@hola.com',
+    message: 'Mensaje',
+    messagePlaceholder: '¡Hola Mario! Me gustaría hablar contigo sobre...',
+    submit: 'Enviar Mensaje',
+    success: 'Mensaje enviado con éxito!  ',
+    error: 'Ocurrió un error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.'
+  },
   metaTags: {
     description: 'Desarrollador de aplicaciones web'
   },
@@ -87,13 +99,13 @@ export const es = {
           ]
         }
       ],
-      buttonLabel: 'Ver todos los proyectos'
+      buttonLabel: 'Ver más proyectos'
     },
     contact: {
       title: 'Contacto',
-      description: 'Encuentrame en las siguientes plataformas',
-      paragraph: 'O envíame un correo',
-      buttonLabel: 'Enviar correo '
+      description: 'Encuéntrame en las siguientes plataformas',
+      paragraph: 'Envíame un mensaje',
+      buttonLabel: 'Enviar mensaje'
     }
   },
   aboutPage: {
@@ -223,5 +235,9 @@ export const es = {
       }
     ],
     buttonLabel: 'Contacto'
+  },
+  contactPage: {
+    title: 'Contacto',
+    description: 'Encuéntrame en las siguientes plataformas'
   }
 };

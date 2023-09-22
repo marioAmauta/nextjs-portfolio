@@ -17,7 +17,7 @@ export function Title({ children, titleType, padding }: Title) {
     case 'h2':
       return <h2 className='text-4xl font-bold mb-10 '>{children}</h2>;
     case 'h3':
-      return <h3 className='text-3xl font-bold'>{children}</h3>;
+      return <h3 className={`text-3xl font-bold ${padding ? padding : ''}`}>{children}</h3>;
     case 'h4':
       return <h4 className='text-2xl font-bold'>{children}</h4>;
     case 'h5':

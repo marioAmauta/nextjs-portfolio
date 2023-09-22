@@ -66,10 +66,13 @@ export function DescriptionSection({ children, gap }: DescriptionSectionProps) {
 type DescriptionParagraphProps = {
   text: string;
   fontWeight?: string;
+  padding?: string;
 };
 
-export function DescriptionParagraph({ text, fontWeight }: DescriptionParagraphProps) {
-  return <p className={`text-lg ${fontWeight ? fontWeight : ''}`}>{text}</p>;
+export function DescriptionParagraph({ text, fontWeight, padding }: DescriptionParagraphProps) {
+  return (
+    <p className={`text-lg ${fontWeight ? fontWeight : ''} ${padding ? padding : ''}`}>{text}</p>
+  );
 }
 
 export function ButtonsContainer({ children }: SectionProps) {

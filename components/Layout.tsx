@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Header } from './Header';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Footer } from './Footer';
+import { ArrowUpButton } from './Buttons';
 
 export function Layout({ children }: { children: ReactNode }) {
   const { translations } = useLanguage();
@@ -21,15 +22,16 @@ export function Layout({ children }: { children: ReactNode }) {
         />
         <meta name='theme-color' />
       </Head>
-      <Header constructionLabel={translations.constructionLabel} />
+      <Header />
       <main
         className='
-          px-4 lg:px-36 2xl:px-96
+        px-4 lg:px-36 2xl:px-96
         '
       >
         {children}
       </main>
-      <Footer />
+      <Footer translations={translations} />
+      <ArrowUpButton />
     </div>
   );
 }

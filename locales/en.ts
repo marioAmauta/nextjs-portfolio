@@ -1,7 +1,19 @@
 import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const en = {
-  constructionLabel: 'Website under construction',
+  madeWithLove: 'Made with ❤️ by Mario Programador',
+  contactForm: {
+    title: 'Send me a Message',
+    name: 'Name',
+    namePlaceholder: 'Your name',
+    email: 'Email',
+    emailPlaceholder: 'hello@hello.com',
+    message: 'Message',
+    messagePlaceholder: 'Hello Mario! I would like to talk to you about...',
+    submit: 'Send Message',
+    success: 'Message sent successfully!',
+    error: 'An error occurred while sending the message. Please try again later.'
+  },
   metaTags: {
     description: 'Web apps developer'
   },
@@ -87,13 +99,13 @@ export const en = {
           ]
         }
       ],
-      buttonLabel: 'See all projects'
+      buttonLabel: 'See more projects'
     },
     contact: {
       title: 'Contact Me',
       description: 'Find me on the following platforms',
-      paragraph: 'Or send me an email',
-      buttonLabel: 'Send email'
+      paragraph: 'Send me a message',
+      buttonLabel: 'Send message'
     }
   },
   aboutPage: {
@@ -223,5 +235,9 @@ export const en = {
       }
     ],
     buttonLabel: 'Contact Me'
+  },
+  contactPage: {
+    title: 'Contact',
+    description: 'Find me on the following platforms'
   }
 };
