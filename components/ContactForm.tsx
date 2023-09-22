@@ -61,6 +61,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
             h-10
             px-4
             bg-[--input-bg-color] placeholder-[--placeholder-text-color]
+            outline-0
           '
         />
         <label
@@ -79,6 +80,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
             h-10
             px-4
             bg-[--input-bg-color] placeholder-[--placeholder-text-color]
+            outline-0
           '
         />
         <label
@@ -98,6 +100,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
             rounded
             text-[--app-text-color]
             bg-[--input-bg-color] placeholder-[--placeholder-text-color]
+            outline-0
           '
         />
         <button

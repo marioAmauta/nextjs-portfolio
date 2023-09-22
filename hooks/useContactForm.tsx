@@ -37,7 +37,7 @@ export function useContactForm() {
   useEffect(() => {
     const message = setTimeout(() => {
       setIsMessageSent('not sent yet');
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(message);
   }, [isMessageSent]);
