@@ -23,16 +23,16 @@ export function ProjectCard({
     <article
       className='
         bg-[--project-card-bg-color]
-        p-6 mx-auto
-        rounded-md
+        pt-6 pb-9 md:pt-8 md:pb-16 px-5 mx-auto
+        rounded-xl
         shadow-md
         flex flex-col gap-4
-        w-full
+        w-full max-w-5xl
       '
     >
       <h3
         className='
-          text-2xl text-center font-bold pb-2
+          text-2xl text-center font-bold pb-2 md:pb-4
         '
       >
         {title}

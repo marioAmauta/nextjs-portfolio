@@ -9,7 +9,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
     <>
       <Title
         titleType='h3'
-        padding='pt-8'
+        padding='pt-8 md:pl-10'
       >
         {translations.title}
       </Title>
@@ -41,7 +41,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
         onSubmit={handleFormSubmit}
         className='
           flex flex-col gap-4
-          my-16 mx-auto
+          mt-10 mb-16 md:my-16 mx-auto
           max-w-xl
         '
       >
@@ -57,7 +57,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
           name='name'
           placeholder={translations.namePlaceholder}
           className='
-            rounded
+            rounded-lg
             h-10
             px-4
             bg-[--input-bg-color] placeholder-[--placeholder-text-color]
@@ -76,7 +76,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
           name='email'
           placeholder={translations.emailPlaceholder}
           className='
-            rounded
+            rounded-lg
             h-10
             px-4
             bg-[--input-bg-color] placeholder-[--placeholder-text-color]
@@ -97,7 +97,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
             h-32
             py-2 px-4
             resize-none
-            rounded
+            rounded-lg
             text-[--app-text-color]
             bg-[--input-bg-color] placeholder-[--placeholder-text-color]
             outline-0
@@ -105,7 +105,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
         />
         <button
           className='
-            rounded
+            rounded-lg
             bg-gray-500
             py-2 px-4 mt-4
             text-white text-lg font-semibold
