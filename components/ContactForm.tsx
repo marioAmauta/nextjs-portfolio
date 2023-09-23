@@ -1,9 +1,18 @@
 import { useContactForm } from '@/hooks/useContactForm';
 import { Title } from './Titles';
+import { Modal } from './Modal';
+import { LoadingSpinner } from './Icons';
 
 export function ContactForm({ translations }: { translations: Record<string, any> }) {
-  const { nameInputId, emailInputId, messageTextareaId, isMessageSent, handleFormSubmit } =
-    useContactForm();
+  const {
+    nameInputId,
+    emailInputId,
+    messageTextareaId,
+    isMessageSent,
+    setIsMessageSent,
+    isLoading,
+    handleFormSubmit
+  } = useContactForm();
 
   return (
     <>
@@ -13,31 +22,21 @@ export function ContactForm({ translations }: { translations: Record<string, any
       >
         {translations.title}
       </Title>
-      {isMessageSent === 'sent' && (
-        <div
-          className='
-          flex flex-col gap-4
-          bg-[--project-card-bg-color] text-[--app-text-color]
-          px-6 py-8 my-8 mx-auto rounded-md
-          max-w-xl
-        '
-        >
-          <p>{translations.success}</p>
-        </div>
-      )}
-      {isMessageSent === 'error' && (
-        <div
-          className='
-            flex flex-col gap-4
-            bg-[--project-card-bg-color] text-[--app-text-color]
-            px-6 py-8 my-8 mx-auto rounded-md
-            max-w-xl
-          '
-        >
-          <p>{translations.error}</p>
-        </div>
-      )}
+      <Modal
+        isActive={isMessageSent === 'sent'}
+        setIsActive={() => setIsMessageSent('not sent yet')}
+        message={translations.success}
+        buttonLabel={translations.close}
+      />
+
+      <Modal
+        isActive={isMessageSent === 'error'}
+        setIsActive={() => setIsMessageSent('not sent yet')}
+        message={translations.error}
+        buttonLabel={translations.close}
+      />
       <form
+        key={isMessageSent}
         onSubmit={handleFormSubmit}
         className='
           flex flex-col gap-4
@@ -52,6 +51,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
           {translations.name}
         </label>
         <input
+          required
           id={nameInputId}
           type='text'
           name='name'
@@ -71,6 +71,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
           {translations.email}
         </label>
         <input
+          required
           id={emailInputId}
           type='email'
           name='email'
@@ -90,6 +91,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
           {translations.message}
         </label>
         <textarea
+          required
           id={messageTextareaId}
           name='message'
           placeholder={translations.messagePlaceholder}
@@ -106,12 +108,13 @@ export function ContactForm({ translations }: { translations: Record<string, any
         <button
           className='
             rounded-lg
-            bg-gray-500
+            bg-[--contact-form-button-bg-color]
             py-2 px-4 mt-4
             text-white text-lg font-semibold
+            flex justify-center items-center
           '
         >
-          {translations.submit}
+          {translations.submit} {isLoading && <LoadingSpinner />}
         </button>
       </form>
     </>

@@ -12,7 +12,8 @@ export const en = {
     messagePlaceholder: 'Hello Mario! I would like to talk to you about...',
     submit: 'Send Message',
     success: 'Message sent successfully!',
-    error: 'An error occurred while sending the message. Please try again later.'
+    error: 'An error occurred while sending the message. Please try again later.',
+    close: 'Close'
   },
   metaTags: {
     description: 'Web apps developer'

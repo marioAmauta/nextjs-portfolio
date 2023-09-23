@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useId, useState } from 'react';
+import { FormEvent, useId, useState } from 'react';
 
 export function useContactForm() {
   const nameInputId = useId();
@@ -8,9 +8,12 @@ export function useContactForm() {
   type isMessageSentType = 'not sent yet' | 'sent' | 'error';
 
   const [isMessageSent, setIsMessageSent] = useState<isMessageSentType>('not sent yet');
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    setIsLoading(true);
 
     const formData = Object.fromEntries(new FormData(event.currentTarget));
 
@@ -25,28 +28,23 @@ export function useContactForm() {
 
       if (res.ok) {
         setIsMessageSent('sent');
-        event.currentTarget.reset();
       } else {
         setIsMessageSent('error');
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
-
-  useEffect(() => {
-    const message = setTimeout(() => {
-      setIsMessageSent('not sent yet');
-    }, 5000);
-
-    return () => clearTimeout(message);
-  }, [isMessageSent]);
 
   return {
     nameInputId,
     emailInputId,
     messageTextareaId,
     isMessageSent,
+    setIsMessageSent,
+    isLoading,
     handleFormSubmit
   };
 }

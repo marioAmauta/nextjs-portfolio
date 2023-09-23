@@ -26,9 +26,21 @@
 
   --input-bg-color: #fff;
   --placeholder-text-color: #afafaf;
+
+  --modal-text-color: #555;
+  --modal-btn-bg-color: #999;
+  --modal-btn-text-color: #333;
+
+  --contact-form-button-bg-color: #999;
 }
 
 :root.dark {
+  --contact-form-button-bg-color: #555;
+
+  --modal-text-color: #222;
+  --modal-btn-bg-color: #888;
+  --modal-btn-text-color: #333;
+
   --app-bg-color: #333;
   --app-text-color: #fff;
 

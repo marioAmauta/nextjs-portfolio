@@ -12,7 +12,8 @@ export const es = {
     messagePlaceholder: '¡Hola Mario! Me gustaría hablar contigo sobre...',
     submit: 'Enviar Mensaje',
     success: 'Mensaje enviado con éxito!  ',
-    error: 'Ocurrió un error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.'
+    error: 'Ocurrió un error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.',
+    close: 'Cerrar'
   },
   metaTags: {
     description: 'Desarrollador de aplicaciones web'
