@@ -112,6 +112,7 @@ export function ContactForm({ translations }: { translations: Record<string, any
             py-2 px-4 mt-4
             text-white text-lg font-semibold
             flex justify-center items-center
+            relative
           '
         >
           {translations.submit} {isLoading && <LoadingSpinner />}
