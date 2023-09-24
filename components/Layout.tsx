@@ -21,6 +21,10 @@ export function Layout({ children }: { children: ReactNode }) {
           content={translations.metaTags.description}
         />
         <meta name='theme-color' />
+        <meta
+          name='google-site-verification'
+          content='8rlBdvD_NNDqp7ZhshtEtbmcT704mAzV4ZDp-Tb1DYI'
+        />
       </Head>
       <Header />
       <main
