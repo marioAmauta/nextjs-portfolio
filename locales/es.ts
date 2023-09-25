@@ -16,7 +16,8 @@ export const es = {
     close: 'Cerrar'
   },
   metaTags: {
-    description: 'Desarrollador de aplicaciones web'
+    description:
+      'Construyo sitios web utilizando tecnologías modernas para ofrecer excelentes interacciones con el usuario y fomentar un crecimiento empresarial continuo, siempre esforzándome por brindar la mejor experiencia.'
   },
   navBar: {
     home: 'Inicio',

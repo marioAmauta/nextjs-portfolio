@@ -16,7 +16,8 @@ export const en = {
     close: 'Close'
   },
   metaTags: {
-    description: 'Web apps developer'
+    description:
+      'I build websites using modern technologies to provide excellent user interactions and facilitate continuous business growth, always striving to deliver the best experience.'
   },
   navBar: {
     home: 'Home',

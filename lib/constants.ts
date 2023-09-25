@@ -7,6 +7,12 @@ export const ELEMENT_IDS = {
   languageSelectId: 'languageSelect'
 };
 
+export const METADATA_DEFAULT = {
+  title: 'Mario Programador',
+  siteUrl: 'https://marioprogramador.com/',
+  ogImagePath: '/images/marioprogramador-desktop.png'
+};
+
 export const CONTACT_LINKS = [
   {
     href: 'https://github.com/marioAmauta',
