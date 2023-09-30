@@ -23,6 +23,7 @@
   --link-btn-text-color: #fff;
 
   --project-card-bg-color: #c4c4c4;
+  --project-card-border-color: #d3d3d3;
 
   --input-bg-color: #fff;
   --placeholder-text-color: #afafaf;
@@ -54,6 +55,7 @@
   --toggle-bar-bg-color: var(--app-text-color);
 
   --project-card-bg-color: #666;
+  --project-card-border-color: #555;
 
   --input-bg-color: #777;
   --placeholder-text-color: #bdbdbd;
