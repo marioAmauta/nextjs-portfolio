@@ -14,7 +14,6 @@ export function HeroSection({ children }: SectionProps) {
         flex flex-col justify-evenly items-center
         text-center
         h-[calc(100svh-var(--header-height))]
-        -mt-4
       '
     >
       {children}
