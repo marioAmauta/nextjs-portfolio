@@ -12,7 +12,6 @@ export default function ProjectsPage() {
   return (
     <>
       <Title titleType='h1'>{projectsPage.title}</Title>
-      <Title titleType='h2'>{projectsPage.description}</Title>
       <ProjectSection>
         {projectsPage.projectsData.map((project: ProjectCardProps) => (
           <ProjectCard

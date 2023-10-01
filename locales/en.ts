@@ -123,7 +123,6 @@ export const en = {
   },
   projectsPage: {
     title: 'My Projects',
-    description: 'Here are some of my certification projects',
     projectsData: [
       {
         title: PROJECTS_DATA.markdownPreviewer.title,
