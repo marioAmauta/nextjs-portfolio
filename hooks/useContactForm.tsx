@@ -1,4 +1,4 @@
-import { FormEvent, useId, useState } from 'react';
+import { FormEvent, useId, useRef, useState } from 'react';
 
 export function useContactForm() {
   const nameInputId = useId();
@@ -9,6 +9,8 @@ export function useContactForm() {
 
   const [isMessageSent, setIsMessageSent] = useState<isMessageSentType>('not sent yet');
   const [isLoading, setIsLoading] = useState(false);
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -28,6 +30,7 @@ export function useContactForm() {
 
       if (res.ok) {
         setIsMessageSent('sent');
+        formRef.current?.reset();
       } else {
         setIsMessageSent('error');
       }
@@ -45,6 +48,7 @@ export function useContactForm() {
     isMessageSent,
     setIsMessageSent,
     isLoading,
-    handleFormSubmit
+    handleFormSubmit,
+    formRef
   };
 }

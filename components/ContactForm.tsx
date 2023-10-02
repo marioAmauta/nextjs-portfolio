@@ -11,32 +11,26 @@ export function ContactForm({ translations }: { translations: Record<string, any
     isMessageSent,
     setIsMessageSent,
     isLoading,
-    handleFormSubmit
+    handleFormSubmit,
+    formRef
   } = useContactForm();
 
   return (
     <>
       <Title
         titleType='h3'
-        padding='pt-8 md:pl-10'
+        padding='pt-8 md:text-center'
       >
         {translations.title}
       </Title>
       <Modal
-        isActive={isMessageSent === 'sent'}
-        setIsActive={() => setIsMessageSent('not sent yet')}
-        message={translations.success}
+        message={isMessageSent === 'sent' ? translations.success : translations.error}
         buttonLabel={translations.close}
-      />
-
-      <Modal
-        isActive={isMessageSent === 'error'}
-        setIsActive={() => setIsMessageSent('not sent yet')}
-        message={translations.error}
-        buttonLabel={translations.close}
+        isActive={isMessageSent !== 'not sent yet'}
+        onClickClose={() => setIsMessageSent('not sent yet')}
       />
       <form
-        key={isMessageSent}
+        ref={formRef}
         onSubmit={handleFormSubmit}
         className='
           flex flex-col gap-4

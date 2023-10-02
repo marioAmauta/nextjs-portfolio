@@ -1,44 +1,42 @@
-type ModalProps = {
-  isActive: boolean;
-  buttonLabel: string;
-  message: string;
-  setIsActive: () => void;
-};
+import { useModal, useModalProps } from '@/hooks/useModal';
 
-export function Modal({ message, isActive, setIsActive, buttonLabel }: ModalProps) {
-  if (!isActive) return null;
+type ModalProps = {
+  message: string;
+  buttonLabel: string;
+  onClickClose: () => void;
+} & useModalProps;
+
+export function Modal({ message, buttonLabel, isActive, onClickClose }: ModalProps) {
+  const { dialogRef } = useModal({
+    isActive
+  });
 
   return (
-    <div
-      className='
-        fixed inset-0 z-50
-        flex items-center justify-center
-        bg-[--bg-blurred-color] backdrop-blur
-        p-4
-      '
+    <dialog
+      ref={dialogRef}
+      className={`
+        ${isActive ? 'flex ' : ''}flex-col gap-4
+        backdrop:backdrop-blur-sm
+        bg-[--project-card-bg-color]
+        text-[--modal-text-color]
+        px-8 py-10
+        rounded-md
+        shadow-2xl
+      `}
     >
-      <div
+      <p className='text-lg font-semibold'>{message}</p>
+      <button
+        onClick={onClickClose}
         className='
-          flex flex-col gap-4
-          bg-[--project-card-bg-color]
-          text-[--modal-text-color]
-          px-8 py-10
-          rounded-md
+          bg-[--modal-btn-bg-color]
+          text-[--modal-btn-text-color] text-lg font-semibold
+          rounded-lg
+          py-2 px-4 mt-4 mx-auto
+          w-full max-w-xs
         '
       >
-        <p className='text-lg font-semibold'>{message}</p>
-        <button
-          onClick={setIsActive}
-          className='
-              bg-[--modal-btn-bg-color]
-              text-[--modal-btn-text-color] text-lg font-semibold
-              rounded-lg
-              py-2 px-4 mt-4
-            '
-        >
-          {buttonLabel}
-        </button>
-      </div>
-    </div>
+        {buttonLabel}
+      </button>
+    </dialog>
   );
 }
