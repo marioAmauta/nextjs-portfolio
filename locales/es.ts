@@ -21,7 +21,7 @@ export const es = {
   },
   navBar: {
     home: 'Inicio',
-    about: 'Sobre Mi',
+    about: 'Sobre Mí',
     myProjects: 'Proyectos',
     contact: 'Contacto'
   },
@@ -35,13 +35,13 @@ export const es = {
       ]
     },
     about: {
-      title: 'Sobre Mi',
+      title: 'Sobre Mí',
       description: [
         'Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.',
         'Actualmente, estoy enfocado en el desarrollo web, trabajando con React, Next.js y Tailwind CSS. De hecho, este sitio web está construido utilizando estas tecnologías.',
         'También tengo experiencia con Node.js, Python (con Flask) y MongoDB.'
       ],
-      buttonLabel: 'Mas sobre mi'
+      buttonLabel: 'Más sobre mi'
     },
     projects: {
       title: 'Mis Proyectos',
