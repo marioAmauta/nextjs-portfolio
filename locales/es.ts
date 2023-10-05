@@ -41,7 +41,7 @@ export const es = {
         'Actualmente, estoy enfocado en el desarrollo web, trabajando con React, Next.js y Tailwind CSS. De hecho, este sitio web está construido utilizando estas tecnologías.',
         'También tengo experiencia con Node.js, Python (con Flask) y MongoDB.'
       ],
-      buttonLabel: 'Más sobre mi'
+      buttonLabel: 'Más sobre mí'
     },
     projects: {
       title: 'Mis Proyectos',
@@ -111,7 +111,7 @@ export const es = {
     }
   },
   aboutPage: {
-    title: 'Sobre Mi',
+    title: 'Sobre Mí',
     subtitle1: 'Mi travesía como desarrollador',
     paragraphs1: [
       'En mis primeros días, comencé a aprender sobre el desarrollo web en 2021, comenzando con HTML, CSS y JavaScript. Usé aplicaciones móviles y leí artículos sobre desarrollo web. También vi videos en YouTube. Aprendí mucho de estos recursos, pero quería aprender más, así que comencé a buscar cursos.',
