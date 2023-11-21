@@ -1,20 +1,16 @@
-import { ReactNode } from 'react';
-import Head from 'next/head';
-import { Header } from './Header';
-import { useLanguage } from '@/hooks/useLanguage';
-import { Footer } from './Footer';
-import { ArrowUpButton } from './Buttons';
-import { METADATA_DEFAULT } from '@/lib/constants';
+import { ReactNode } from 'react'
+import Head from 'next/head'
+import { Header } from './Header'
+import { useLanguage } from '@/hooks/useLanguage'
+import { Footer } from './Footer'
+import { ArrowUpButton } from './Buttons'
+import { METADATA_DEFAULT } from '@/lib/constants'
 
 export function Layout({ children }: { children: ReactNode }) {
-  const { translations } = useLanguage();
+  const { translations } = useLanguage()
 
   return (
-    <div
-      className='
-        grid grid-rows-[auto,1fr,auto] min-h-[100dvh]
-      '
-    >
+    <div className='grid grid-rows-[auto,1fr,auto] min-h-[100dvh]'>
       <Head>
         <title>{METADATA_DEFAULT.title}</title>
         <meta
@@ -84,15 +80,9 @@ export function Layout({ children }: { children: ReactNode }) {
         />
       </Head>
       <Header />
-      <main
-        className='
-        px-4 lg:px-36 2xl:px-96
-        '
-      >
-        {children}
-      </main>
+      <main className='px-4 lg:px-36 2xl:px-96'>{children}</main>
       <Footer translations={translations} />
       <ArrowUpButton />
     </div>
-  );
+  )
 }

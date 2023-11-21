@@ -1,29 +1,13 @@
-import { LinkWithLabel } from '@/pages';
-import Image from 'next/image';
-import { ContactLinkButton, TechLinkButton } from './Buttons';
+import Image from 'next/image'
+import { ContactLinkButton, TechLinkButton } from './Buttons'
+import { ProjectCardProps } from '@/lib/definitions'
 
-export type ProjectCardProps = {
-  title: string;
-  description: string[];
-  image: string;
-  title2: string;
-  technologies: LinkWithLabel[];
-  links: LinkWithLabel[];
-};
-
-export function ProjectCard({
-  title,
-  description,
-  image,
-  title2,
-  technologies,
-  links
-}: ProjectCardProps) {
+export function ProjectCard({ title, description, image, title2, technologies, links }: ProjectCardProps) {
   return (
     <article
       className='
         bg-[--project-card-bg-color]
-        mx-auto md:px-2 md:py-5
+        mx-auto
         border-[0.10rem] border-[--project-card-border-color]
         shadow-lg rounded-lg
         overflow-hidden
@@ -72,5 +56,5 @@ export function ProjectCard({
         </footer>
       </div>
     </article>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
+import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants'
 
 export const en = {
   madeWithLove: 'Made with ❤️ by Mario Programador',
@@ -39,7 +39,7 @@ export const en = {
       description: [
         "I'm a self-taught software developer who loves learning new things and strives to improve every day.",
         'Currently, I am focused on web development, working with React, Next.js, and Tailwind CSS. In fact, this website is built using these technologies.',
-        'I also have experience with Node.js, Python (with Flask), and MongoDB.'
+        'I also have experience with Node.js, TypeScript, Python, and MongoDB.'
       ],
       buttonLabel: 'More about me'
     },
@@ -47,6 +47,33 @@ export const en = {
       title: 'My Projects',
       description: 'These are some of my projects',
       projectsData: [
+        {
+          title: PROJECTS_DATA.pomodoroTimer.title,
+          description: [
+            'This project is a Pomodoro timer that you can use to improve your productivity. You can set the timer to work in sessions of 25 minutes with 5-minute breaks, or you can customize it to fit your needs.'
+          ],
+          image: PROJECTS_DATA.pomodoroTimer.images.desktop,
+          title2: 'Technologies I Used',
+          technologies: [
+            TECHNOLOGIES.html,
+            TECHNOLOGIES.tailwindcss,
+            TECHNOLOGIES.heroicons,
+            TECHNOLOGIES.javascript,
+            TECHNOLOGIES.react,
+            TECHNOLOGIES.propTypes,
+            TECHNOLOGIES.vite
+          ],
+          links: [
+            {
+              label: 'Code',
+              href: PROJECTS_DATA.pomodoroTimer.links.sourceCode
+            },
+            {
+              label: 'Demo',
+              href: PROJECTS_DATA.pomodoroTimer.links.liveDemo
+            }
+          ]
+        },
         {
           title: PROJECTS_DATA.markdownPreviewer.title,
           description: [
@@ -72,31 +99,6 @@ export const en = {
             {
               label: 'Demo',
               href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
-            }
-          ]
-        },
-        {
-          title: PROJECTS_DATA.randomQuoteMachine.title,
-          description: [
-            "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon."
-          ],
-          image: PROJECTS_DATA.randomQuoteMachine.images.desktop,
-          title2: 'Technologies I Used',
-          technologies: [
-            TECHNOLOGIES.html,
-            TECHNOLOGIES.css,
-            TECHNOLOGIES.javascript,
-            TECHNOLOGIES.react,
-            TECHNOLOGIES.vite
-          ],
-          links: [
-            {
-              label: 'Code',
-              href: PROJECTS_DATA.randomQuoteMachine.links.sourceCode
-            },
-            {
-              label: 'Demo',
-              href: PROJECTS_DATA.randomQuoteMachine.links.liveDemo
             }
           ]
         }
@@ -125,30 +127,30 @@ export const en = {
     title: 'My Projects',
     projectsData: [
       {
-        title: PROJECTS_DATA.markdownPreviewer.title,
+        title: PROJECTS_DATA.calculator.title,
         description: [
-          'In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.'
+          "Calculator built with React, using the mathematical library 'math-expression-evaluator,' applying the logic of formulas/expressions through one of React's hooks, 'useReducer,' and verifying its functionality with the testing library 'Cypress'."
         ],
-        image: PROJECTS_DATA.markdownPreviewer.images.desktop,
+        image: PROJECTS_DATA.calculator.images.desktop,
         title2: 'Technologies I Used',
         technologies: [
           TECHNOLOGIES.html,
           TECHNOLOGIES.css,
           TECHNOLOGIES.javascript,
           TECHNOLOGIES.react,
+          TECHNOLOGIES.mathExpressionEvaluator,
           TECHNOLOGIES.propTypes,
-          TECHNOLOGIES.dompurify,
-          TECHNOLOGIES.marked,
-          TECHNOLOGIES.vite
+          TECHNOLOGIES.vite,
+          TECHNOLOGIES.cypress
         ],
         links: [
           {
             label: 'Code',
-            href: PROJECTS_DATA.markdownPreviewer.links.sourceCode
+            href: PROJECTS_DATA.calculator.links.sourceCode
           },
           {
             label: 'Demo',
-            href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
+            href: PROJECTS_DATA.calculator.links.liveDemo
           }
         ]
       },
@@ -233,12 +235,63 @@ export const en = {
             href: PROJECTS_DATA.surveyForm.links.liveDemo
           }
         ]
+      },
+      {
+        title: PROJECTS_DATA.markdownPreviewer.title,
+        description: [
+          'In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.'
+        ],
+        image: PROJECTS_DATA.markdownPreviewer.images.desktop,
+        title2: 'Technologies I Used',
+        technologies: [
+          TECHNOLOGIES.html,
+          TECHNOLOGIES.css,
+          TECHNOLOGIES.javascript,
+          TECHNOLOGIES.react,
+          TECHNOLOGIES.propTypes,
+          TECHNOLOGIES.dompurify,
+          TECHNOLOGIES.marked,
+          TECHNOLOGIES.vite
+        ],
+        links: [
+          {
+            label: 'Code',
+            href: PROJECTS_DATA.markdownPreviewer.links.sourceCode
+          },
+          {
+            label: 'Demo',
+            href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
+          }
+        ]
+      },
+      {
+        title: PROJECTS_DATA.pomodoroTimer.title,
+        description: [
+          'This project is a Pomodoro timer that you can use to improve your productivity. You can set the timer to work in sessions of 25 minutes with 5-minute breaks, or you can customize it to fit your needs.'
+        ],
+        image: PROJECTS_DATA.pomodoroTimer.images.desktop,
+        title2: 'Technologies I Used',
+        technologies: [
+          TECHNOLOGIES.html,
+          TECHNOLOGIES.tailwindcss,
+          TECHNOLOGIES.heroicons,
+          TECHNOLOGIES.javascript,
+          TECHNOLOGIES.react,
+          TECHNOLOGIES.propTypes,
+          TECHNOLOGIES.vite
+        ],
+        links: [
+          {
+            label: 'Code',
+            href: PROJECTS_DATA.pomodoroTimer.links.sourceCode
+          },
+          {
+            label: 'Demo',
+            href: PROJECTS_DATA.pomodoroTimer.links.liveDemo
+          }
+        ]
       }
     ],
     buttonLabel: 'Contact Me'
-  },
-  contactPage: {
-    title: 'Contact',
-    description: 'Find me on the following platforms'
   }
-};
+}

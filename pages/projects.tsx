@@ -1,13 +1,15 @@
-import { LinkButton } from '@/components/Buttons';
-import { ProjectCard, ProjectCardProps } from '@/components/ProjectCard';
-import { ProjectSection } from '@/components/Sections';
-import { Title } from '@/components/Titles';
-import { useLanguage } from '@/hooks/useLanguage';
+import { contactLink } from '@/lib/constants'
+import { ProjectCardProps } from '@/lib/definitions'
+import { useLanguage } from '@/hooks/useLanguage'
+import { Title } from '@/components/Titles'
+import { ProjectSection } from '@/components/Sections'
+import { ProjectCard } from '@/components/ProjectCard'
+import { LinkButton } from '@/components/Buttons'
 
 export default function ProjectsPage() {
   const {
     translations: { projectsPage }
-  } = useLanguage();
+  } = useLanguage()
 
   return (
     <>
@@ -22,9 +24,9 @@ export default function ProjectsPage() {
       </ProjectSection>
       <LinkButton
         label={projectsPage.buttonLabel}
-        href='/contact'
-        margin='my-12'
+        href={contactLink}
+        customClass='my-12'
       />
     </>
-  );
+  )
 }

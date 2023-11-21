@@ -1,8 +1,8 @@
-import { LANGUAGE_SELECT_DATA } from '@/lib/constants';
-import { useLanguage } from '@/hooks/useLanguage';
+import { LANGUAGE_SELECT_DATA } from '@/lib/constants'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export function LanguageSwitcher() {
-  const { locale, changeLanguage } = useLanguage();
+  const { locale, changeLanguage } = useLanguage()
 
   return (
     <label
@@ -23,15 +23,15 @@ export function LanguageSwitcher() {
           h-full
         '
       >
-        {LANGUAGE_SELECT_DATA.languageOptions.map(option => (
+        {LANGUAGE_SELECT_DATA.languageOptions.map(({ value, label }) => (
           <option
-            key={option.value}
-            value={option.value}
+            key={value}
+            value={value}
           >
-            {option.label}
+            {label}
           </option>
         ))}
       </select>
     </label>
-  );
+  )
 }

@@ -1,23 +1,22 @@
-import { FormEvent, useId, useRef, useState } from 'react';
+import { isMessageSentType } from '@/lib/definitions'
+import { FormEvent, useId, useRef, useState } from 'react'
 
 export function useContactForm() {
-  const nameInputId = useId();
-  const emailInputId = useId();
-  const messageTextareaId = useId();
+  const nameInputId = useId()
+  const emailInputId = useId()
+  const messageTextareaId = useId()
 
-  type isMessageSentType = 'not sent yet' | 'sent' | 'error';
+  const [isMessageSent, setIsMessageSent] = useState<isMessageSentType>('not sent yet')
+  const [isLoading, setIsLoading] = useState(false)
 
-  const [isMessageSent, setIsMessageSent] = useState<isMessageSentType>('not sent yet');
-  const [isLoading, setIsLoading] = useState(false);
-
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = useRef<HTMLFormElement>(null)
 
   async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+    event.preventDefault()
 
-    setIsLoading(true);
+    setIsLoading(true)
 
-    const formData = Object.fromEntries(new FormData(event.currentTarget));
+    const formData = Object.fromEntries(new FormData(event.currentTarget))
 
     try {
       const res = await fetch('/api/contact', {
@@ -26,18 +25,18 @@ export function useContactForm() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
-      });
+      })
 
       if (res.ok) {
-        setIsMessageSent('sent');
-        formRef.current?.reset();
+        setIsMessageSent('sent')
+        formRef.current?.reset()
       } else {
-        setIsMessageSent('error');
+        setIsMessageSent('error')
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
   }
 
@@ -50,5 +49,5 @@ export function useContactForm() {
     isLoading,
     handleFormSubmit,
     formRef
-  };
+  }
 }

@@ -1,17 +1,20 @@
+import { ProjectData } from './definitions'
+
 export const ELEMENT_IDS = {
   themeSelectId: 'themeSelect',
   toggleButtonId: 'toggle-button',
   mobileMenuId: 'mobile-menu',
   bgBlurredId: 'bg-blurred',
   mainHeaderId: 'main-header',
-  languageSelectId: 'languageSelect'
-};
+  languageSelectId: 'languageSelect',
+  contactSectionId: 'contact'
+}
 
 export const METADATA_DEFAULT = {
   title: 'Mario Programador',
   siteUrl: 'https://marioprogramador.com/',
   ogImagePath: '/images/marioprogramador-desktop.png'
-};
+}
 
 export const CONTACT_LINKS = [
   {
@@ -22,7 +25,9 @@ export const CONTACT_LINKS = [
     href: 'https://www.linkedin.com/in/marioamauta/',
     label: 'Linkedin'
   }
-];
+]
+
+export const contactLink = `/#${ELEMENT_IDS.contactSectionId}`
 
 export const NAVBAR_LINKS = [
   {
@@ -37,12 +42,11 @@ export const NAVBAR_LINKS = [
     name: 'myProjects',
     path: '/projects'
   },
-
   {
     name: 'contact',
-    path: '/contact'
+    path: contactLink
   }
-];
+]
 
 export const THEME_INPUT_DATA = {
   light: {
@@ -63,7 +67,7 @@ export const THEME_INPUT_DATA = {
     id: 'dark-palette',
     value: 'dark'
   }
-};
+}
 
 export const LANGUAGE_SELECT_DATA = {
   languageId: ELEMENT_IDS.languageSelectId,
@@ -78,7 +82,7 @@ export const LANGUAGE_SELECT_DATA = {
       label: 'ES'
     }
   ]
-};
+}
 
 export const TECHNOLOGIES = {
   html: {
@@ -112,21 +116,46 @@ export const TECHNOLOGIES = {
   vite: {
     label: 'Vite',
     href: 'https://vitejs.dev/'
+  },
+  mathExpressionEvaluator: {
+    label: 'Math Expression Evaluator',
+    href: 'https://www.npmjs.com/package/math-expression-evaluator'
+  },
+  cypress: {
+    label: 'Cypress',
+    href: 'https://www.cypress.io/'
+  },
+  tailwindcss: {
+    label: 'Tailwind CSS',
+    href: 'https://tailwindcss.com/'
+  },
+  heroicons: {
+    label: 'Heroicons',
+    href: 'https://heroicons.com/'
   }
-};
-
-export type ProjectData = {
-  title: string;
-  images: {
-    desktop: string;
-  };
-  links: {
-    sourceCode: string;
-    liveDemo: string;
-  };
-};
+}
 
 export const PROJECTS_DATA: Record<string, ProjectData> = {
+  pomodoroTimer: {
+    title: '25 + 5 Clock',
+    images: {
+      desktop: '/images/react-25-plus-5-clock-desktop.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/react-25-plus-5-clock',
+      liveDemo: 'https://react-25-plus-5-clock.vercel.app/'
+    }
+  },
+  calculator: {
+    title: 'Calculator',
+    images: {
+      desktop: '/images/calculator-desktop.png'
+    },
+    links: {
+      sourceCode: 'https://github.com/marioAmauta/react-calculator',
+      liveDemo: 'https://calculator-marioamauta.vercel.app/'
+    }
+  },
   markdownPreviewer: {
     title: 'Markdown Previewer',
     images: {
@@ -177,4 +206,4 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       liveDemo: 'https://marioamauta.github.io/survey-form/'
     }
   }
-};
+}

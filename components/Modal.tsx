@@ -1,15 +1,8 @@
-import { useModal, useModalProps } from '@/hooks/useModal';
-
-type ModalProps = {
-  message: string;
-  buttonLabel: string;
-  onClickClose: () => void;
-} & useModalProps;
+import { useModal } from '@/hooks/useModal'
+import { ModalProps } from '@/lib/definitions'
 
 export function Modal({ message, buttonLabel, isActive, onClickClose }: ModalProps) {
-  const { dialogRef } = useModal({
-    isActive
-  });
+  const { dialogRef } = useModal({ isActive })
 
   return (
     <dialog
@@ -38,5 +31,5 @@ export function Modal({ message, buttonLabel, isActive, onClickClose }: ModalPro
         {buttonLabel}
       </button>
     </dialog>
-  );
+  )
 }

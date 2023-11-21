@@ -1,4 +1,4 @@
-import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
+import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants'
 
 export const es = {
   madeWithLove: 'Hecho con ❤️ por Mario Programador',
@@ -39,7 +39,7 @@ export const es = {
       description: [
         'Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.',
         'Actualmente, estoy enfocado en el desarrollo web, trabajando con React, Next.js y Tailwind CSS. De hecho, este sitio web está construido utilizando estas tecnologías.',
-        'También tengo experiencia con Node.js, Python (con Flask) y MongoDB.'
+        'También tengo experiencia con Node.js, TypesScript, Python y MongoDB.'
       ],
       buttonLabel: 'Más sobre mí'
     },
@@ -47,6 +47,33 @@ export const es = {
       title: 'Mis Proyectos',
       description: ['Estos son algunos de mis proyectos'],
       projectsData: [
+        {
+          title: PROJECTS_DATA.pomodoroTimer.title,
+          description: [
+            'Este proyecto es un temporizador Pomodoro que puedes usar para mejorar tu productividad. Puedes configurar el temporizador para que funcione en sesiones de 25 minutos con descansos de 5 minutos, o puedes personalizarlo para que se ajuste a tus necesidades.'
+          ],
+          image: PROJECTS_DATA.pomodoroTimer.images.desktop,
+          title2: 'Tecnologías que Usé',
+          technologies: [
+            TECHNOLOGIES.html,
+            TECHNOLOGIES.tailwindcss,
+            TECHNOLOGIES.heroicons,
+            TECHNOLOGIES.javascript,
+            TECHNOLOGIES.react,
+            TECHNOLOGIES.propTypes,
+            TECHNOLOGIES.vite
+          ],
+          links: [
+            {
+              label: 'Código',
+              href: PROJECTS_DATA.pomodoroTimer.links.sourceCode
+            },
+            {
+              label: 'Demo',
+              href: PROJECTS_DATA.pomodoroTimer.links.liveDemo
+            }
+          ]
+        },
         {
           title: PROJECTS_DATA.markdownPreviewer.title,
           description: [
@@ -72,31 +99,6 @@ export const es = {
             {
               label: 'Demo',
               href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
-            }
-          ]
-        },
-        {
-          title: PROJECTS_DATA.randomQuoteMachine.title,
-          description: [
-            "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter."
-          ],
-          image: PROJECTS_DATA.randomQuoteMachine.images.desktop,
-          title2: 'Tecnologías que Usé',
-          technologies: [
-            TECHNOLOGIES.html,
-            TECHNOLOGIES.css,
-            TECHNOLOGIES.javascript,
-            TECHNOLOGIES.react,
-            TECHNOLOGIES.vite
-          ],
-          links: [
-            {
-              label: 'Código',
-              href: PROJECTS_DATA.randomQuoteMachine.links.sourceCode
-            },
-            {
-              label: 'Demo',
-              href: PROJECTS_DATA.randomQuoteMachine.links.liveDemo
             }
           ]
         }
@@ -125,30 +127,30 @@ export const es = {
     title: 'Mis Proyectos',
     projectsData: [
       {
-        title: PROJECTS_DATA.markdownPreviewer.title,
+        title: PROJECTS_DATA.calculator.title,
         description: [
-          'En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.'
+          "Calculadora construida con React, utilizando la librería matemática 'math-expression-evaluator', aplicando la lógica de fórmulas/expresiones mediante uno de los hooks de React, 'useReducer', y verificando su funcionamiento con la librería de pruebas 'Cypress'"
         ],
-        image: PROJECTS_DATA.markdownPreviewer.images.desktop,
+        image: PROJECTS_DATA.calculator.images.desktop,
         title2: 'Tecnologías que Usé',
         technologies: [
           TECHNOLOGIES.html,
           TECHNOLOGIES.css,
           TECHNOLOGIES.javascript,
           TECHNOLOGIES.react,
+          TECHNOLOGIES.mathExpressionEvaluator,
           TECHNOLOGIES.propTypes,
-          TECHNOLOGIES.dompurify,
-          TECHNOLOGIES.marked,
-          TECHNOLOGIES.vite
+          TECHNOLOGIES.vite,
+          TECHNOLOGIES.cypress
         ],
         links: [
           {
             label: 'Código',
-            href: PROJECTS_DATA.markdownPreviewer.links.sourceCode
+            href: PROJECTS_DATA.calculator.links.sourceCode
           },
           {
             label: 'Demo',
-            href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
+            href: PROJECTS_DATA.calculator.links.liveDemo
           }
         ]
       },
@@ -233,12 +235,63 @@ export const es = {
             href: PROJECTS_DATA.surveyForm.links.liveDemo
           }
         ]
+      },
+      {
+        title: PROJECTS_DATA.markdownPreviewer.title,
+        description: [
+          'En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.'
+        ],
+        image: PROJECTS_DATA.markdownPreviewer.images.desktop,
+        title2: 'Tecnologías que Usé',
+        technologies: [
+          TECHNOLOGIES.html,
+          TECHNOLOGIES.css,
+          TECHNOLOGIES.javascript,
+          TECHNOLOGIES.react,
+          TECHNOLOGIES.propTypes,
+          TECHNOLOGIES.dompurify,
+          TECHNOLOGIES.marked,
+          TECHNOLOGIES.vite
+        ],
+        links: [
+          {
+            label: 'Código',
+            href: PROJECTS_DATA.markdownPreviewer.links.sourceCode
+          },
+          {
+            label: 'Demo',
+            href: PROJECTS_DATA.markdownPreviewer.links.liveDemo
+          }
+        ]
+      },
+      {
+        title: PROJECTS_DATA.pomodoroTimer.title,
+        description: [
+          'Este proyecto es un temporizador Pomodoro que puedes usar para mejorar tu productividad. Puedes configurar el temporizador para que funcione en sesiones de 25 minutos con descansos de 5 minutos, o puedes personalizarlo para que se ajuste a tus necesidades.'
+        ],
+        image: PROJECTS_DATA.pomodoroTimer.images.desktop,
+        title2: 'Tecnologías que Usé',
+        technologies: [
+          TECHNOLOGIES.html,
+          TECHNOLOGIES.tailwindcss,
+          TECHNOLOGIES.heroicons,
+          TECHNOLOGIES.javascript,
+          TECHNOLOGIES.react,
+          TECHNOLOGIES.propTypes,
+          TECHNOLOGIES.vite
+        ],
+        links: [
+          {
+            label: 'Código',
+            href: PROJECTS_DATA.pomodoroTimer.links.sourceCode
+          },
+          {
+            label: 'Demo',
+            href: PROJECTS_DATA.pomodoroTimer.links.liveDemo
+          }
+        ]
       }
     ],
     buttonLabel: 'Contacto'
-  },
-  contactPage: {
-    title: 'Contacto',
-    description: 'Encuéntrame en las siguientes plataformas'
   }
-};
+}

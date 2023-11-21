@@ -1,18 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faDesktop, faMoon, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun, faDesktop, faMoon, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
-type ThemeIconProps = {
-  theme: string;
-};
-
-export function ThemeIcons({ theme }: ThemeIconProps) {
-  return (
-    <FontAwesomeIcon icon={theme === 'light' ? faSun : theme === 'dark' ? faMoon : faDesktop} />
-  );
+export function ThemeIcons({ theme }: { theme: string }) {
+  return <FontAwesomeIcon icon={theme === 'light' ? faSun : theme === 'dark' ? faMoon : faDesktop} />
 }
 
 export function ArrowUpIcon() {
-  return <FontAwesomeIcon icon={faArrowUp} />;
+  return <FontAwesomeIcon icon={faArrowUp} />
 }
 
 export function LoadingSpinner() {
@@ -26,5 +20,5 @@ export function LoadingSpinner() {
         animate-spin
       '
     />
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { ELEMENT_IDS } from '@/lib/constants';
+import { ReactNode } from 'react'
+import { ELEMENT_IDS } from '@/lib/constants'
 
 export function NavbarItem({ children }: { children: ReactNode }) {
   return (
@@ -11,7 +11,7 @@ export function NavbarItem({ children }: { children: ReactNode }) {
     >
       {children}
     </div>
-  );
+  )
 }
 
 export function Navbar({ children }: { children: ReactNode }) {
@@ -30,5 +30,5 @@ export function Navbar({ children }: { children: ReactNode }) {
     >
       {children}
     </nav>
-  );
+  )
 }

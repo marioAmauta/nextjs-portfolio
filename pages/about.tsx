@@ -1,12 +1,12 @@
-import { LinkButton } from '@/components/Buttons';
-import { DescriptionParagraph, ParagraphsSection } from '@/components/Sections';
-import { Title } from '@/components/Titles';
-import { useLanguage } from '@/hooks/useLanguage';
+import { LinkButton } from '@/components/Buttons'
+import { DescriptionParagraph, ParagraphsSection } from '@/components/Sections'
+import { Title } from '@/components/Titles'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export default function AboutPage() {
   const {
     translations: { aboutPage }
-  } = useLanguage();
+  } = useLanguage()
 
   return (
     <>
@@ -23,8 +23,8 @@ export default function AboutPage() {
       <LinkButton
         label={aboutPage.linkButton}
         href='/projects'
-        margin='my-12'
+        customClass='my-12'
       />
     </>
-  );
+  )
 }

@@ -1,11 +1,6 @@
-import { CONTACT_LINKS } from '@/lib/constants';
-import { ReactNode } from 'react';
-import { ContactLinkButton } from './Buttons';
-
-type SectionProps = {
-  children: ReactNode;
-  margin?: string;
-};
+import { CONTACT_LINKS } from '@/lib/constants'
+import { ContactLinkButton } from './Buttons'
+import { DescriptionParagraphProps, DescriptionSectionProps, SectionProps } from '@/lib/definitions'
 
 export function HeroSection({ children }: SectionProps) {
   return (
@@ -18,19 +13,20 @@ export function HeroSection({ children }: SectionProps) {
     >
       {children}
     </section>
-  );
+  )
 }
 
-export function RegularSection({ children }: SectionProps) {
+export function RegularSection({ children, id }: SectionProps) {
   return (
     <section
+      id={id ?? ''}
       className='
         py-16
       '
     >
       {children}
     </section>
-  );
+  )
 }
 
 export function ParagraphsSection({ children }: SectionProps) {
@@ -42,13 +38,8 @@ export function ParagraphsSection({ children }: SectionProps) {
     >
       {children}
     </div>
-  );
+  )
 }
-
-type DescriptionSectionProps = {
-  children: ReactNode;
-  gap?: string;
-};
 
 export function DescriptionSection({ children, gap }: DescriptionSectionProps) {
   return (
@@ -59,34 +50,18 @@ export function DescriptionSection({ children, gap }: DescriptionSectionProps) {
     >
       {children}
     </div>
-  );
+  )
 }
 
-type DescriptionParagraphProps = {
-  text: string;
-  fontWeight?: string;
-  padding?: string;
-};
-
-export function DescriptionParagraph({ text, fontWeight, padding }: DescriptionParagraphProps) {
-  return (
-    <p className={`text-lg ${fontWeight ? fontWeight : ''} ${padding ? padding : ''}`}>{text}</p>
-  );
+export function DescriptionParagraph({ text, customClass }: DescriptionParagraphProps) {
+  return <p className={`text-lg ${customClass ?? ''}`}>{text}</p>
 }
 
 export function ButtonsContainer({ children }: SectionProps) {
-  return (
-    <div
-      className='
-        flex justify-center gap-10
-      '
-    >
-      {children}
-    </div>
-  );
+  return <div className='flex justify-center gap-10'>{children}</div>
 }
 
-export function ContactButtons({ buttonsMargin }: { buttonsMargin?: string }) {
+export function ContactButtons() {
   return (
     <ButtonsContainer>
       {CONTACT_LINKS.map(({ href, label }) => (
@@ -94,11 +69,10 @@ export function ContactButtons({ buttonsMargin }: { buttonsMargin?: string }) {
           key={href}
           href={href}
           label={label}
-          margin={buttonsMargin}
         />
       ))}
     </ButtonsContainer>
-  );
+  )
 }
 
 export function ProjectSection({ children }: SectionProps) {
@@ -111,5 +85,5 @@ export function ProjectSection({ children }: SectionProps) {
     >
       {children}
     </section>
-  );
+  )
 }

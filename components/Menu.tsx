@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import { NAVBAR_LINKS } from '@/lib/constants';
-import { ToggleButton } from './ToggleButton';
-import { useLanguage } from '@/hooks/useLanguage';
-import { Navbar, NavbarItem } from './Navbar';
-import { BlurredBackground } from './BlurredBackground';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import Link from 'next/link'
+import { NAVBAR_LINKS } from '@/lib/constants'
+import { ToggleButton } from './ToggleButton'
+import { useLanguage } from '@/hooks/useLanguage'
+import { Navbar, NavbarItem } from './Navbar'
+import { BlurredBackground } from './BlurredBackground'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Menu() {
-  const { translations } = useLanguage();
+  const { translations } = useLanguage()
 
   return (
     <>
@@ -18,22 +18,16 @@ export function Menu() {
           <NavbarItem key={link.name}>
             <Link
               href={link.path}
-              className='
-                w-max
-              '
+              className='w-max'
             >
               {translations.navBar[link.name]}
             </Link>
           </NavbarItem>
         ))}
-        <div
-          className='
-            absolute bottom-[25vh] inset-x-0 md:static md:pl-4
-          '
-        >
+        <div className='absolute bottom-[25vh] inset-x-0 md:static md:pl-4'>
           <ThemeSwitcher />
         </div>
       </Navbar>
     </>
-  );
+  )
 }

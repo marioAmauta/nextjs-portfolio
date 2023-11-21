@@ -1,5 +1,6 @@
-import { LinkButton } from '@/components/Buttons';
-import { ProjectCard, ProjectCardProps } from '@/components/ProjectCard';
+import { LinkButton } from '@/components/Buttons'
+import { ContactForm } from '@/components/ContactForm'
+import { ProjectCard } from '@/components/ProjectCard'
 import {
   ContactButtons,
   DescriptionParagraph,
@@ -7,19 +8,16 @@ import {
   HeroSection,
   ProjectSection,
   RegularSection
-} from '@/components/Sections';
-import { Title } from '@/components/Titles';
-import { useLanguage } from '@/hooks/useLanguage';
-
-export type LinkWithLabel = {
-  label: string;
-  href: string;
-};
+} from '@/components/Sections'
+import { Title } from '@/components/Titles'
+import { useLanguage } from '@/hooks/useLanguage'
+import { ELEMENT_IDS } from '@/lib/constants'
+import { ProjectCardProps } from '@/lib/definitions'
 
 export default function IndexPage() {
   const {
-    translations: { indexPage }
-  } = useLanguage();
+    translations: { indexPage, contactForm }
+  } = useLanguage()
 
   return (
     <>
@@ -31,7 +29,7 @@ export default function IndexPage() {
             <DescriptionParagraph
               key={index}
               text={text}
-              fontWeight='font-semibold'
+              customClass='font-semibold'
             />
           ))}
         </DescriptionSection>
@@ -57,7 +55,7 @@ export default function IndexPage() {
         <DescriptionSection>
           <DescriptionParagraph
             text={indexPage.projects.description}
-            fontWeight='font-semibold'
+            customClass='font-semibold'
           />
           <ProjectSection>
             {indexPage.projects.projectsData.map((project: ProjectCardProps) => (
@@ -73,18 +71,17 @@ export default function IndexPage() {
           />
         </DescriptionSection>
       </RegularSection>
-      <RegularSection>
+      <RegularSection id={ELEMENT_IDS.contactSectionId}>
         <Title titleType='h2'>{indexPage.contact.title}</Title>
+        <ContactForm translations={contactForm} />
         <DescriptionSection>
-          <DescriptionParagraph text={indexPage.contact.description} />
-          <ContactButtons buttonsMargin='my-12' />
-          <DescriptionParagraph text={indexPage.contact.paragraph} />
-          <LinkButton
-            href='/contact'
-            label={indexPage.contact.buttonLabel}
+          <DescriptionParagraph
+            text={indexPage.contact.description}
+            customClass='pt-2 pb-4 font-semibold text-center'
           />
+          <ContactButtons />
         </DescriptionSection>
       </RegularSection>
     </>
-  );
+  )
 }

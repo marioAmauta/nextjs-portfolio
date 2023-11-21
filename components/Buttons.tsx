@@ -1,21 +1,16 @@
-import Link from 'next/link';
-import { ArrowUpIcon } from './Icons';
-import { useScrollToTop } from '@/hooks/useScrollToTop';
+import Link from 'next/link'
+import { ArrowUpIcon } from './Icons'
+import { useScrollToTop } from '@/hooks/useScrollToTop'
+import { LinkButtonProps } from '@/lib/definitions'
 
-type LinkButtonProps = {
-  href: string;
-  label: string;
-  margin?: string;
-};
-
-export function LinkButton({ href, label, margin }: LinkButtonProps) {
+export function LinkButton({ href, label, customClass }: LinkButtonProps) {
   return (
     <Link
       href={href}
       className={`
         transition-colors duration-300
         bg-[--btn-bg-color]
-        px-4 py-2 ${margin ? margin : ''}
+        px-4 py-2 ${customClass ?? ''}
         w-max
         rounded-lg
         shadow
@@ -25,10 +20,10 @@ export function LinkButton({ href, label, margin }: LinkButtonProps) {
     >
       {label}
     </Link>
-  );
+  )
 }
 
-export function ContactLinkButton({ href, label, margin }: LinkButtonProps) {
+export function ContactLinkButton({ href, label, customClass }: LinkButtonProps) {
   return (
     <Link
       href={href}
@@ -38,7 +33,7 @@ export function ContactLinkButton({ href, label, margin }: LinkButtonProps) {
         transition-colors duration-300
         bg-[--btn-bg-color]
         w-28
-        px-4 py-2 ${margin ? margin : ''}
+        px-4 py-2 ${customClass ?? ''}
         rounded-lg
         shadow
         text-center text-lg font-semibold
@@ -46,7 +41,7 @@ export function ContactLinkButton({ href, label, margin }: LinkButtonProps) {
     >
       {label}
     </Link>
-  );
+  )
 }
 
 export function TechLinkButton({ label, href }: LinkButtonProps) {
@@ -65,11 +60,11 @@ export function TechLinkButton({ label, href }: LinkButtonProps) {
     >
       {label}
     </Link>
-  );
+  )
 }
 
 export function ArrowUpButton() {
-  const { isVisible, scrollToTop } = useScrollToTop();
+  const { isVisible, scrollToTop } = useScrollToTop()
 
   return (
     <button
@@ -85,5 +80,5 @@ export function ArrowUpButton() {
     >
       <ArrowUpIcon />
     </button>
-  );
+  )
 }

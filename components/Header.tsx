@@ -1,14 +1,13 @@
-import Link from 'next/link';
-import { ELEMENT_IDS } from '@/lib/constants';
-import { Menu } from './Menu';
-import { useMobileMenu } from '@/hooks/useMobileMenu';
-import { LanguageSwitcher } from './LanguageSwitcher';
-import { useHideHeader } from '@/hooks/useHideHeader';
+import Link from 'next/link'
+import { ELEMENT_IDS } from '@/lib/constants'
+import { Menu } from './Menu'
+import { useMobileMenu } from '@/hooks/useMobileMenu'
+import { LanguageSwitcher } from './LanguageSwitcher'
+import { useHideHeader } from '@/hooks/useHideHeader'
 
 export function Header() {
-  useHideHeader({ headerId: ELEMENT_IDS.mainHeaderId });
-
-  useMobileMenu();
+  useHideHeader({ headerId: ELEMENT_IDS.mainHeaderId })
+  useMobileMenu()
 
   return (
     <header
@@ -25,20 +24,14 @@ export function Header() {
     >
       <Link
         href='/'
-        className='
-            text-xl
-          '
+        className='text-xl'
       >
         Mario Programador
       </Link>
-      <div
-        className='
-            flex justify-center items-center gap-4 md:flex-row-reverse md:gap-6
-          '
-      >
+      <div className='flex justify-center items-center gap-4 md:flex-row-reverse md:gap-6'>
         <LanguageSwitcher />
         <Menu />
       </div>
     </header>
-  );
+  )
 }

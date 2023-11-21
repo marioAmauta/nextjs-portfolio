@@ -1,7 +1,7 @@
-import { useContactForm } from '@/hooks/useContactForm';
-import { Title } from './Titles';
-import { Modal } from './Modal';
-import { LoadingSpinner } from './Icons';
+import { useContactForm } from '@/hooks/useContactForm'
+import { Title } from './Titles'
+import { Modal } from './Modal'
+import { LoadingSpinner } from './Icons'
 
 export function ContactForm({ translations }: { translations: Record<string, any> }) {
   const {
@@ -13,13 +13,13 @@ export function ContactForm({ translations }: { translations: Record<string, any
     isLoading,
     handleFormSubmit,
     formRef
-  } = useContactForm();
+  } = useContactForm()
 
   return (
     <>
       <Title
         titleType='h3'
-        padding='pt-8 md:text-center'
+        customClass='pt-2 md:text-center'
       >
         {translations.title}
       </Title>
@@ -113,5 +113,5 @@ export function ContactForm({ translations }: { translations: Record<string, any
         </button>
       </form>
     </>
-  );
+  )
 }
