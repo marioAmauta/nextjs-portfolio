@@ -21,6 +21,7 @@ export function LanguageSwitcher() {
           rounded-md
           p-1
           h-full
+          cursor-pointer
         '
       >
         {LANGUAGE_SELECT_DATA.languageOptions.map(({ value, label }) => (

@@ -1,9 +1,9 @@
-import { THEME_INPUT_DATA } from '@/lib/constants';
-import { useTheme } from '@/hooks/useTheme';
-import { ThemeIcons } from './Icons';
+import { THEME_INPUT_DATA } from '@/lib/constants'
+import { useTheme } from '@/hooks/useTheme'
+import { ThemeIcons } from './Icons'
 
 export function ThemeSwitcher() {
-  const { theme, onThemeChange } = useTheme();
+  const { theme, onThemeChange } = useTheme()
 
   return (
     <form
@@ -24,6 +24,7 @@ export function ThemeSwitcher() {
               flex justify-center items-center
               w-8 h-8
               transition-all duration-300
+              cursor-pointer
             `}
         >
           <input
@@ -36,5 +37,5 @@ export function ThemeSwitcher() {
         </label>
       ))}
     </form>
-  );
+  )
 }
