@@ -1,4 +1,4 @@
-import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants'
+import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const es = {
   madeWithLove: 'Hecho con ❤️ por Mario Programador',
@@ -39,7 +39,7 @@ export const es = {
       description: [
         'Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.',
         'Actualmente, estoy enfocado en el desarrollo web, trabajando con React, Next.js y Tailwind CSS. De hecho, este sitio web está construido utilizando estas tecnologías.',
-        'También tengo experiencia con Node.js, TypesScript, Python y MongoDB.'
+        'También tengo experiencia con Node.js, TypeScript, Python y MongoDB.'
       ],
       buttonLabel: 'Más sobre mí'
     },
@@ -117,7 +117,7 @@ export const es = {
     subtitle1: 'Mi travesía como desarrollador',
     paragraphs1: [
       'En mis primeros días, comencé a aprender sobre el desarrollo web en 2021, comenzando con HTML, CSS y JavaScript. Usé aplicaciones móviles y leí artículos sobre desarrollo web. También vi videos en YouTube. Aprendí mucho de estos recursos, pero quería aprender más, así que comencé a buscar cursos.',
-      'Descubrí freeCodeCamp, una plataforma increíble para aprender desarrollo web. Comencé con la Certificación de Diseño Web Responsivo, luego avancé a la Certificación de Algoritmos y Estructuras de Datos de JavaScript. Actualmente, estoy trabajando en la Certificación de Bibliotecas de Desarrollo Frontend.',
+      'Descubrí freeCodeCamp, una plataforma increíble para aprender desarrollo web. Comencé con la Certificación de Diseño Web Responsivo, luego avancé a la Certificación de Algoritmos y Estructuras de Datos en JavaScript. Y recientemente, completé la Certificación de Bibliotecas de Desarrollo Frontend.',
       'Sin embargo, también quería expandir mi conocimiento, así que comencé a explorar frameworks para abordar proyectos más complejos. Opté por Next.js para React, y en cuanto al diseño, he estado utilizando Tailwind CSS.',
       'Pero no estoy limitado a aprender solo una tecnología. De hecho, he completado un curso de Python donde aprendí cómo usar Python y sus bibliotecas, como Flask y Tkinter.'
     ],
@@ -294,4 +294,4 @@ export const es = {
     ],
     buttonLabel: 'Contacto'
   }
-}
+};

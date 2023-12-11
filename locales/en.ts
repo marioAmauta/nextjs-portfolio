@@ -1,4 +1,4 @@
-import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants'
+import { PROJECTS_DATA, TECHNOLOGIES } from '@/lib/constants';
 
 export const en = {
   madeWithLove: 'Made with ❤️ by Mario Programador',
@@ -117,7 +117,7 @@ export const en = {
     subtitle1: 'My Dev Journey',
     paragraphs1: [
       'In my early days, I started learning about web development in 2021, beginning with HTML, CSS, and JavaScript. I used mobile apps and read articles about web development. I also watched videos on YouTube. I learned a lot from these resources, but I wanted to learn more, so I started looking for courses.',
-      "I discovered freeCodeCamp, an amazing platform for learning web development. I began with the Responsive Web Design Certification, then progressed to the JavaScript Algorithms and Data Structures Certification. Currently, I'm working on the Front End Development Libraries Certification.",
+      'I discovered freeCodeCamp, an incredible platform for learning web development. I started with the Responsive Web Design Certification, then progressed to the JavaScript Algorithms and Data Structures Certification. And recently, I completed the Front End Development Libraries Certification.',
       "However, I also wanted to expand my knowledge, so I began exploring frameworks to tackle more complex projects. I opted for Next.js for React, and for styling, I've been using Tailwind CSS.",
       'But I am not limited to learning just one technology. In fact, I have completed a Python course where I learned how to use Python and its libraries, such as Flask and Tkinter.'
     ],
@@ -294,4 +294,4 @@ export const en = {
     ],
     buttonLabel: 'Contact Me'
   }
-}
+};
