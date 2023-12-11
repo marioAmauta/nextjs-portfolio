@@ -11,7 +11,7 @@ import {
 } from '@/components/Sections';
 import { Title } from '@/components/Titles';
 import { useLanguage } from '@/hooks/useLanguage';
-import { ELEMENT_IDS } from '@/lib/constants';
+import { ELEMENT_IDS, PAGES_URLS } from '@/lib/constants';
 import { ProjectCardProps } from '@/lib/definitions';
 
 export default function IndexPage() {
@@ -37,7 +37,7 @@ export default function IndexPage() {
           {indexPage.about.description.map((text: string, index: number) => (
             <DescriptionParagraph key={index} text={text} />
           ))}
-          <LinkButton href='/about' label={indexPage.about.buttonLabel} />
+          <LinkButton href={PAGES_URLS.about} label={indexPage.about.buttonLabel} />
         </DescriptionSection>
       </RegularSection>
       <RegularSection>
@@ -49,7 +49,7 @@ export default function IndexPage() {
               <ProjectCard key={project.title} {...project} />
             ))}
           </ProjectSection>
-          <LinkButton href='/projects' label={indexPage.projects.buttonLabel} />
+          <LinkButton href={PAGES_URLS.projects} label={indexPage.projects.buttonLabel} />
         </DescriptionSection>
       </RegularSection>
       <RegularSection id={ELEMENT_IDS.contactSectionId}>

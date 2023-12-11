@@ -2,6 +2,7 @@ import { LinkButton } from '@/components/Buttons';
 import { DescriptionParagraph, ParagraphsSection } from '@/components/Sections';
 import { Title } from '@/components/Titles';
 import { useLanguage } from '@/hooks/useLanguage';
+import { PAGES_URLS } from '@/lib/constants';
 
 export default function AboutPage() {
   const {
@@ -17,7 +18,7 @@ export default function AboutPage() {
           <DescriptionParagraph key={index} text={text} />
         ))}
       </ParagraphsSection>
-      <LinkButton label={aboutPage.linkButton} href='/projects' customClass='my-12' />
+      <LinkButton label={aboutPage.linkButton} href={PAGES_URLS.about} customClass='my-12' />
     </>
   );
 }

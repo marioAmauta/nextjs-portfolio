@@ -12,6 +12,32 @@ export const ELEMENT_IDS = {
   contactSectionId: 'contact'
 };
 
+export const PAGES_URLS = {
+  home: '/',
+  about: '/about',
+  projects: '/projects',
+  contact: `/#${ELEMENT_IDS.contactSectionId}`
+};
+
+export const NAVBAR_LINKS = [
+  {
+    name: 'home',
+    path: PAGES_URLS.home
+  },
+  {
+    name: 'about',
+    path: PAGES_URLS.about
+  },
+  {
+    name: 'myProjects',
+    path: PAGES_URLS.projects
+  },
+  {
+    name: 'contact',
+    path: PAGES_URLS.contact
+  }
+];
+
 export const METADATA_DEFAULT = {
   title: 'Mario Programador',
   siteUrl: 'https://marioprogramador.com/',
@@ -26,27 +52,6 @@ export const CONTACT_LINKS = [
   {
     href: 'https://www.linkedin.com/in/marioamauta/',
     label: 'Linkedin'
-  }
-];
-
-export const contactLink = `/#${ELEMENT_IDS.contactSectionId}`;
-
-export const NAVBAR_LINKS = [
-  {
-    name: 'home',
-    path: '/'
-  },
-  {
-    name: 'about',
-    path: '/about'
-  },
-  {
-    name: 'myProjects',
-    path: '/projects'
-  },
-  {
-    name: 'contact',
-    path: contactLink
   }
 ];
 

@@ -2,13 +2,13 @@ import { useRouter } from 'next/router';
 import { ChangeEvent } from 'react';
 import { en } from '@/locales/en';
 import { es } from '@/locales/es';
-import { contactLink } from '@/lib/constants';
+import { PAGES_URLS } from '@/lib/constants';
 
 export function useLanguage() {
   const router = useRouter();
   const { locale, pathname, asPath } = router;
 
-  const withoutContactLink = asPath.replace(contactLink, '/');
+  const withoutContactLink = asPath.replace(PAGES_URLS.contact, '/');
   const translations: any = locale === 'en' ? en : es;
 
   function changeLanguage(event: ChangeEvent<HTMLSelectElement>) {

@@ -1,10 +1,10 @@
-import { contactLink } from '@/lib/constants';
 import { ProjectCardProps } from '@/lib/definitions';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Title } from '@/components/Titles';
 import { ProjectSection } from '@/components/Sections';
 import { ProjectCard } from '@/components/ProjectCard';
 import { LinkButton } from '@/components/Buttons';
+import { PAGES_URLS } from '@/lib/constants';
 
 export default function ProjectsPage() {
   const {
@@ -19,7 +19,7 @@ export default function ProjectsPage() {
           <ProjectCard key={project.title} {...project} />
         ))}
       </ProjectSection>
-      <LinkButton label={projectsPage.buttonLabel} href={contactLink} customClass='my-12' />
+      <LinkButton label={projectsPage.buttonLabel} href={PAGES_URLS.contact} customClass='my-12' />
     </>
   );
 }

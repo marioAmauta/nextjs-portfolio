@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ELEMENT_IDS, NAVBAR_LINKS, contactLink } from '@/lib/constants';
+import { ELEMENT_IDS, NAVBAR_LINKS } from '@/lib/constants';
 import { useLanguage } from '@/hooks/useLanguage';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
