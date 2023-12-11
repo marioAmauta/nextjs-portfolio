@@ -4,13 +4,7 @@ export function BlurredBackground() {
   return (
     <div
       id={ELEMENT_IDS.bgBlurredId}
-      className='
-        md:hidden
-        fixed inset-0
-        w-0 min-h-screen
-        transition duration-100
-        backdrop-blur-sm bg-[--bg-blurred-color]
-      '
+      className='fixed inset-0 min-h-screen w-0 bg-[--bg-blurred-color] backdrop-blur-sm transition duration-100 md:hidden'
     />
   );
 }

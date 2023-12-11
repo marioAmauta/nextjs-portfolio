@@ -1,20 +1,22 @@
-import { ProjectData } from './definitions'
+import { ProjectData } from './definitions';
 
 export const ELEMENT_IDS = {
-  themeSelectId: 'themeSelect',
+  themeChecker: 'theme-checker',
+  themeSelectId: 'theme-select',
+  themePalette: 'theme-palette',
   toggleButtonId: 'toggle-button',
   mobileMenuId: 'mobile-menu',
   bgBlurredId: 'bg-blurred',
   mainHeaderId: 'main-header',
   languageSelectId: 'languageSelect',
   contactSectionId: 'contact'
-}
+};
 
 export const METADATA_DEFAULT = {
   title: 'Mario Programador',
   siteUrl: 'https://marioprogramador.com/',
   ogImagePath: '/images/marioprogramador-desktop.png'
-}
+};
 
 export const CONTACT_LINKS = [
   {
@@ -25,9 +27,9 @@ export const CONTACT_LINKS = [
     href: 'https://www.linkedin.com/in/marioamauta/',
     label: 'Linkedin'
   }
-]
+];
 
-export const contactLink = `/#${ELEMENT_IDS.contactSectionId}`
+export const contactLink = `/#${ELEMENT_IDS.contactSectionId}`;
 
 export const NAVBAR_LINKS = [
   {
@@ -46,7 +48,7 @@ export const NAVBAR_LINKS = [
     name: 'contact',
     path: contactLink
   }
-]
+];
 
 export const THEME_INPUT_DATA = {
   light: {
@@ -67,7 +69,7 @@ export const THEME_INPUT_DATA = {
     id: 'dark-palette',
     value: 'dark'
   }
-}
+};
 
 export const LANGUAGE_SELECT_DATA = {
   languageId: ELEMENT_IDS.languageSelectId,
@@ -82,7 +84,7 @@ export const LANGUAGE_SELECT_DATA = {
       label: 'ES'
     }
   ]
-}
+};
 
 export const TECHNOLOGIES = {
   html: {
@@ -133,7 +135,7 @@ export const TECHNOLOGIES = {
     label: 'Heroicons',
     href: 'https://heroicons.com/'
   }
-}
+};
 
 export const PROJECTS_DATA: Record<string, ProjectData> = {
   pomodoroTimer: {
@@ -206,4 +208,4 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       liveDemo: 'https://marioamauta.github.io/survey-form/'
     }
   }
-}
+};

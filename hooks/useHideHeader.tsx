@@ -1,27 +1,27 @@
-import { useEffect } from 'react'
-import { HideHeaderProps } from '@/lib/definitions'
+import { useEffect } from 'react';
+import { HideHeaderProps } from '@/lib/definitions';
 
 export function useHideHeader({ headerId }: HideHeaderProps) {
   useEffect(() => {
-    let previousScrollPosition = window.scrollY
+    let previousScrollPosition = window.scrollY;
 
     function handleScroll() {
-      let currentScrollPosition = window.scrollY
-      const $header = document.getElementById(headerId)
+      let currentScrollPosition = window.scrollY;
+      const $header = document.getElementById(headerId);
 
-      if ($header === null) return
+      if ($header === null) return;
 
       if (previousScrollPosition > currentScrollPosition) {
-        $header.style.top = '0px'
+        $header.style.top = '0px';
       } else {
-        $header.style.top = `-${$header.offsetHeight}px`
+        $header.style.top = `-${$header.offsetHeight}px`;
       }
 
-      previousScrollPosition = currentScrollPosition
+      previousScrollPosition = currentScrollPosition;
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [headerId])
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [headerId]);
 }

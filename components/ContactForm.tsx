@@ -1,7 +1,7 @@
-import { useContactForm } from '@/hooks/useContactForm'
-import { Title } from './Titles'
-import { Modal } from './Modal'
-import { LoadingSpinner } from './Icons'
+import { useContactForm } from '@/hooks/useContactForm';
+import { Title } from './Titles';
+import { Modal } from './Modal';
+import { LoadingSpinner } from './Icons';
 
 export function ContactForm({ translations }: { translations: Record<string, any> }) {
   const {
@@ -13,14 +13,11 @@ export function ContactForm({ translations }: { translations: Record<string, any
     isLoading,
     handleFormSubmit,
     formRef
-  } = useContactForm()
+  } = useContactForm();
 
   return (
     <>
-      <Title
-        titleType='h3'
-        customClass='pt-2 md:text-center'
-      >
+      <Title titleType='h3' customClass='pt-2 md:text-center'>
         {translations.title}
       </Title>
       <Modal
@@ -32,16 +29,9 @@ export function ContactForm({ translations }: { translations: Record<string, any
       <form
         ref={formRef}
         onSubmit={handleFormSubmit}
-        className='
-          flex flex-col gap-4
-          mt-10 mb-16 md:my-16 mx-auto
-          max-w-xl
-        '
+        className='mx-auto mb-16 mt-10 flex max-w-xl flex-col gap-4 md:my-16'
       >
-        <label
-          htmlFor={nameInputId}
-          className='text-lg'
-        >
+        <label htmlFor={nameInputId} className='text-lg'>
           {translations.name}
         </label>
         <input
@@ -50,18 +40,9 @@ export function ContactForm({ translations }: { translations: Record<string, any
           type='text'
           name='name'
           placeholder={translations.namePlaceholder}
-          className='
-            rounded-lg
-            h-10
-            px-4
-            bg-[--input-bg-color] placeholder-[--placeholder-text-color]
-            outline-0
-          '
+          className='h-10 rounded-lg bg-[--input-bg-color] px-4 placeholder-[--placeholder-text-color] outline-0'
         />
-        <label
-          htmlFor={emailInputId}
-          className='text-lg'
-        >
+        <label htmlFor={emailInputId} className='text-lg'>
           {translations.email}
         </label>
         <input
@@ -70,18 +51,9 @@ export function ContactForm({ translations }: { translations: Record<string, any
           type='email'
           name='email'
           placeholder={translations.emailPlaceholder}
-          className='
-            rounded-lg
-            h-10
-            px-4
-            bg-[--input-bg-color] placeholder-[--placeholder-text-color]
-            outline-0
-          '
+          className='h-10 rounded-lg bg-[--input-bg-color] px-4 placeholder-[--placeholder-text-color] outline-0'
         />
-        <label
-          htmlFor={messageTextareaId}
-          className='text-lg'
-        >
+        <label htmlFor={messageTextareaId} className='text-lg'>
           {translations.message}
         </label>
         <textarea
@@ -89,29 +61,12 @@ export function ContactForm({ translations }: { translations: Record<string, any
           id={messageTextareaId}
           name='message'
           placeholder={translations.messagePlaceholder}
-          className='
-            h-32
-            py-2 px-4
-            resize-none
-            rounded-lg
-            text-[--app-text-color]
-            bg-[--input-bg-color] placeholder-[--placeholder-text-color]
-            outline-0
-          '
+          className='h-32 resize-none rounded-lg bg-[--input-bg-color] px-4 py-2 text-[--app-text-color] placeholder-[--placeholder-text-color] outline-0'
         />
-        <button
-          className='
-            rounded-lg
-            bg-[--contact-form-button-bg-color]
-            py-2 px-4 mt-4
-            text-white text-lg font-semibold
-            flex justify-center items-center
-            relative
-          '
-        >
+        <button className='relative mt-4 flex items-center justify-center rounded-lg bg-[--contact-form-button-bg-color] px-4 py-2 text-lg font-semibold text-white'>
           {translations.submit} {isLoading && <LoadingSpinner />}
         </button>
       </form>
     </>
-  )
+  );
 }

@@ -1,12 +1,12 @@
-import { LinkButton } from '@/components/Buttons'
-import { DescriptionParagraph, ParagraphsSection } from '@/components/Sections'
-import { Title } from '@/components/Titles'
-import { useLanguage } from '@/hooks/useLanguage'
+import { LinkButton } from '@/components/Buttons';
+import { DescriptionParagraph, ParagraphsSection } from '@/components/Sections';
+import { Title } from '@/components/Titles';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function AboutPage() {
   const {
     translations: { aboutPage }
-  } = useLanguage()
+  } = useLanguage();
 
   return (
     <>
@@ -14,17 +14,10 @@ export default function AboutPage() {
       <Title titleType='h2'>{aboutPage.subtitle1}</Title>
       <ParagraphsSection>
         {aboutPage.paragraphs1.map((text: string, index: number) => (
-          <DescriptionParagraph
-            key={index}
-            text={text}
-          />
+          <DescriptionParagraph key={index} text={text} />
         ))}
       </ParagraphsSection>
-      <LinkButton
-        label={aboutPage.linkButton}
-        href='/projects'
-        customClass='my-12'
-      />
+      <LinkButton label={aboutPage.linkButton} href='/projects' customClass='my-12' />
     </>
-  )
+  );
 }
