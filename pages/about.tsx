@@ -1,8 +1,8 @@
-import { LinkButton } from '@/components/Buttons';
-import { DescriptionParagraph, ParagraphsSection } from '@/components/Sections';
-import { Title } from '@/components/Titles';
-import { useLanguage } from '@/hooks/useLanguage';
-import { PAGES_URLS } from '@/lib/constants';
+import { LinkButton } from "@/components/Buttons";
+import { DescriptionParagraph, ParagraphsSection } from "@/components/Sections";
+import { Title } from "@/components/Titles";
+import { useLanguage } from "@/hooks/useLanguage";
+import { APP_LINKS } from "@/lib/constants";
 
 export default function AboutPage() {
   const {
@@ -11,14 +11,18 @@ export default function AboutPage() {
 
   return (
     <>
-      <Title titleType='h1'>{aboutPage.title}</Title>
-      <Title titleType='h2'>{aboutPage.subtitle1}</Title>
+      <Title titleType="h1">{aboutPage.title}</Title>
+      <Title titleType="h2">{aboutPage.subtitle1}</Title>
       <ParagraphsSection>
         {aboutPage.paragraphs1.map((text: string, index: number) => (
           <DescriptionParagraph key={index} text={text} />
         ))}
       </ParagraphsSection>
-      <LinkButton label={aboutPage.linkButton} href={PAGES_URLS.about} customClass='my-12' />
+      <LinkButton
+        label={aboutPage.linkButton}
+        href={APP_LINKS.about}
+        className="my-12"
+      />
     </>
   );
 }

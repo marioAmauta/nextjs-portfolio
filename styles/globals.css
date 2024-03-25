@@ -67,7 +67,7 @@
 
 #toggle-button::before,
 #toggle-button::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 1.6rem;
   height: 0.125rem;
@@ -114,6 +114,6 @@ select {
   background-color: unset;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   display: none;
 }

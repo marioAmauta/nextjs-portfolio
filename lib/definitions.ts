@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-export type LinkWithLabel = {
+type LinkWithLabel = {
   label: string;
   href: string;
 };
@@ -17,34 +17,32 @@ export type ProjectCardProps = {
 export type LinkButtonProps = {
   href: string;
   label: string;
-  customClass?: string;
+  className?: string;
 };
 
 export type SectionProps = {
-  children: ReactNode;
-  margin?: string;
   id?: string;
+  children: ReactNode;
+  className?: string;
 };
 
 export type DescriptionParagraphProps = {
   text: string;
-  customClass?: string;
+  className?: string;
 };
 
 export type DescriptionSectionProps = {
   children: ReactNode;
-  gap?: string;
+  className?: string;
 };
 
 export type TitleProps = {
   children: ReactNode;
-  titleType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'hero' | 'heroSubtitle';
-  customClass?: string;
+  titleType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "hero" | "heroSubtitle";
+  className?: string;
 };
 
-export type isMessageSentType = 'not sent yet' | 'sent' | 'error';
-
-export type HideHeaderProps = { headerId: string };
+export type isMessageSentType = "not sent yet" | "sent" | "error";
 
 export type ModalProps = {
   message: string;
