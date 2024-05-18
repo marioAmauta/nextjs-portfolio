@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { APP_LINKS, ELEMENT_IDS } from "@/lib/constants";
 import { LanguageSwitcher } from "./language-switcher";
 import { Suspense, useEffect } from "react";
 import { Navbar } from "@/components/navbar";
 import { BlurredBackground, ToggleButton } from "./sections";
+import { Link } from "@/navigation";
 
 export function Header() {
   useEffect(() => {
