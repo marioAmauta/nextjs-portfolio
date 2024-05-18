@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-bg-color: #f5f5f5;
+  --app-text-color: #333;
+
+  --btn-bg-color: #cccccc;
+  --btn-text-color: var(--app-text-color);
+
+  --border-color: #ccc;
+
+  --navbar-bg-color: var(--app-bg-color);
+
+  --toggle-bar-bg-color: var(--app-text-color);
+
+  --header-height: 4rem;
+
+  --bg-blurred-color: #00000080;
+
+  --link-btn-bg-color: #bdbdbd;
+  --link-btn-text-color: #fff;
+
+  --project-card-bg-color: #c4c4c4;
+  --project-card-border-color: #d3d3d3;
+
+  --input-bg-color: #fff;
+  --placeholder-text-color: #afafaf;
+
+  --modal-text-color: #555;
+  --modal-btn-bg-color: #999;
+  --modal-btn-text-color: #333;
+
+  --contact-form-button-bg-color: #999;
+}
+
+:root.dark {
+  --contact-form-button-bg-color: #555;
+
+  --modal-text-color: #222;
+  --modal-btn-bg-color: #888;
+  --modal-btn-text-color: #333;
+
+  --app-bg-color: #333;
+  --app-text-color: #fff;
+
+  --btn-bg-color: #555;
+  --btn-text-color: var(--app-text-color);
+
+  --border-color: #555;
+
+  --navbar-bg-color: var(--app-bg-color);
+
+  --toggle-bar-bg-color: var(--app-text-color);
+
+  --project-card-bg-color: #666;
+  --project-card-border-color: #555;
+
+  --input-bg-color: #777;
+  --placeholder-text-color: #bdbdbd;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+#toggle-button::before,
+#toggle-button::after {
+  content: "";
+  position: absolute;
+  width: 1.6rem;
+  height: 0.18rem;
+  background-color: var(--toggle-bar-bg-color);
+  border-radius: 0.1rem;
+}
+
+#toggle-button::before {
+  transform: translateY(-5px);
+  transition: 300ms;
+}
+
+#toggle-button::after {
+  transform: translateY(5px);
+  transition: 500ms;
+}
+
+#toggle-button.active::before {
+  transform: translateY(0px) rotate(45deg);
+}
+
+#toggle-button.active::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+
+#bg-blurred.active {
+  width: 100%;
+}
+
+#mobile-menu.active {
+  right: 0;
+}
+
+body.active {
+  overflow: hidden;
+}
+
+label.active {
+  background-color: var(--btn-bg-color);
+}
+
+select {
+  background-color: unset;
+}
+
+input[type="radio"] {
+  display: none;
+}

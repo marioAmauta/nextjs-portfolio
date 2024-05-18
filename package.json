@@ -5,33 +5,30 @@
   "scripts": {
     "dev": "next dev",
     "build": "prettier --write . && next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@sendgrid/mail": "8.1.1",
+    "@sendgrid/mail": "8.1.3",
     "@vercel/speed-insights": "1.0.10",
-    "next": "14.1.4",
-    "next-sitemap": "4.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "14.2.3",
+    "next-intl": "3.14.0",
+    "next-themes": "0.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "6.5.1",
-    "@fortawesome/free-solid-svg-icons": "6.5.1",
-    "@fortawesome/react-fontawesome": "0.2.0",
-    "@types/node": "20.11.30",
-    "@types/react": "18.2.70",
-    "@types/react-dom": "18.2.22",
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.2",
+    "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.19",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.1.4",
+    "eslint-config-next": "14.2.3",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
-    "prettier-plugin-tailwindcss": "0.5.12",
-    "tailwindcss": "3.4.1",
+    "prettier-plugin-tailwindcss": "0.5.14",
+    "tailwindcss": "3.4.3",
     "typescript": "5.4.3"
   }
 }
