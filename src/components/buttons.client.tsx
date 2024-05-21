@@ -32,9 +32,9 @@ export function ArrowUpButton() {
   return (
     <button
       onClick={scrollToTop}
-      className={`bottom-8 right-8 rounded-full bg-[--btn-bg-color] ${isVisible ? "fixed" : "hidden"}`}
+      className={`bottom-8 right-8 rounded-full bg-btn-bg-color dark:bg-btn-bg-color-dark md:bottom-16 md:right-16 ${isVisible ? "fixed" : "hidden"}`}
     >
-      <ArrowUpIcon className="m-3 h-5 w-5 fill-[--app-text-color] " />
+      <ArrowUpIcon className="m-3 h-5 w-5 fill-app-text-color dark:fill-app-text-color-dark " />
     </button>
   );
 }

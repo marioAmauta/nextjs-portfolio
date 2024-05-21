@@ -35,24 +35,38 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t("description"),
       card: "summary_large_image",
       images: METADATA_DEFAULT.ogImagePath
-    }
+    },
+    keywords: [
+      "mario programador",
+      "mario developer",
+      "programador web",
+      "web programmer",
+      "desarrollador web",
+      "web developer",
+      "desarrollador frontend",
+      "frontend developer",
+      "typescript",
+      "javascript",
+      "reactjs",
+      "react.js",
+      "nextjs",
+      "next.js",
+      "next-intl",
+      "next-themes",
+      "css",
+      "tailwindcss"
+    ]
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params: { locale }
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
+export default async function LocaleLayout({ children, params: { locale } }: { children: ReactNode; params: { locale: string } }) {
   unstable_setRequestLocale(locale);
 
   const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-[--app-bg-color] text-[--app-text-color]">
+      <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-app-bg-color text-app-text-color dark:bg-app-bg-color-dark dark:text-app-text-color-dark">
         <NextThemesProvider>
           <IntlClientProvider locale={locale} messages={messages}>
             <Header />

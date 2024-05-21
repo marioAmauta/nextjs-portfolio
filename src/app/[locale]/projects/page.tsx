@@ -19,11 +19,7 @@ export default async function ProjectsPage({ params: { locale } }: { params: { l
       <Title titleType="h1">{t("title")}</Title>
       <ProjectSection>
         {projects.map((project: ProjectCardProps) => (
-          <ProjectCard
-            key={project.title}
-            {...project}
-            description={tProjectData(project.description as any)}
-          />
+          <ProjectCard key={project.title} {...project} description={tProjectData(project.description as any)} />
         ))}
       </ProjectSection>
       <LinkButton label={t("buttonLabel")} href={APP_LINKS.contact} className="my-12" />

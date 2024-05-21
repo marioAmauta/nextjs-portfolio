@@ -1,30 +1,20 @@
 import { APP_LINKS, CONTACT_LINKS, ELEMENT_IDS, PROJECTS_DATA } from "@/lib/constants";
-import { ContactLinkButton, LinkButton } from "./buttons";
-import {
-  DescriptionParagraphProps,
-  DescriptionSectionProps,
-  ProjectCardProps,
-  SectionProps
-} from "@/lib/definitions";
 import { useTranslations } from "next-intl";
+import { SectionProps, ProjectCardProps, DescriptionSectionProps, DescriptionParagraphProps } from "@/lib/definitions";
 import { Title } from "./titles";
+import { ContactLinkButton, LinkButton } from "./buttons";
 import { ProjectCard } from "./project-card";
 import { ContactForm } from "./contact-form";
 
 export function BlurredBackground() {
-  return (
-    <div
-      id={ELEMENT_IDS.bgBlurredId}
-      className="fixed inset-0 min-h-screen w-0 bg-[--bg-blurred-color] backdrop-blur-sm transition duration-100 md:hidden"
-    />
-  );
+  return <div id={ELEMENT_IDS.bgBlurredId} className="fixed inset-0 min-h-screen w-0 bg-[#00000080] backdrop-blur-sm md:hidden" />;
 }
 
 export function ToggleButton() {
   return (
     <div
       id={ELEMENT_IDS.toggleButtonId}
-      className="z-50 flex h-10 w-10 cursor-pointer items-center justify-center md:hidden"
+      className="z-50 flex h-10 w-10 cursor-pointer items-center justify-center before:bg-app-text-color after:bg-app-text-color dark:before:bg-app-text-color-dark dark:after:bg-app-text-color-dark md:hidden"
     />
   );
 }
@@ -49,26 +39,18 @@ export function DescriptionParagraph({ text, className }: DescriptionParagraphPr
   return <p className={`text-lg ${className ?? ""}`}>{text}</p>;
 }
 
-export function ButtonsContainer({ children }: SectionProps) {
-  return <div className="flex justify-center gap-10">{children}</div>;
-}
-
 export function ContactButtons() {
   return (
-    <ButtonsContainer>
+    <div className="flex justify-center gap-10">
       {CONTACT_LINKS.map(({ href, label }) => (
         <ContactLinkButton key={href} href={href} label={label} />
       ))}
-    </ButtonsContainer>
+    </div>
   );
 }
 
 export function ProjectSection({ children }: SectionProps) {
-  return (
-    <section className="grid grid-cols-1 gap-16 py-4 sm:grid-cols-2 sm:gap-6 md:gap-10 lg:gap-16 2xl:grid-cols-3">
-      {children}
-    </section>
-  );
+  return <section className="grid grid-cols-1 gap-16 py-4 sm:grid-cols-2 sm:gap-6 md:gap-10 lg:gap-16 2xl:grid-cols-3">{children}</section>;
 }
 
 export function HeroSection() {
@@ -116,11 +98,7 @@ export function ProjectsSection() {
         <DescriptionParagraph text={t("description")} className="font-semibold" />
         <ProjectSection>
           {projectsData.map((project: ProjectCardProps) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              description={tProjectsData(project.description as any)}
-            />
+            <ProjectCard key={project.title} {...project} description={tProjectsData(project.description as any)} />
           ))}
         </ProjectSection>
         <LinkButton href={APP_LINKS.projects} label={t("buttonLabel")} />
@@ -137,10 +115,7 @@ export function ContactSection() {
       <Title titleType="h2">{t("title")}</Title>
       <ContactForm />
       <DescriptionSection>
-        <DescriptionParagraph
-          text={t("description")}
-          className="pb-4 pt-2 text-center font-semibold"
-        />
+        <DescriptionParagraph text={t("description")} className="pb-4 pt-2 text-center font-semibold" />
         <ContactButtons />
       </DescriptionSection>
     </RegularSection>

@@ -23,11 +23,7 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <select
-      defaultValue={locale}
-      onChange={handleChange}
-      className="z-50 cursor-pointer bg-transparent"
-    >
+    <select defaultValue={locale} onChange={handleChange} className="z-50 cursor-pointer bg-transparent">
       <option value="en">EN</option>
       <option value="es">ES</option>
     </select>

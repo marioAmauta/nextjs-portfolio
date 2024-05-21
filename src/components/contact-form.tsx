@@ -50,16 +50,12 @@ export function ContactForm() {
         {t("title")}
       </Title>
       <Modal
-        message={isMessageSent === "sent" ? t("success") : t("error")}
-        buttonLabel={t("close")}
         isActive={isMessageSent !== "not sent yet"}
+        message={isMessageSent === "sent" ? t("success") : t("error")}
         onClickClose={() => setIsMessageSent("not sent yet")}
+        buttonLabel={t("close")}
       />
-      <form
-        ref={formRef}
-        onSubmit={handleFormSubmit}
-        className="mx-auto mb-16 mt-10 flex max-w-xl flex-col gap-4 md:my-16"
-      >
+      <form ref={formRef} onSubmit={handleFormSubmit} className="mx-auto mb-16 mt-10 flex max-w-xl flex-col gap-4 md:my-16">
         <label htmlFor={nameInputId} className="text-lg">
           {t("name")}
         </label>
@@ -69,7 +65,7 @@ export function ContactForm() {
           type="text"
           name="name"
           placeholder={t("namePlaceholder")}
-          className="h-10 rounded-lg bg-[--input-bg-color] px-4 placeholder-[--placeholder-text-color] outline-0"
+          className="h-10 rounded-lg bg-input-bg-color px-4 outline-0 dark:bg-input-bg-color-dark"
         />
         <label htmlFor={emailInputId} className="text-lg">
           {t("email")}
@@ -80,7 +76,7 @@ export function ContactForm() {
           type="email"
           name="email"
           placeholder={t("emailPlaceholder")}
-          className="h-10 rounded-lg bg-[--input-bg-color] px-4 placeholder-[--placeholder-text-color] outline-0"
+          className="h-10 rounded-lg bg-input-bg-color px-4 outline-0 dark:bg-input-bg-color-dark"
         />
         <label htmlFor={messageTextareaId} className="text-lg">
           {t("message")}
@@ -90,9 +86,9 @@ export function ContactForm() {
           id={messageTextareaId}
           name="message"
           placeholder={t("messagePlaceholder")}
-          className="h-32 resize-none rounded-lg bg-[--input-bg-color] px-4 py-2 text-[--app-text-color] placeholder-[--placeholder-text-color] outline-0"
+          className="h-24 resize-none rounded-lg bg-input-bg-color px-4 py-2 outline-0 dark:bg-input-bg-color-dark"
         />
-        <button className="relative mt-4 flex items-center justify-center rounded-lg bg-[--contact-form-button-bg-color] px-4 py-2 text-lg font-semibold text-white">
+        <button className="relative mt-4 flex items-center justify-center rounded-lg bg-btn-bg-color px-4 py-2 text-lg font-semibold dark:bg-btn-bg-color-dark">
           {t("submit")} {isLoading && <LoadingSpinner />}
         </button>
       </form>

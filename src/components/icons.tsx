@@ -4,22 +4,20 @@ export type Theme = "light" | "dark" | "system";
 
 export function ThemeIcons({ theme }: { theme: Theme }) {
   if (theme === "light") {
-    return <SunIcon className="h-5 w-5 fill-[--app-text-color]" />;
+    return <SunIcon className="h-5 w-5 fill-app-text-color dark:fill-app-text-color-dark" />;
   }
 
   if (theme === "dark") {
-    return <MoonIcon className="h-5 w-5 fill-[--app-text-color]" />;
+    return <MoonIcon className="h-5 w-5 fill-app-text-color dark:fill-app-text-color-dark" />;
   }
 
   if (theme === "system") {
-    return <SystemIcon className="h-5 w-5 fill-[--app-text-color]" />;
+    return <SystemIcon className="h-5 w-5 fill-app-text-color dark:fill-app-text-color-dark" />;
   }
 }
 
 export function LoadingSpinner() {
-  return (
-    <div className="absolute right-12 h-4 w-4 animate-spin rounded-full border-2 border-solid border-white border-r-black border-t-black" />
-  );
+  return <div className="absolute right-12 h-4 w-4 animate-spin rounded-full border-2 border-solid border-white border-r-black border-t-black" />;
 }
 
 export function SunIcon(props: SVGProps<SVGSVGElement>) {

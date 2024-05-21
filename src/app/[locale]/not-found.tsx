@@ -10,11 +10,15 @@ export default async function NotFoundPage() {
   const t = await getTranslations("NotFoundPage");
 
   return (
-    <section className="flex flex-col items-center justify-center gap-8 text-center">
-      <Title titleType="h1">404</Title>
-      <Title titleType="h2">{t("title")}</Title>
+    <section className="flex h-[calc(100dvh-(var(--header-height)*2))] flex-col items-center justify-center gap-10 text-center">
+      <Title titleType="h1" className="py-0">
+        404
+      </Title>
+      <Title titleType="h2" className="mb-0">
+        {t("title")}
+      </Title>
       <p className="text-lg font-semibold">{t("description")}</p>
-      <LinkButton href={APP_LINKS.home} label={t("buttonLabel")} className="mt-10" />
+      <LinkButton href={APP_LINKS.home} label={t("buttonLabel")} />
     </section>
   );
 }

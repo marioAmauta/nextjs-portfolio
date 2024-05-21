@@ -57,19 +57,16 @@ export const CONTACT_LINKS = [
 
 export const THEME_INPUT_DATA = {
   light: {
-    type: "radio",
     name: "theme-options",
     id: "light-theme",
     value: "light"
   },
   system: {
-    type: "radio",
     name: "theme-options",
     id: "system-theme",
     value: "system"
   },
   dark: {
-    type: "radio",
     name: "theme-options",
     id: "dark-palette",
     value: "dark"
@@ -177,13 +174,7 @@ export const PROJECTS_DATA: Record<string, ProjectCardProps> = {
     title: "Random Quote Machine",
     description: "randomQuoteMachineDescription",
     image: "/images/random-quote-machine-desktop.png",
-    technologies: [
-      TECHNOLOGIES.html,
-      TECHNOLOGIES.css,
-      TECHNOLOGIES.javascript,
-      TECHNOLOGIES.react,
-      TECHNOLOGIES.vite
-    ],
+    technologies: [TECHNOLOGIES.html, TECHNOLOGIES.css, TECHNOLOGIES.javascript, TECHNOLOGIES.react, TECHNOLOGIES.vite],
     links: {
       sourceCode: "https://github.com/marioAmauta/random-quote-machine",
       liveDemo: "https://random-quote-machine-marioamauta.vercel.app/"

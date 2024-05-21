@@ -1,11 +1,11 @@
 "use client";
 
-import { APP_LINKS, ELEMENT_IDS } from "@/lib/constants";
-import { LanguageSwitcher } from "./language-switcher";
 import { Suspense, useEffect } from "react";
-import { Navbar } from "@/components/navbar";
-import { BlurredBackground, ToggleButton } from "./sections";
+import { APP_LINKS, ELEMENT_IDS } from "@/lib/constants";
 import { Link } from "@/navigation";
+import { Navbar } from "./navbar";
+import { LanguageSwitcher } from "./language-switcher";
+import { BlurredBackground, ToggleButton } from "./sections";
 
 export function Header() {
   useEffect(() => {
@@ -35,14 +35,10 @@ export function Header() {
 
         if (event.target.id === toggleButtonId) {
           document.body?.classList.toggle(activeClass);
-          toggleElements.forEach((element) =>
-            document.getElementById(element)?.classList.toggle(activeClass)
-          );
+          toggleElements.forEach((element) => document.getElementById(element)?.classList.toggle(activeClass));
         } else if (event.target.id === bgBlurredId || event.target.tagName === "A") {
           document.body?.classList.remove(activeClass);
-          toggleElements.forEach((element) =>
-            document.getElementById(element)?.classList.remove(activeClass)
-          );
+          toggleElements.forEach((element) => document.getElementById(element)?.classList.remove(activeClass));
         }
       }
     }
@@ -59,7 +55,7 @@ export function Header() {
   return (
     <header
       id={ELEMENT_IDS.mainHeaderId}
-      className="sticky top-0 z-30 flex h-[--header-height] items-center justify-between border-b border-[--border-color] bg-[--app-bg-color] p-4 font-semibold transition-all duration-300 lg:px-5% xl:px-10%  2xl:px-15%"
+      className="sticky top-0 z-30 flex h-[--header-height] items-center justify-between border-b border-app-border-color bg-app-bg-color px-4 font-semibold transition-all duration-300 dark:border-app-border-color-dark dark:bg-app-bg-color-dark md:transition-none lg:px-5% xl:px-10% 2xl:px-15%"
     >
       <Link href={APP_LINKS.home} className="text-xl">
         Mario Programador

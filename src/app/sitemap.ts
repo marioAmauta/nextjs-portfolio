@@ -13,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return keys.map((key) => ({
     url: getUrl(key, defaultLocale),
+    lastModified: new Date(),
     alternates: {
       languages: Object.fromEntries(locales.map((locale) => [locale, getUrl(key, locale)]))
     }
