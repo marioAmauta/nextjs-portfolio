@@ -45,7 +45,8 @@
     "randomQuoteMachineDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
     "javaScriptDocumentationDescription": "This project is dedicated to JavaScript Documentation, divided into sections where you can find information about this amazing language, how to declare variables, work with different data types, and much more.",
     "theSaxophoneCornerDescription": "This project is a small simulation of a Saxophone Store where you can view various Saxophone models and their respective prices, along with informative sections about the business. Additionally, there's a fictitious form available for subscribing to the store's newsletter.",
-    "surveyFormDescription": "This project is a simulated survey form designed to gather information from users. It incorporates a variety of input elements, including text fields, email fields, numeric fields, radio buttons, checkboxes, and a dropdown menu."
+    "surveyFormDescription": "This project is a simulated survey form designed to gather information from users. It incorporates a variety of input elements, including text fields, email fields, numeric fields, radio buttons, checkboxes, and a dropdown menu.",
+    "githubDevfinderDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following"
   },
   "ProjectCard": {
     "title2": "Technologies I used",
