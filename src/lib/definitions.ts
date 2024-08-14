@@ -1,14 +1,14 @@
 import { usePathname } from "@/navigation";
 import { ReactNode } from "react";
 
-type LinkWithLabel = {
+export type LinkWithLabel = {
   label: string;
   href: string;
 };
 
 export type ProjectCardProps = {
   title: string;
-  description: string;
+  description: TranslationKey;
   image: string;
   technologies: LinkWithLabel[];
   links: {

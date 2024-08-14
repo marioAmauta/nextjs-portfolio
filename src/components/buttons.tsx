@@ -1,5 +1,6 @@
-import { LinkButtonProps } from "@/lib/definitions";
 import { Link } from "@/navigation";
+
+import { LinkButtonProps } from "@/lib/definitions";
 
 export function LinkButton({ href, label, className }: LinkButtonProps) {
   return (

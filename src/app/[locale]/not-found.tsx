@@ -1,10 +1,12 @@
 // Note that `app/[locale]/[...rest]/page.tsx`
 // is necessary for this page to render.
 
+import { getTranslations } from "next-intl/server";
+
+import { APP_LINKS } from "@/lib/constants";
+
 import { LinkButton } from "@/components/buttons";
 import { Title } from "@/components/titles";
-import { APP_LINKS } from "@/lib/constants";
-import { getTranslations } from "next-intl/server";
 
 export default async function NotFoundPage() {
   const t = await getTranslations("NotFoundPage");

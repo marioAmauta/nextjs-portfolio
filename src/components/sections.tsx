@@ -1,10 +1,12 @@
-import { APP_LINKS, CONTACT_LINKS, ELEMENT_IDS, PROJECTS_DATA } from "@/lib/constants";
 import { useTranslations } from "next-intl";
+
+import { APP_LINKS, CONTACT_LINKS, ELEMENT_IDS, PROJECTS_DATA } from "@/lib/constants";
 import { SectionProps, ProjectCardProps, DescriptionSectionProps, DescriptionParagraphProps } from "@/lib/definitions";
-import { Title } from "./titles";
+
 import { ContactLinkButton, LinkButton } from "./buttons";
-import { ProjectCard } from "./project-card";
 import { ContactForm } from "./contact-form";
+import { ProjectCard } from "./project-card";
+import { Title } from "./titles";
 
 export function BlurredBackground() {
   return <div id={ELEMENT_IDS.bgBlurredId} className="fixed inset-0 min-h-screen w-0 bg-[#00000080] backdrop-blur-sm md:hidden" />;

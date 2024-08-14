@@ -1,7 +1,8 @@
-import { AboutSection, ContactSection, HeroSection, ProjectsSection } from "@/components/sections";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
+import { AboutSection, ContactSection, HeroSection, ProjectsSection } from "@/components/sections";
+
+export default function HomePage({ params: { locale } }: NextPageProps) {
   unstable_setRequestLocale(locale);
 
   return (

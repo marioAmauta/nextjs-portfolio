@@ -2,7 +2,9 @@
 
 import { useTheme } from "next-themes";
 import { ChangeEvent, useEffect, useState } from "react";
+
 import { THEME_INPUT_DATA } from "@/lib/constants";
+
 import { Theme, ThemeIcons } from "./icons";
 
 export function ThemeSwitcher() {

@@ -1,5 +1,6 @@
-import { ModalProps } from "@/lib/definitions";
 import { useRef } from "react";
+
+import { ModalProps } from "@/lib/definitions";
 
 export function Modal({ message, buttonLabel, isActive, onClickClose }: ModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -13,7 +14,7 @@ export function Modal({ message, buttonLabel, isActive, onClickClose }: ModalPro
   return (
     <dialog
       ref={dialogRef}
-      className={`flex-col gap-4 rounded-md bg-project-card-bg-color px-8 py-10 text-modal-text-color shadow-2xl backdrop:backdrop-blur-sm dark:bg-project-card-bg-color-dark dark:text-modal-text-color-dark ${isActive ? "flex " : ""}`}
+      className={`flex-col gap-4 rounded-md bg-project-card-bg-color px-8 py-10 text-modal-text-color shadow-2xl backdrop:backdrop-blur-sm dark:bg-project-card-bg-color-dark dark:text-modal-text-color-dark ${isActive ? "flex" : ""}`}
     >
       <p className="text-lg font-semibold">{message}</p>
       <button

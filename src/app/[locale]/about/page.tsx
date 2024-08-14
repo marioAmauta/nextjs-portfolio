@@ -1,11 +1,13 @@
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+
+import { APP_LINKS } from "@/lib/constants";
+import { range } from "@/lib/utils";
+
 import { LinkButton } from "@/components/buttons";
 import { DescriptionParagraph, ParagraphsSection } from "@/components/sections";
 import { Title } from "@/components/titles";
-import { APP_LINKS } from "@/lib/constants";
-import { range } from "@/lib/utils";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
-export default async function AboutPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function AboutPage({ params: { locale } }: NextPageProps) {
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations("AboutPage");
@@ -17,7 +19,7 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
       <Title titleType="h2">{t("subtitle")}</Title>
       <ParagraphsSection>
         {paragraphs.map((p) => (
-          <DescriptionParagraph key={p} text={t(`paragraphs.p${p}` as any)} />
+          <DescriptionParagraph key={p} text={t(`paragraphs.p${p}` as TranslationKey)} />
         ))}
       </ParagraphsSection>
       <LinkButton label={t("linkButton")} href={APP_LINKS.projects} className="my-12" />

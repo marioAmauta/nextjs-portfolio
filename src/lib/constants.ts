@@ -1,3 +1,5 @@
+import { AppPathnames } from "@/config";
+
 import { ProjectCardProps } from "./definitions";
 
 export const ELEMENT_IDS = {
@@ -19,7 +21,10 @@ export const APP_LINKS = {
   contact: `/#${ELEMENT_IDS.contactSectionId}`
 };
 
-export const NAVBAR_LINKS = [
+export const NAVBAR_LINKS: {
+  name: TranslationKey;
+  path: AppPathnames;
+}[] = [
   {
     name: "home",
     path: APP_LINKS.home
@@ -136,6 +141,22 @@ export const TECHNOLOGIES = {
   heroicons: {
     label: "Heroicons",
     href: "https://heroicons.com/"
+  },
+  nextjs: {
+    label: "Next.js",
+    href: "https://nextjs.org/"
+  },
+  nextThemes: {
+    label: "Next Themes",
+    href: "https://github.com/pacocoursey/next-themes"
+  },
+  daisyui: {
+    label: "DaisyUI",
+    href: "https://daisyui.com/"
+  },
+  typescript: {
+    label: "TypeScript",
+    href: "https://www.typescriptlang.org/"
   }
 };
 
@@ -234,6 +255,23 @@ export const PROJECTS_DATA: Record<string, ProjectCardProps> = {
     links: {
       sourceCode: "https://github.com/marioAmauta/react-25-plus-5-clock",
       liveDemo: "https://react-25-plus-5-clock.vercel.app/"
+    }
+  },
+  githubDevfinder: {
+    title: "Github Devfinder",
+    description: "githubDevfinderDescription",
+    image: "/images/github-devfinder-desktop.png",
+    technologies: [
+      TECHNOLOGIES.react,
+      TECHNOLOGIES.nextjs,
+      TECHNOLOGIES.nextThemes,
+      TECHNOLOGIES.daisyui,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.typescript
+    ],
+    links: {
+      sourceCode: "https://github.com/marioAmauta/github-devfinder/",
+      liveDemo: "https://githubdevfinder.vercel.app/"
     }
   }
 };

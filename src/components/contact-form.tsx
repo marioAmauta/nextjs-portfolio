@@ -1,12 +1,15 @@
 "use client";
 
-import { Title } from "./titles";
-import { Modal } from "./modal";
-import { LoadingSpinner } from "./icons";
 import { FormEvent, useId, useRef, useState } from "react";
-import { isMessageSentType } from "@/lib/definitions";
 import { useTranslations } from "use-intl";
+
 import { sendEmail } from "@/app/actions";
+
+import { isMessageSentType } from "@/lib/definitions";
+
+import { LoadingSpinner } from "./icons";
+import { Modal } from "./modal";
+import { Title } from "./titles";
 
 export function ContactForm() {
   const t = useTranslations("ContactForm");

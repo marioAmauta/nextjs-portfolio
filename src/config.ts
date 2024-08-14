@@ -1,4 +1,5 @@
-import { Pathnames } from "next-intl/navigation";
+import { Pathnames } from "next-intl/routing";
+
 import { APP_LINKS } from "@/lib/constants";
 
 export const defaultLocale = "en" as const;
@@ -11,5 +12,7 @@ export const pathnames = {
   [about]: { en: about, es: "/acerca" },
   [projects]: { en: projects, es: "/proyectos" }
 } satisfies Pathnames<typeof locales>;
+
+export type Locale = (typeof locales)[number];
 
 export type AppPathnames = keyof typeof pathnames;

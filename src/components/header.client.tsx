@@ -1,10 +1,12 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
-import { APP_LINKS, ELEMENT_IDS } from "@/lib/constants";
 import { Link } from "@/navigation";
-import { Navbar } from "./navbar";
+import { Suspense, useEffect } from "react";
+
+import { APP_LINKS, ELEMENT_IDS } from "@/lib/constants";
+
 import { LanguageSwitcher } from "./language-switcher";
+import { Navbar } from "./navbar";
 import { BlurredBackground, ToggleButton } from "./sections";
 
 export function Header() {
@@ -12,7 +14,7 @@ export function Header() {
     let previousScrollPosition = window.scrollY;
 
     function handleScroll() {
-      let currentScrollPosition = window.scrollY;
+      const currentScrollPosition = window.scrollY;
       const $header = document.getElementById(ELEMENT_IDS.mainHeaderId);
 
       if ($header === null) return;
@@ -55,7 +57,7 @@ export function Header() {
   return (
     <header
       id={ELEMENT_IDS.mainHeaderId}
-      className="sticky top-0 z-30 flex h-[--header-height] items-center justify-between border-b border-app-border-color bg-app-bg-color px-4 font-semibold transition-all duration-300 dark:border-app-border-color-dark dark:bg-app-bg-color-dark md:transition-none lg:px-5% xl:px-10% 2xl:px-15%"
+      className="sticky top-0 z-30 flex h-[--header-height] items-center justify-between border-b border-app-border-color bg-app-bg-color px-4 font-semibold transition-all duration-300 dark:border-app-border-color-dark dark:bg-app-bg-color-dark lg:px-5% xl:px-10% 2xl:px-15%"
     >
       <Link href={APP_LINKS.home} className="text-xl">
         Mario Programador

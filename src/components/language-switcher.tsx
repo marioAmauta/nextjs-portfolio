@@ -1,25 +1,22 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { ChangeEvent } from "react";
+import { Locale } from "@/config";
 import { usePathname, useRouter } from "@/navigation";
+import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { ChangeEvent } from "react";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const queryParams = Object.fromEntries(searchParams.entries());
 
   function handleChange(event: ChangeEvent<HTMLSelectElement>) {
-    const options = { locale: event.target.value, scroll: false };
-
-    if (queryParams) {
-      router.replace({ pathname: pathname as number, query: { ...queryParams } }, options);
-    } else {
-      router.replace({ pathname: pathname as number }, options);
-    }
+    router.replace(
+      { pathname: pathname.toString(), query: Object.fromEntries(searchParams.entries()) },
+      { locale: event.target.value as Locale, scroll: false }
+    );
   }
 
   return (

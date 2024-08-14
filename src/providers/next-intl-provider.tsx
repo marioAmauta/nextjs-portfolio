@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode } from "react";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
+import { ReactNode } from "react";
 
 export function IntlClientProvider({ locale, messages, children }: { locale: string; messages: AbstractIntlMessages; children: ReactNode }) {
   return (
