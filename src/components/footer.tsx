@@ -4,8 +4,10 @@ export function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="container flex h-header-height items-center justify-center border-t">
-      <p className="text-center">{t("madeWithLove")}</p>
+    <footer className="flex h-header-height items-center justify-center border-t">
+      <div className="container">
+        <p className="text-center">{t("madeWithLove")}</p>
+      </div>
     </footer>
   );
 }
