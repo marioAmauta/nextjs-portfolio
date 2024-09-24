@@ -1,88 +1,68 @@
 {
+  "metadata": {
+    "description": "Construyo sitios web utilizando tecnologías modernas para ofrecer excelentes interacciones con el usuario y fomentar un crecimiento empresarial continuo, siempre esforzándome por brindar la mejor experiencia."
+  },
+  "HomePage": {
+    "HeroSection": {
+      "title": "Soy Mario",
+      "subtitle": "Desarrollador Frontend",
+      "description": "Siempre mejorando para hacer realidad el software de tus sueños"
+    },
+    "AboutSection": {
+      "title": "Sobre Mí",
+      "description": {
+        "p1": "Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.",
+        "p2": "Enfocado en el desarrollo web, trabajando con React, Next.js, Tailwind CSS, Playwright, Cypress,  y otras tecnologías modernas."
+      },
+      "buttonLabel": "Más sobre mí"
+    },
+    "ProjectsSection": {
+      "title": "Mis Proyectos",
+      "description": "Estos son algunos de mis proyectos",
+      "buttonLabel": "Ver más proyectos"
+    },
+    "ContactSection": {
+      "title": "Contacto"
+    }
+  },
   "NotFoundPage": {
     "title": "Página no encontrada",
     "description": "Lo siento, la página que estás buscando no existe",
     "buttonLabel": "Volver a la página de Inicio"
   },
-  "metadata": {
-    "description": "Construyo sitios web utilizando tecnologías modernas para ofrecer excelentes interacciones con el usuario y fomentar un crecimiento empresarial continuo, siempre esforzándome por brindar la mejor experiencia."
-  },
-  "Navbar": {
-    "home": "Inicio",
-    "about": "Sobre Mí",
-    "myProjects": "Proyectos",
-    "contact": "Contacto"
-  },
   "Footer": {
     "madeWithLove": "Hecho con ❤️ por Mario Programador"
   },
-  "HeroSection": {
-    "title": "Soy Mario",
-    "subtitle": "Desarrollador de Software",
-    "description": {
-      "p1": "Apasionado por la tecnología.",
-      "p2": "Siempre mejorando mis habilidades para hacer realidad el sitio web de tus sueños."
-    }
-  },
-  "AboutSection": {
-    "title": "Sobre Mí",
-    "description": {
-      "p1": "Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.",
-      "p2": "Actualmente, estoy enfocado en el desarrollo web, trabajando con React, Next.js y Tailwind CSS. De hecho, este sitio web está construido utilizando estas tecnologías.",
-      "p3": "También tengo experiencia con Node.js, TypeScript, Python y MongoDB."
-    },
-    "buttonLabel": "Más sobre mí"
-  },
-  "ProjectsSection": {
-    "title": "Mis Proyectos",
-    "description": "Estos son algunos de mis proyectos",
-    "buttonLabel": "Ver más proyectos"
-  },
-  "projectsData": {
-    "pomodoroTimerDescription": "Este proyecto es un temporizador Pomodoro que puedes usar para mejorar tu productividad. Puedes configurar el temporizador para que funcione en sesiones de 25 minutos con descansos de 5 minutos, o puedes personalizarlo para que se ajuste a tus necesidades.",
-    "calculatorDescription": "Calculadora construida con React, utilizando la librería matemática 'math-expression-evaluator', aplicando la lógica de fórmulas/expresiones mediante uno de los hooks de React, 'useReducer', y verificando su funcionamiento con la librería de pruebas 'Cypress'",
-    "markdownPreviewerDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
-    "randomQuoteMachineDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
-    "javaScriptDocumentationDescription": "Este proyecto está dedicado a la Documentación de JavaScript, dividido en secciones donde puedes encontrar información sobre este increíble lenguaje, cómo declarar variables, trabajar con diferentes tipos de datos y mucho más.",
-    "theSaxophoneCornerDescription": "Este proyecto es una pequeña simulación de una tienda de saxofones donde puedes ver diferentes modelos de saxofones y sus respectivos precios, junto con secciones informativas sobre el negocio. Además, hay un formulario ficticio disponible para suscribirte al boletín de la tienda.",
-    "surveyFormDescription": "Este proyecto es un formulario de encuesta simulado diseñado para recopilar información de los usuarios. Incluye una variedad de elementos de entrada, como campos de texto, campos de correo electrónico, campos numéricos, botones de radio, casillas de verificación y un menú desplegable.",
-    "githubDevfinderDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo"
-  },
-  "ProjectCard": {
-    "title2": "Tecnologías que usé",
-    "sourceCode": "Código",
-    "liveDemo": "Demo"
-  },
-  "ContactSection": {
-    "title": "Contacto",
+  "ContactButtons": {
     "description": "Encuéntrame en las siguientes plataformas"
   },
+  "ProjectCard": {
+    "sourceCode": "Código",
+    "liveDemo": "Proyecto"
+  },
   "ContactForm": {
-    "title": "Envíame un mensaje",
-    "name": "Nombre",
+    "nameLabel": "Nombre",
     "namePlaceholder": "Tu nombre",
-    "email": "Correo electrónico",
+    "nameError": "Por favor, introduce tu nombre",
+    "emailLabel": "Correo electrónico",
     "emailPlaceholder": "hola@hola.com",
-    "message": "Mensaje",
+    "emailError": "Por favor, introduce una dirección de correo electrónico válida",
+    "messageLabel": "Mensaje",
     "messagePlaceholder": "¡Hola Mario! Me gustaría hablar contigo sobre...",
+    "messageError": "Por favor, introduce un mensaje",
     "submit": "Enviar Mensaje",
     "success": "Mensaje enviado con éxito!  ",
     "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.",
-    "close": "Cerrar"
+    "invalidData": "Por favor, complete todos los campos correctamente."
   },
-  "AboutPage": {
-    "title": "Sobre Mí",
-    "subtitle": "Mi travesía como desarrollador",
-    "paragraphs": {
-      "p1": "En mis primeros días, comencé a aprender sobre el desarrollo web en 2021, comenzando con HTML, CSS y JavaScript. Usé aplicaciones móviles y leí artículos sobre desarrollo web. También vi videos en YouTube. Aprendí mucho de estos recursos, pero quería aprender más, así que comencé a buscar cursos.",
-      "p2": "Descubrí freeCodeCamp, una plataforma increíble para aprender desarrollo web. Comencé con la Certificación de Diseño Web Responsivo, luego avancé a la Certificación de Algoritmos y Estructuras de Datos en JavaScript. Y recientemente, completé la Certificación de Bibliotecas de Desarrollo Frontend.",
-      "p3": "Sin embargo, también quería expandir mi conocimiento, así que comencé a explorar frameworks para abordar proyectos más complejos. Opté por Next.js para React, y en cuanto al diseño, he estado utilizando Tailwind CSS.",
-      "p4": "Pero no estoy limitado a aprender solo una tecnología. De hecho, he completado un curso de Python donde aprendí cómo usar Python y sus bibliotecas, como Flask y Tkinter."
-    },
-    "linkButton": "Ver proyectos"
+  "ThemeSwitcher": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
   },
-  "ProjectsPage": {
-    "title": "Mis Proyectos",
-    "buttonLabel": "Contacto"
+  "projectDescriptions": {
+    "markdownPreviewerDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
+    "randomQuoteMachineDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
+    "githubDevfinderDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo"
   }
 }

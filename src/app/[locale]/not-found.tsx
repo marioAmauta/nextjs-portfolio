@@ -5,22 +5,18 @@ import { getTranslations } from "next-intl/server";
 
 import { APP_LINKS } from "@/lib/constants";
 
-import { LinkButton } from "@/components/buttons";
-import { Title } from "@/components/titles";
+import { ButtonLink } from "@/components/link-button";
+import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
 
 export default async function NotFoundPage() {
   const t = await getTranslations("NotFoundPage");
 
   return (
     <section className="flex h-[calc(100dvh-(var(--header-height)*2))] flex-col items-center justify-center gap-10 text-center">
-      <Title titleType="h1" className="py-0">
-        404
-      </Title>
-      <Title titleType="h2" className="mb-0">
-        {t("title")}
-      </Title>
-      <p className="text-lg font-semibold">{t("description")}</p>
-      <LinkButton href={APP_LINKS.home} label={t("buttonLabel")} />
+      <TypographyH1>404</TypographyH1>
+      <TypographyH2>{t("title")}</TypographyH2>
+      <TypographyP className="text-lg font-semibold">{t("description")}</TypographyP>
+      <ButtonLink href={APP_LINKS.homePage}>{t("buttonLabel")}</ButtonLink>
     </section>
   );
 }

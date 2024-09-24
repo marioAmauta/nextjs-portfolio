@@ -1,100 +1,95 @@
 "use client";
 
-import { FormEvent, useId, useRef, useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useTransition } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { useTranslations } from "use-intl";
 
 import { sendEmail } from "@/app/actions";
 
-import { isMessageSentType } from "@/lib/definitions";
+import { ContactFormSchemaType } from "@/lib/definitions";
+import { contactFormSchema } from "@/lib/schemas";
 
-import { LoadingSpinner } from "./icons";
-import { Modal } from "./modal";
-import { Title } from "./titles";
+import { ButtonLoading } from "@/components/button-loading";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const t = useTranslations("ContactForm");
+  const [isPending, startTransition] = useTransition();
 
-  const nameInputId = useId();
-  const emailInputId = useId();
-  const messageTextareaId = useId();
-
-  const [isMessageSent, setIsMessageSent] = useState<isMessageSentType>("not sent yet");
-  const [isLoading, setIsLoading] = useState(false);
-
-  const formRef = useRef<HTMLFormElement>(null);
-
-  async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    setIsLoading(true);
-
-    const formData = new FormData(event.currentTarget);
-
-    try {
-      const res = await sendEmail(formData);
-
-      if (res.ok) {
-        setIsMessageSent("sent");
-        formRef.current?.reset();
-      } else {
-        setIsMessageSent("error");
-      }
-    } catch (error) {
-      console.error(error);
-      throw new Error("Failed to send email");
-    } finally {
-      setIsLoading(false);
+  const form = useForm<ContactFormSchemaType>({
+    resolver: zodResolver(contactFormSchema(t)),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: ""
     }
+  });
+
+  async function onSubmit(data: ContactFormSchemaType) {
+    startTransition(async () => {
+      const response = await sendEmail(data);
+
+      if (response) {
+        if (response.success) {
+          toast.success(t("success"));
+          form.reset();
+        } else {
+          toast.error(t("error"));
+        }
+      }
+    });
   }
 
   return (
-    <>
-      <Title titleType="h3" className="pt-2 md:text-center">
-        {t("title")}
-      </Title>
-      <Modal
-        isActive={isMessageSent !== "not sent yet"}
-        message={isMessageSent === "sent" ? t("success") : t("error")}
-        onClickClose={() => setIsMessageSent("not sent yet")}
-        buttonLabel={t("close")}
-      />
-      <form ref={formRef} onSubmit={handleFormSubmit} className="mx-auto mb-16 mt-10 flex max-w-xl flex-col gap-4 md:my-16">
-        <label htmlFor={nameInputId} className="text-lg">
-          {t("name")}
-        </label>
-        <input
-          required
-          id={nameInputId}
-          type="text"
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-lg space-y-8 py-8">
+        <FormField
+          control={form.control}
           name="name"
-          placeholder={t("namePlaceholder")}
-          className="h-10 rounded-lg bg-input-bg-color px-4 outline-0 dark:bg-input-bg-color-dark"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("nameLabel")}</FormLabel>
+              <FormControl>
+                <Input placeholder={t("namePlaceholder")} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-        <label htmlFor={emailInputId} className="text-lg">
-          {t("email")}
-        </label>
-        <input
-          required
-          id={emailInputId}
-          type="email"
+        <FormField
+          control={form.control}
           name="email"
-          placeholder={t("emailPlaceholder")}
-          className="h-10 rounded-lg bg-input-bg-color px-4 outline-0 dark:bg-input-bg-color-dark"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("emailLabel")}</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder={t("emailPlaceholder")} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-        <label htmlFor={messageTextareaId} className="text-lg">
-          {t("message")}
-        </label>
-        <textarea
-          required
-          id={messageTextareaId}
+        <FormField
+          control={form.control}
           name="message"
-          placeholder={t("messagePlaceholder")}
-          className="h-24 resize-none rounded-lg bg-input-bg-color px-4 py-2 outline-0 dark:bg-input-bg-color-dark"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("messageLabel")}</FormLabel>
+              <FormControl>
+                <Textarea placeholder={t("messagePlaceholder")} className="resize-none" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-        <button className="relative mt-4 flex items-center justify-center rounded-lg bg-btn-bg-color px-4 py-2 text-lg font-semibold dark:bg-btn-bg-color-dark">
-          {t("submit")} {isLoading && <LoadingSpinner />}
-        </button>
+        <ButtonLoading loading={isPending} disabled={isPending} className="w-full">
+          {t("submit")}
+        </ButtonLoading>
       </form>
-    </>
+    </Form>
   );
 }

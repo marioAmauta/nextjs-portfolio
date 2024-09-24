@@ -5,7 +5,7 @@ type LocaleParams = {
 };
 
 type NextPageProps = {
-  searchParams?: Record<string, string | string[]>;
+  searchParams: Record<string, string | string[] | undefined>;
   params: {
     locale: Languages;
   };

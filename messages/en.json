@@ -1,88 +1,68 @@
 {
+  "metadata": {
+    "description": "I build websites using modern technologies to provide excellent user interactions and facilitate continuous business growth, always striving to deliver the best experience."
+  },
+  "HomePage": {
+    "HeroSection": {
+      "title": "I'm Mario",
+      "subtitle": "Frontend Developer",
+      "description": "Always improving to make the software of your dreams come true"
+    },
+    "AboutSection": {
+      "title": "About Me",
+      "description": {
+        "p1": "I'm a self-taught software developer who loves learning new things and strives to improve every day.",
+        "p2": "Focused on web development, working with React, Next.js, Tailwind CSS, Playwright, Cypress, and other modern technologies."
+      },
+      "buttonLabel": "More about me"
+    },
+    "ProjectsSection": {
+      "title": "My Projects",
+      "description": "These are some of my last projects",
+      "buttonLabel": "See more projects"
+    },
+    "ContactSection": {
+      "title": "Contact Me"
+    }
+  },
   "NotFoundPage": {
     "title": "Page not found",
     "description": "Sorry, The page you are looking for does not exist",
     "buttonLabel": "Return to Home Page"
   },
-  "metadata": {
-    "description": "I build websites using modern technologies to provide excellent user interactions and facilitate continuous business growth, always striving to deliver the best experience."
-  },
-  "Navbar": {
-    "home": "Home",
-    "about": "About",
-    "myProjects": "Projects",
-    "contact": "Contact"
-  },
   "Footer": {
     "madeWithLove": "Made with ❤️ by Mario Programador"
   },
-  "HeroSection": {
-    "title": "I'm Mario",
-    "subtitle": "Software Developer",
-    "description": {
-      "p1": "Passionate about technology.",
-      "p2": "Always improving my skills to make the website of your dreams come true."
-    }
-  },
-  "AboutSection": {
-    "title": "About Me",
-    "description": {
-      "p1": "I'm a self-taught software developer who loves learning new things and strives to improve every day.",
-      "p2": "Currently, I am focused on web development, working with React, Next.js, and Tailwind CSS. In fact, this website is built using these technologies.",
-      "p3": "I also have experience with Node.js, TypeScript, Python, and MongoDB."
-    },
-    "buttonLabel": "More about me"
-  },
-  "ProjectsSection": {
-    "title": "My Projects",
-    "description": "These are some of my projects",
-    "buttonLabel": "See more projects"
-  },
-  "projectsData": {
-    "pomodoroTimerDescription": "This project is a Pomodoro timer that you can use to improve your productivity. You can set the timer to work in sessions of 25 minutes with 5-minute breaks, or you can customize it to fit your needs.",
-    "calculatorDescription": "Calculator built with React, using the mathematical library 'math-expression-evaluator,' applying the logic of formulas/expressions through one of React's hooks, 'useReducer,' and verifying its functionality with the testing library 'Cypress'.",
-    "markdownPreviewerDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",
-    "randomQuoteMachineDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
-    "javaScriptDocumentationDescription": "This project is dedicated to JavaScript Documentation, divided into sections where you can find information about this amazing language, how to declare variables, work with different data types, and much more.",
-    "theSaxophoneCornerDescription": "This project is a small simulation of a Saxophone Store where you can view various Saxophone models and their respective prices, along with informative sections about the business. Additionally, there's a fictitious form available for subscribing to the store's newsletter.",
-    "surveyFormDescription": "This project is a simulated survey form designed to gather information from users. It incorporates a variety of input elements, including text fields, email fields, numeric fields, radio buttons, checkboxes, and a dropdown menu.",
-    "githubDevfinderDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following"
-  },
-  "ProjectCard": {
-    "title2": "Technologies I used",
-    "sourceCode": "Code",
-    "liveDemo": "Demo"
-  },
-  "ContactSection": {
-    "title": "Contact Me",
+  "ContactButtons": {
     "description": "Find me on the following platforms"
   },
+  "ProjectCard": {
+    "sourceCode": "Source Code",
+    "liveDemo": "View Project"
+  },
   "ContactForm": {
-    "title": "Send me a Message",
-    "name": "Name",
+    "nameLabel": "Name",
     "namePlaceholder": "Your name",
-    "email": "Email",
+    "nameError": "Please enter your name",
+    "emailLabel": "Email",
     "emailPlaceholder": "hello@hello.com",
-    "message": "Message",
+    "emailError": "Please enter a valid email",
+    "messageLabel": "Message",
     "messagePlaceholder": "Hello Mario! I would like to talk to you about...",
+    "messageError": "Please enter a message",
     "submit": "Send Message",
     "success": "Message sent successfully!",
     "error": "An error occurred while sending the message. Please try again later.",
-    "close": "Close"
+    "invalidData": "Please fill in all fields correctly."
   },
-  "AboutPage": {
-    "title": "About Me",
-    "subtitle": "My Dev Journey",
-    "paragraphs": {
-      "p1": "In my early days, I started learning about web development in 2021, beginning with HTML, CSS, and JavaScript. I used mobile apps and read articles about web development. I also watched videos on YouTube. I learned a lot from these resources, but I wanted to learn more, so I started looking for courses.",
-      "p2": "I discovered freeCodeCamp, an incredible platform for learning web development. I started with the Responsive Web Design Certification, then progressed to the JavaScript Algorithms and Data Structures Certification. And recently, I completed the Front End Development Libraries Certification.",
-      "p3": "However, I also wanted to expand my knowledge, so I began exploring frameworks to tackle more complex projects. I opted for Next.js for React, and for styling, I've been using Tailwind CSS.",
-      "p4": "But I am not limited to learning just one technology. In fact, I have completed a Python course where I learned how to use Python and its libraries, such as Flask and Tkinter."
-    },
-    "linkButton": "See projects"
+  "ThemeSwitcher": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   },
-  "ProjectsPage": {
-    "title": "My Projects",
-    "buttonLabel": "Contact Me"
+  "projectDescriptions": {
+    "markdownPreviewerDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",
+    "randomQuoteMachineDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
+    "githubDevfinderDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following"
   }
 }

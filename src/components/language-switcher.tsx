@@ -1,28 +1,51 @@
 "use client";
 
-import { Locale } from "@/config";
+import { Locale, locales } from "@/config";
 import { usePathname, useRouter } from "@/navigation";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { ChangeEvent } from "react";
+import { useEffect, useState } from "react";
+
+import { Select, SelectValue, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
+  const { replace } = useRouter();
   const searchParams = useSearchParams();
+  const [selectedLanguage, setSelectedLanguage] = useState(locale);
 
-  function handleChange(event: ChangeEvent<HTMLSelectElement>) {
-    router.replace(
-      { pathname: pathname.toString(), query: Object.fromEntries(searchParams.entries()) },
-      { locale: event.target.value as Locale, scroll: false }
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  function handleChange(value: Locale) {
+    setSelectedLanguage(value);
+
+    replace(
+      { pathname: pathname.toString(), query: { ...Object.fromEntries(searchParams) } },
+      { locale: value, scroll: false }
     );
   }
 
   return (
-    <select defaultValue={locale} onChange={handleChange} className="z-50 cursor-pointer bg-transparent">
-      <option value="en">EN</option>
-      <option value="es">ES</option>
-    </select>
+    <Select value={selectedLanguage} onValueChange={handleChange}>
+      <SelectTrigger className="bg-transparent">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent align="center" className="min-w-max">
+        {locales.map((locale) => (
+          <SelectItem key={locale} value={locale} className="cursor-pointer">
+            {locale.toUpperCase()}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }

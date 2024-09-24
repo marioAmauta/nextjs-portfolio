@@ -1,69 +1,13 @@
-import { usePathname } from "@/navigation";
-import { ReactNode } from "react";
+import { z } from "zod";
 
-export type LinkWithLabel = {
-  label: string;
-  href: string;
-};
+import { contactFormSchema } from "./schemas";
 
-export type ProjectCardProps = {
-  title: string;
-  description: TranslationKey;
-  image: string;
-  technologies: LinkWithLabel[];
-  links: {
-    sourceCode: string;
-    liveDemo: string;
-  };
-};
+export type ActionReturnType =
+  | {
+      success: boolean;
+      errors?: Record<string, unknown>;
+      message?: string;
+    }
+  | undefined;
 
-export type LinkButtonProps = {
-  href: ReturnType<typeof usePathname>;
-  label: string;
-  className?: string;
-};
-
-export type SectionProps = {
-  id?: string;
-  children: ReactNode;
-  className?: string;
-};
-
-export type DescriptionParagraphProps = {
-  text: string;
-  className?: string;
-};
-
-export type DescriptionSectionProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-export type TitleProps = {
-  children: ReactNode;
-  titleType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "hero" | "heroSubtitle";
-  className?: string;
-};
-
-export type isMessageSentType = "not sent yet" | "sent" | "error";
-
-export type ModalProps = {
-  message: string;
-  buttonLabel: string;
-  onClickClose: () => void;
-} & useModalProps;
-
-export type useModalProps = {
-  isActive: boolean;
-};
-
-export type ProjectData = {
-  title: string;
-  images: {
-    desktop: string;
-  };
-  links: {
-    sourceCode: string;
-    liveDemo: string;
-  };
-};
+export type ContactFormSchemaType = z.infer<ReturnType<typeof contactFormSchema>>;

@@ -3,15 +3,16 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 import { getMessages, getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { Toaster } from "sonner";
+
+import { METADATA_DEFAULT } from "@/lib/constants";
 
 import { IntlClientProvider } from "@/providers/next-intl-provider";
 import { NextThemesProvider } from "@/providers/next-themes-provider";
 
-import { METADATA_DEFAULT } from "@/lib/constants";
-
-import { ArrowUpButton } from "@/components/buttons.client";
+import { ButtonBackToTop } from "@/components/button-back-to-top";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header.client";
+import { Header } from "@/components/header";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -70,17 +71,18 @@ export default async function LocaleLayout({ children, params: { locale } }: Lay
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-app-bg-color text-app-text-color dark:bg-app-bg-color-dark dark:text-app-text-color-dark">
+      <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-background">
         <NextThemesProvider>
           <IntlClientProvider locale={locale} messages={messages}>
             <Header />
-            <main className="px-4 lg:px-5% xl:px-10% 2xl:px-15%">
+            <main className="container mx-auto space-y-16 px-4 py-8">
               {children}
               <Analytics />
               <SpeedInsights />
             </main>
             <Footer />
-            <ArrowUpButton />
+            <ButtonBackToTop />
+            <Toaster position="top-center" />
           </IntlClientProvider>
         </NextThemesProvider>
       </body>

@@ -16,7 +16,16 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": [["/^next/", "module"], "/^@/styles/", "/^@/app/", "/^@/providers/", "/^@/lib/", "/^@/components/", ["parent", "sibling", "index"]],
+        "groups": [
+          ["/^next/", "module"],
+          "/^@/styles/",
+          "/^@/app/",
+          "/^@/lib/",
+          "/^@/providers/",
+          "/^@/hooks/",
+          "/^@/components/",
+          ["parent", "sibling", "index"]
+        ],
         "alphabetize": {
           "order": "asc",
           "ignoreCase": true
@@ -25,8 +34,10 @@
     ],
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/no-empty-object-type": "warn",
+    "@typescript-eslint/no-empty-object-type": "off",
+    "@typescript-eslint/no-require-imports": "warn",
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
     "no-console": "warn"
   }
 }

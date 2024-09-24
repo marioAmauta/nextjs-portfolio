@@ -1,30 +1,58 @@
+"use client";
+
+import { ExternalLink, Github } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { ProjectCardProps } from "@/lib/definitions";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { ContactLinkButton, TechLinkButton } from "./buttons";
+import { ButtonLinkExternal, TechLinkButton } from "./link-button";
 
-export function ProjectCard({ title, description, image, technologies, links }: ProjectCardProps) {
+type LinkWithLabel = {
+  label: string;
+  href: string;
+};
+
+export type ProjectCardProps = {
+  title: string;
+  descriptionKey: TranslationKey;
+  imageSrc: string;
+  technologies: LinkWithLabel[];
+  links: {
+    sourceCode: string;
+    liveDemo: string;
+  };
+};
+
+export function ProjectCard({ imageSrc, title, technologies, descriptionKey, links }: ProjectCardProps) {
   const t = useTranslations("ProjectCard");
 
   return (
-    <article className="grid grid-rows-[auto,1fr] overflow-hidden rounded-lg bg-project-card-bg-color text-center shadow-lg dark:bg-project-card-bg-color-dark">
-      <Image src={image} alt={title} width={400} height={200} className="w-full" />
-      <div className="grid gap-4 px-4 py-8">
-        <h2 className="text-center text-2xl font-bold">{title}</h2>
-        <p>{description}</p>
-        <h3 className="text-xl font-semibold">{t("title2")}</h3>
-        <section className="flex flex-wrap justify-center gap-2">
-          {technologies.map(({ label, href }) => (
-            <TechLinkButton key={href} href={href} label={label} />
-          ))}
-        </section>
-        <section className="flex justify-center gap-4 md:gap-8">
-          <ContactLinkButton href={links.sourceCode} label={t("sourceCode")} />
-          <ContactLinkButton href={links.liveDemo} label={t("liveDemo")} />
-        </section>
+    <Card className="w-full max-w-sm overflow-hidden">
+      <div className="relative h-48">
+        <Image src={imageSrc} alt={`${title}'s image`} fill={true} />
       </div>
-    </article>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{descriptionKey}</CardDescription>
+        <div className="flex flex-wrap justify-center gap-2">
+          {technologies.map(({ label, href }) => (
+            <TechLinkButton href={href} key={href}>
+              {label}
+            </TechLinkButton>
+          ))}
+        </div>
+      </CardHeader>
+      <CardFooter className="grid grid-cols-2 gap-8">
+        <ButtonLinkExternal href={links.liveDemo} className="flex justify-center gap-2">
+          <ExternalLink className="size-4" />
+          {t("liveDemo")}
+        </ButtonLinkExternal>
+        <ButtonLinkExternal href={links.sourceCode} className="flex justify-center gap-2">
+          <Github className="size-4" />
+          {t("sourceCode")}
+        </ButtonLinkExternal>
+      </CardFooter>
+    </Card>
   );
 }

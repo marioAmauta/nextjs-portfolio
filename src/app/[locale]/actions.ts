@@ -1,11 +1,29 @@
 "use server";
 
-import sgMail, { MailDataRequired } from "@sendgrid/mail";
+import "server-only";
 
-export async function sendEmail(formData: FormData): Promise<{ ok: boolean }> {
+import sgMail, { MailDataRequired } from "@sendgrid/mail";
+import { getTranslations } from "next-intl/server";
+
+import { ActionReturnType } from "@/lib/definitions";
+import { contactFormSchema } from "@/lib/schemas";
+
+export async function sendEmail(data: unknown): Promise<ActionReturnType> {
   sgMail.setApiKey(String(process.env.SENDGRID_API_KEY));
 
-  const { name, email, message } = Object.fromEntries(formData);
+  const t = await getTranslations("ContactForm");
+
+  const parsedContactData = contactFormSchema(t).safeParse(data);
+
+  if (!parsedContactData.success) {
+    return {
+      success: false,
+      errors: parsedContactData.error.flatten().fieldErrors,
+      message: t("invalidData")
+    };
+  }
+
+  const { name, email, message } = parsedContactData.data;
 
   const msg: MailDataRequired = {
     to: String(process.env.SENDGRID_TO),
@@ -21,10 +39,14 @@ export async function sendEmail(formData: FormData): Promise<{ ok: boolean }> {
   try {
     await sgMail.send(msg);
 
-    return { ok: true };
-  } catch (error) {
-    console.error(error);
-
-    return { ok: false };
+    return {
+      success: true,
+      message: t("success")
+    };
+  } catch {
+    return {
+      success: false,
+      message: t("error")
+    };
   }
 }

@@ -1,10 +1,11 @@
 "use client";
 
+import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { ArrowUpIcon } from "./icons";
+import { cn } from "@/lib/utils";
 
-export function ArrowUpButton() {
+export function ButtonBackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   function scrollToTop() {
@@ -33,9 +34,12 @@ export function ArrowUpButton() {
   return (
     <button
       onClick={scrollToTop}
-      className={`bottom-8 right-8 rounded-full bg-btn-bg-color dark:bg-btn-bg-color-dark md:bottom-16 md:right-16 ${isVisible ? "fixed" : "hidden"}`}
+      className={cn(
+        "bottom-14 right-8 rounded-full bg-background/80 p-3 shadow-lg backdrop-blur dark:bg-background/50 md:bottom-16 md:right-16",
+        isVisible ? "fixed" : "hidden"
+      )}
     >
-      <ArrowUpIcon className="m-3 h-5 w-5 fill-app-text-color dark:fill-app-text-color-dark" />
+      <ArrowUp className="size-8" />
     </button>
   );
 }

@@ -11,35 +11,63 @@ export default {
       minHeight: {
         "screen-dynamic": "100dvh"
       },
+      height: {
+        "header-height": "var(--header-height)"
+      },
       padding: {
         "5%": "5%",
         "10%": "10%",
         "15%": "15%"
       },
       colors: {
-        "app-bg-color": "#f5f5f5",
-        "app-bg-color-dark": "#333",
-        "app-text-color": "#333",
-        "app-text-color-dark": "#fff",
-        "app-border-color": "#ccc",
-        "app-border-color-dark": "#555",
-        "btn-bg-color": "#ccc",
-        "btn-bg-color-dark": "#555",
-        "btn-text-color": "#333",
-        "btn-text-color-dark": "#fff",
-        "input-bg-color": "#fff",
-        "input-bg-color-dark": "#777",
-        "project-card-bg-color": "#c4c4c4",
-        "project-card-bg-color-dark": "#666",
-        "project-card-border-color": "#d3d3d3",
-        "project-card-border-color-dark": "#555",
-        "modal-text-color": "#555",
-        "modal-text-color-dark": "#222",
-        "modal-btn-bg-color": "#999",
-        "modal-btn-bg-color-dark": "#888",
-        "modal-btn-text-color": "#333"
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))"
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))"
+        },
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))"
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))"
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))"
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))"
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))"
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))"
+        }
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)"
       }
     }
   },
-  plugins: []
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require("tailwindcss-animate")]
 } satisfies Config;
