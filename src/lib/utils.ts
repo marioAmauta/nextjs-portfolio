@@ -8,3 +8,11 @@ export function range({ start, stop, step = 1 }: { start: number; stop: number; 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+export function createSlug(...inputs: string[]): string {
+  return inputs
+    .map((el) => el.split(" ").filter((i) => i))
+    .flat()
+    .join("-")
+    .toLocaleLowerCase();
+}

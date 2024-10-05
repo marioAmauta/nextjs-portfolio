@@ -1,4 +1,6 @@
-export const APP_LINKS = {
+import { AppPathnames } from "@/i18n/routing";
+
+export const APP_LINKS: Record<string, AppPathnames> = {
   homePage: "/"
 };
 

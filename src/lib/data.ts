@@ -1,6 +1,7 @@
-import { ProjectCardProps } from "@/components/project-card";
+import { LinkWithLabel, ProjectData } from "./definitions";
+import { ProjectDataDTO } from "./dto";
 
-export const TECHNOLOGIES = {
+export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
   html: {
     label: "HTML",
     href: "https://developer.mozilla.org/en-US/docs/Web/HTML"
@@ -64,24 +65,64 @@ export const TECHNOLOGIES = {
   typescript: {
     label: "TypeScript",
     href: "https://www.typescriptlang.org/"
+  },
+  playwright: {
+    href: "https://playwright.dev/",
+    label: "Playwright"
+  },
+  shadcn: {
+    href: "https://ui.shadcn.com/",
+    label: "shadcn"
+  },
+  lucia: {
+    href: "https://lucia-auth.com/",
+    label: "Lucia"
+  },
+  prisma: {
+    href: "https://www.prisma.io/",
+    label: "Prisma"
+  },
+  reactHookForm: {
+    href: "https://react-hook-form.com/",
+    label: "React Hook Form"
+  },
+  zod: {
+    href: "https://zod.dev/",
+    label: "Zod"
   }
 };
 
-export const PROJECTS_DATA: Record<string, ProjectCardProps> = {
+export const PROJECTS_DATA: Record<string, ProjectData> = {
   randomQuoteMachine: {
     title: "Random Quote Machine",
-    descriptionKey: "randomQuoteMachineDescription",
-    imageSrc: "/images/random-quote-machine-desktop.png",
+    shortDescriptionKey: "randomQuoteMachineShortDescription",
+    longDescriptionKey: "randomQuoteMachineLongDescription",
+    longDescriptionParagraphs: ["p1"],
+    imageSrc: {
+      desktop: ["/images/random-quote-machine-desktop-01.png", "/images/random-quote-machine-desktop-02.png"],
+      mobile: ["/images/random-quote-machine-mobile-01.png", "/images/random-quote-machine-mobile-02.png"]
+    },
     technologies: [TECHNOLOGIES.html, TECHNOLOGIES.css, TECHNOLOGIES.javascript, TECHNOLOGIES.react, TECHNOLOGIES.vite],
-    links: {
-      sourceCode: "https://github.com/marioAmauta/random-quote-machine",
-      liveDemo: "https://random-quote-machine-marioamauta.vercel.app/"
-    }
+    liveUrl: "https://random-quote-machine-marioamauta.vercel.app/",
+    repoUrl: "https://github.com/marioAmauta/random-quote-machine"
   },
   markdownPreviewer: {
     title: "Markdown Previewer",
-    descriptionKey: "markdownPreviewerDescription",
-    imageSrc: "/images/markdown-previewer-desktop.png",
+    shortDescriptionKey: "markdownPreviewerShortDescription",
+    longDescriptionKey: "markdownPreviewerLongDescription",
+    longDescriptionParagraphs: ["p1"],
+    imageSrc: {
+      desktop: [
+        "/images/markdown-previewer-desktop-01.png",
+        "/images/markdown-previewer-desktop-03.png",
+        "/images/markdown-previewer-desktop-03.png"
+      ],
+      mobile: [
+        "/images/markdown-previewer-mobile-01.png",
+        "/images/markdown-previewer-mobile-02.png",
+        "/images/markdown-previewer-mobile-03.png"
+      ]
+    },
     technologies: [
       TECHNOLOGIES.html,
       TECHNOLOGIES.css,
@@ -92,15 +133,26 @@ export const PROJECTS_DATA: Record<string, ProjectCardProps> = {
       TECHNOLOGIES.marked,
       TECHNOLOGIES.vite
     ],
-    links: {
-      sourceCode: "https://github.com/marioAmauta/markdown-previewer",
-      liveDemo: "https://markdown-previewer-marioprogramador.vercel.app/"
-    }
+    repoUrl: "https://github.com/marioAmauta/markdown-previewer",
+    liveUrl: "https://markdown-previewer-marioprogramador.vercel.app/"
   },
   githubDevfinder: {
     title: "Github Devfinder",
-    descriptionKey: "githubDevfinderDescription",
-    imageSrc: "/images/github-devfinder-desktop.png",
+    shortDescriptionKey: "githubDevfinderShortDescription",
+    longDescriptionKey: "githubDevfinderLongDescription",
+    longDescriptionParagraphs: ["p1"],
+    imageSrc: {
+      desktop: [
+        "/images/github-devfinder-desktop-01.png",
+        "/images/github-devfinder-desktop-02.png",
+        "/images/github-devfinder-desktop-03.png"
+      ],
+      mobile: [
+        "/images/github-devfinder-mobile-01.png",
+        "/images/github-devfinder-mobile-02.png",
+        "/images/github-devfinder-mobile-03.png"
+      ]
+    },
     technologies: [
       TECHNOLOGIES.react,
       TECHNOLOGIES.nextjs,
@@ -109,9 +161,69 @@ export const PROJECTS_DATA: Record<string, ProjectCardProps> = {
       TECHNOLOGIES.tailwindcss,
       TECHNOLOGIES.typescript
     ],
-    links: {
-      sourceCode: "https://github.com/marioAmauta/github-devfinder/",
-      liveDemo: "https://githubdevfinder.vercel.app/?user=marioAmauta"
-    }
+    repoUrl: "https://github.com/marioAmauta/github-devfinder/",
+    liveUrl: "https://githubdevfinder.vercel.app/?q=marioAmauta"
+  },
+  clientesCarwash: {
+    title: "Clientes Carwash",
+    shortDescriptionKey: "clientesCarwashShortDescription",
+    longDescriptionKey: "clientesCarwashLongDescription",
+    longDescriptionParagraphs: ["p1"],
+    imageSrc: {
+      desktop: [
+        "/images/clientes-carwash-desktop-01.png",
+        "/images/clientes-carwash-desktop-02.png",
+        "/images/clientes-carwash-desktop-03.png",
+        "/images/clientes-carwash-desktop-04.png",
+        "/images/clientes-carwash-desktop-05.png",
+        "/images/clientes-carwash-desktop-06.png",
+        "/images/clientes-carwash-desktop-07.png",
+        "/images/clientes-carwash-desktop-08.png",
+        "/images/clientes-carwash-desktop-09.png",
+        "/images/clientes-carwash-desktop-10.png"
+      ],
+      mobile: [
+        "/images/clientes-carwash-mobile-01.png",
+        "/images/clientes-carwash-mobile-02.png",
+        "/images/clientes-carwash-mobile-03.png",
+        "/images/clientes-carwash-mobile-04.png",
+        "/images/clientes-carwash-mobile-05.png",
+        "/images/clientes-carwash-mobile-06.png",
+        "/images/clientes-carwash-mobile-07.png",
+        "/images/clientes-carwash-mobile-08.png",
+        "/images/clientes-carwash-mobile-09.png",
+        "/images/clientes-carwash-mobile-10.png"
+      ]
+    },
+    technologies: [
+      TECHNOLOGIES.prisma,
+      TECHNOLOGIES.lucia,
+      TECHNOLOGIES.react,
+      TECHNOLOGIES.nextjs,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.shadcn,
+      TECHNOLOGIES.reactHookForm,
+      TECHNOLOGIES.zod,
+      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.playwright
+    ],
+    repoUrl: "https://github.com/marioAmauta/clientes-carwash",
+    liveUrl: "https://clientes-carwash.vercel.app/iniciar-sesion?email=marioamauta@hello.com&password=hello123"
   }
 };
+
+const projects = Object.values(PROJECTS_DATA).map((project) => new ProjectDataDTO(project));
+
+export function getProjectCardData(): ProjectDataDTO[] {
+  return projects.map((project) => new ProjectDataDTO(project)).toReversed();
+}
+
+export function getProjectDetailData(slug: string) {
+  const foundProject = projects.find((project) => project.slug === slug);
+
+  if (!foundProject) {
+    return null;
+  }
+
+  return foundProject;
+}
