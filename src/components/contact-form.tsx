@@ -46,7 +46,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-lg space-y-8 py-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-lg space-y-8">
         <FormField
           control={form.control}
           name="name"

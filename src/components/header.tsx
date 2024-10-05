@@ -1,10 +1,10 @@
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import { Suspense } from "react";
 
 import { APP_LINKS } from "@/lib/constants";
 
-import { LanguageSwitcher } from "./language-switcher";
-import { ThemeSwitcher } from "./theme-switcher";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function Header() {
   return (

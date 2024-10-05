@@ -35,11 +35,11 @@ export function ButtonBackToTop() {
     <button
       onClick={scrollToTop}
       className={cn(
-        "bottom-14 right-8 rounded-full bg-background/80 p-3 shadow-lg backdrop-blur dark:bg-background/50 md:bottom-16 md:right-16",
+        "bottom-14 right-8 rounded-full border bg-background/50 p-3 shadow-lg backdrop-blur md:bottom-16 md:right-16",
         isVisible ? "fixed" : "hidden"
       )}
     >
-      <ArrowUp className="size-8" />
+      <ArrowUp className="size-6" />
     </button>
   );
 }
