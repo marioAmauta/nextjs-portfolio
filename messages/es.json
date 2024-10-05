@@ -17,13 +17,18 @@
       "buttonLabel": "Más sobre mí"
     },
     "ProjectsSection": {
-      "title": "Mis Proyectos",
-      "description": "Estos son algunos de mis proyectos",
-      "buttonLabel": "Ver más proyectos"
+      "title": "Mis Proyectos"
     },
     "ContactSection": {
       "title": "Contacto"
     }
+  },
+  "ProjectDetailPage": {
+    "title1": "Detalles del Proyecto",
+    "title2": "Tecnologías Utilizadas",
+    "closeButton": "Cerrar",
+    "codeButton": "Ver Código",
+    "projectButton": "Ver Proyecto"
   },
   "NotFoundPage": {
     "title": "Página no encontrada",
@@ -37,8 +42,8 @@
     "description": "Encuéntrame en las siguientes plataformas"
   },
   "ProjectCard": {
-    "sourceCode": "Código",
-    "liveDemo": "Proyecto"
+    "viewDetailsLink": "Ver detalles",
+    "closeButton": "Cerrar"
   },
   "ContactForm": {
     "nameLabel": "Nombre",
@@ -61,8 +66,21 @@
     "system": "Sistema"
   },
   "projectDescriptions": {
-    "markdownPreviewerDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
-    "randomQuoteMachineDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
-    "githubDevfinderDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo"
+    "markdownPreviewerShortDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
+    "markdownPreviewerLongDescription": {
+      "p1": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic."
+    },
+    "randomQuoteMachineShortDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
+    "randomQuoteMachineLongDescription": {
+      "p1": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter."
+    },
+    "githubDevfinderShortDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo",
+    "githubDevfinderLongDescription": {
+      "p1": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo"
+    },
+    "clientesCarwashShortDescription": "Este proyecto es una base de datos de clientes diseñada para el personal de un negocio de lavado de autos. Su objetivo es ayudar a los lavadores a llevar un registro de sus mejores y peores clientes, basándose en las propinas recibidas.",
+    "clientesCarwashLongDescription": {
+      "p1": "Este proyecto es una base de datos de clientes diseñada para el personal de un negocio de lavado de autos. Su objetivo es ayudar a los lavadores a llevar un registro de sus mejores y peores clientes, basándose en las propinas recibidas."
+    }
   }
 }

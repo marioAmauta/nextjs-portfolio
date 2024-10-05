@@ -17,13 +17,18 @@
       "buttonLabel": "More about me"
     },
     "ProjectsSection": {
-      "title": "My Projects",
-      "description": "These are some of my last projects",
-      "buttonLabel": "See more projects"
+      "title": "My Projects"
     },
     "ContactSection": {
       "title": "Contact Me"
     }
+  },
+  "ProjectDetailPage": {
+    "title1": "Overview",
+    "title2": "Technologies Used",
+    "closeButton": "Close",
+    "codeButton": "View Code",
+    "projectButton": "View Project"
   },
   "NotFoundPage": {
     "title": "Page not found",
@@ -37,8 +42,8 @@
     "description": "Find me on the following platforms"
   },
   "ProjectCard": {
-    "sourceCode": "Source Code",
-    "liveDemo": "View Project"
+    "viewDetailsLink": "View details",
+    "closeButton": "Close"
   },
   "ContactForm": {
     "nameLabel": "Name",
@@ -61,8 +66,21 @@
     "system": "System"
   },
   "projectDescriptions": {
-    "markdownPreviewerDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",
-    "randomQuoteMachineDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
-    "githubDevfinderDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following"
+    "markdownPreviewerShortDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",
+    "markdownPreviewerLongDescription": {
+      "p1": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click."
+    },
+    "randomQuoteMachineShortDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
+    "randomQuoteMachineLongDescription": {
+      "p1": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon."
+    },
+    "githubDevfinderShortDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following",
+    "githubDevfinderLongDescription": {
+      "p1": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following"
+    },
+    "clientesCarwashShortDescription": "This project is a customer database designed for the staff of a car wash business. Its goal is to help the washers keep track of their best and worst customers, based on the tips received.",
+    "clientesCarwashLongDescription": {
+      "p1": "This project is a customer database designed for the staff of a car wash business. Its goal is to help the washers keep track of their best and worst customers, based on the tips received."
+    }
   }
 }
