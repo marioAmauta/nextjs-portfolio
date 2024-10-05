@@ -37,7 +37,7 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
           </DrawerTrigger>
           <DrawerContent className="mx-auto max-w-screen-2xl items-center justify-center gap-6 px-4 pb-4">
             <DrawerClose>
-              <Link href={slug as AppPathnames}>
+              <Link href={`/${slug}` as AppPathnames}>
                 <DrawerTitle className="underline">{title}</DrawerTitle>
               </Link>
             </DrawerClose>
@@ -68,7 +68,7 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
         <CardDescription>{tProjectDescription(shortDescriptionKey as TranslationKey)}</CardDescription>
       </CardHeader>
       <CardFooter className="col-auto grid">
-        <ButtonLink href={slug as AppPathnames} className="flex justify-center gap-2">
+        <ButtonLink href={`/${slug}` as AppPathnames} className="flex justify-center gap-2">
           {t("viewDetailsLink")}
           <ArrowRight className="size-5" />
         </ButtonLink>
