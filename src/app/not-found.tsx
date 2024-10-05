@@ -1,6 +1,6 @@
 "use client";
 
-import { defaultLocale } from "@/config";
+import { routing } from "@/i18n/routing";
 import Error from "next/error";
 
 // Render the default Next.js 404 page when a route
@@ -9,7 +9,7 @@ import Error from "next/error";
 
 export default function NotFound() {
   return (
-    <html lang={defaultLocale}>
+    <html lang={routing.defaultLocale}>
       <body>
         <Error statusCode={404} />
       </body>

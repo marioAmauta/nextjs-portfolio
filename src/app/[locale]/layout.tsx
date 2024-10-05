@@ -1,4 +1,4 @@
-import { locales } from "@/config";
+import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
@@ -15,7 +15,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t("description"),
       type: "website",
       siteName: METADATA_DEFAULT.title,
-      url: METADATA_DEFAULT.siteUrl,
+      url: new URL(METADATA_DEFAULT.siteUrl),
       images: METADATA_DEFAULT.ogImagePath,
       alternateLocale: ["en_EN", "es_ES"]
     },
