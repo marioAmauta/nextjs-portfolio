@@ -16,7 +16,7 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
 
   return (
     <Card className="w-full max-w-lg overflow-hidden">
-      <div className="relative bg-gradient-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
+      <div className="group/image relative bg-gradient-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
         <Image
           src={imageSrc.mobile[0]}
           width={375}
@@ -32,7 +32,7 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
           className="hidden rounded-lg object-cover lg:block"
         />
         <Drawer>
-          <DrawerTrigger className="absolute bottom-4 right-4 flex justify-end rounded-full border bg-background p-1 md:bottom-8 md:right-8">
+          <DrawerTrigger className="absolute bottom-4 right-4 flex justify-end rounded-full border bg-background p-1 transition-transform group-hover/image:scale-110 md:bottom-8 md:right-8">
             <ZoomIn className="size-6 cursor-pointer" />
           </DrawerTrigger>
           <DrawerContent className="mx-auto max-w-screen-2xl items-center justify-center gap-6 px-4 pb-4">
@@ -67,10 +67,10 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
         </div>
         <CardDescription>{tProjectDescription(shortDescriptionKey as TranslationKey)}</CardDescription>
       </CardHeader>
-      <CardFooter className="col-auto grid">
-        <ButtonLink href={`/${slug}` as AppPathnames} className="flex justify-center gap-2">
+      <CardFooter className="flex justify-end">
+        <ButtonLink href={`/${slug}` as AppPathnames} className="group/btn flex justify-center gap-2">
           {t("viewDetailsLink")}
-          <ArrowRight className="size-5" />
+          <ArrowRight className="size-5 transition-transform group-hover/btn:translate-x-0.5" />
         </ButtonLink>
       </CardFooter>
     </Card>
