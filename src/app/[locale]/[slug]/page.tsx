@@ -38,7 +38,7 @@ export default function ProjectDetailPage({ params: { slug, locale } }: { params
       <TypographyH1>{projectData.title}</TypographyH1>
       <section className="grid gap-16 md:grid-cols-2">
         <div className="overflow-hidden rounded-lg md:hidden">
-          <Carousel>
+          <Carousel className="group">
             <CarouselContent>
               {projectData.imageSrc.mobile.map((src) => (
                 <CarouselItem
@@ -54,7 +54,7 @@ export default function ProjectDetailPage({ params: { slug, locale } }: { params
                     className="mx-auto h-[30vh] w-fit rounded-md object-contain"
                   />
                   <Drawer>
-                    <DrawerTrigger className="absolute bottom-3 right-3 flex justify-end rounded-full border bg-background p-1">
+                    <DrawerTrigger className="absolute bottom-3 right-3 flex justify-end rounded-full border bg-background p-1 transition-transform group-hover:scale-110">
                       <ZoomIn className="size-6 cursor-pointer" />
                     </DrawerTrigger>
                     <DrawerContent className="mx-auto max-w-screen-2xl items-center justify-center gap-6 px-4 pb-4">
@@ -73,11 +73,11 @@ export default function ProjectDetailPage({ params: { slug, locale } }: { params
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="transition-transform group-hover:scale-110" />
+            <CarouselNext className="transition-transform group-hover:scale-110" />
           </Carousel>
         </div>
-        <div className="hidden h-fit overflow-hidden rounded-lg border md:block">
+        <div className="group hidden h-fit overflow-hidden rounded-lg border md:block">
           <Carousel>
             <CarouselContent>
               {projectData.imageSrc.desktop.map((src) => (
@@ -91,7 +91,7 @@ export default function ProjectDetailPage({ params: { slug, locale } }: { params
                     className="w-fit object-contain"
                   />
                   <Drawer>
-                    <DrawerTrigger className="absolute bottom-4 right-4 flex justify-end rounded-full border bg-background p-1">
+                    <DrawerTrigger className="absolute bottom-4 right-4 flex justify-end rounded-full border bg-background p-1 transition-transform group-hover:scale-110">
                       <ZoomIn className="size-6 cursor-pointer" />
                     </DrawerTrigger>
                     <DrawerContent className="mx-auto max-w-screen-2xl items-center justify-center gap-6 px-4 pb-4">
@@ -110,8 +110,8 @@ export default function ProjectDetailPage({ params: { slug, locale } }: { params
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="transition-transform group-hover:scale-110" />
+            <CarouselNext className="transition-transform group-hover:scale-110" />
           </Carousel>
         </div>
         <div className="space-y-10">
@@ -132,12 +132,12 @@ export default function ProjectDetailPage({ params: { slug, locale } }: { params
         </div>
       </section>
       <div className="flex w-full gap-4 pb-8 md:justify-center">
-        <ButtonLinkExternal href={projectData.repoUrl} className="flex justify-center gap-2">
-          <ExternalLink className="size-5" />
+        <ButtonLinkExternal href={projectData.repoUrl} className="group flex justify-center gap-2">
+          <ExternalLink className="size-5 transition-transform group-hover:-translate-y-0.5" />
           {t("codeButton")}
         </ButtonLinkExternal>
-        <ButtonLinkExternal href={projectData.liveUrl} className="flex justify-center gap-2">
-          <ExternalLink className="size-5" />
+        <ButtonLinkExternal href={projectData.liveUrl} className="group flex justify-center gap-2">
+          <ExternalLink className="size-5 transition-transform group-hover:-translate-y-0.5" />
           {t("projectButton")}
         </ButtonLinkExternal>
       </div>
