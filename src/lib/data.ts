@@ -58,10 +58,6 @@ export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
     label: "Next Themes",
     href: "https://github.com/pacocoursey/next-themes"
   },
-  daisyui: {
-    label: "DaisyUI",
-    href: "https://daisyui.com/"
-  },
   typescript: {
     label: "TypeScript",
     href: "https://www.typescriptlang.org/"
@@ -89,6 +85,10 @@ export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
   zod: {
     href: "https://zod.dev/",
     label: "Zod"
+  },
+  useDebounce: {
+    href: "https://www.npmjs.com/package/use-debounce",
+    label: "use-debounce"
   }
 };
 
@@ -157,9 +157,10 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       TECHNOLOGIES.react,
       TECHNOLOGIES.nextjs,
       TECHNOLOGIES.nextThemes,
-      TECHNOLOGIES.daisyui,
       TECHNOLOGIES.tailwindcss,
-      TECHNOLOGIES.typescript
+      TECHNOLOGIES.typescript,
+      TECHNOLOGIES.shadcn,
+      TECHNOLOGIES.useDebounce
     ],
     repoUrl: "https://github.com/marioAmauta/github-devfinder/",
     liveUrl: "https://githubdevfinder.vercel.app/?q=marioAmauta"
