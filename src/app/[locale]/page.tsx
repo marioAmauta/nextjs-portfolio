@@ -18,7 +18,7 @@ export default function HomePage({ params: { locale } }: NextPageProps) {
 
   return (
     <>
-      <section className="-mt-10 flex h-[calc(100vh-var(--header-height))] max-h-[800px] min-h-[500px] flex-col items-center justify-evenly text-center">
+      <section className="-mt-10 flex h-[calc(100svh-var(--header-height))] max-h-[800px] min-h-[500px] flex-col items-center justify-evenly text-center">
         <TypographyH1 className="text-5xl">{t("HeroSection.title")}</TypographyH1>
         <TypographyH2>
           <span className="bg-gradient-to-r from-cyan-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
