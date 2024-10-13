@@ -3,8 +3,6 @@
 
 import { getTranslations } from "next-intl/server";
 
-import { APP_LINKS } from "@/lib/constants";
-
 import { ButtonLink } from "@/components/link-button";
 import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
 
@@ -12,11 +10,11 @@ export default async function NotFoundPage() {
   const t = await getTranslations("NotFoundPage");
 
   return (
-    <section className="mx-auto w-max space-y-16 text-center">
+    <section className="mx-auto space-y-16 text-center">
       <TypographyH1>404</TypographyH1>
-      <TypographyH2>{t("title")}</TypographyH2>
+      <TypographyH2 className="mx-auto w-fit">{t("title")}</TypographyH2>
       <TypographyP className="text-lg font-semibold">{t("description")}</TypographyP>
-      <ButtonLink href={APP_LINKS.homePage}>{t("buttonLabel")}</ButtonLink>
+      <ButtonLink href="/">{t("buttonLabel")}</ButtonLink>
     </section>
   );
 }

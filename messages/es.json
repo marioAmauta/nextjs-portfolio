@@ -6,29 +6,14 @@
     "HeroSection": {
       "title": "Soy Mario",
       "subtitle": "Desarrollador Frontend",
-      "description": "Siempre mejorando para hacer realidad el software de tus sueños"
-    },
-    "AboutSection": {
-      "title": "Sobre Mí",
-      "description": {
+      "aboutMe": {
         "p1": "Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.",
         "p2": "Enfocado en el desarrollo web, trabajando con React, Next.js, Tailwind CSS, Playwright, Cypress,  y otras tecnologías modernas."
-      },
-      "buttonLabel": "Más sobre mí"
+      }
     },
     "ProjectsSection": {
       "title": "Mis Proyectos"
-    },
-    "ContactSection": {
-      "title": "Contacto"
     }
-  },
-  "ProjectDetailPage": {
-    "title1": "Detalles del Proyecto",
-    "title2": "Tecnologías Utilizadas",
-    "closeButton": "Cerrar",
-    "codeButton": "Ver Código",
-    "projectButton": "Ver Proyecto"
   },
   "NotFoundPage": {
     "title": "Página no encontrada",
@@ -38,27 +23,10 @@
   "Footer": {
     "madeWithLove": "Hecho con ❤️ por Mario Programador"
   },
-  "ContactButtons": {
-    "description": "Encuéntrame en las siguientes plataformas"
-  },
   "ProjectCard": {
-    "viewDetailsLink": "Ver detalles",
+    "code": "Código",
+    "project": "Proyecto",
     "closeButton": "Cerrar"
-  },
-  "ContactForm": {
-    "nameLabel": "Nombre",
-    "namePlaceholder": "Tu nombre",
-    "nameError": "Por favor, introduce tu nombre",
-    "emailLabel": "Correo electrónico",
-    "emailPlaceholder": "hola@hola.com",
-    "emailError": "Por favor, introduce una dirección de correo electrónico válida",
-    "messageLabel": "Mensaje",
-    "messagePlaceholder": "¡Hola Mario! Me gustaría hablar contigo sobre...",
-    "messageError": "Por favor, introduce un mensaje",
-    "submit": "Enviar Mensaje",
-    "success": "Mensaje enviado con éxito!  ",
-    "error": "Ocurrió un error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.",
-    "invalidData": "Por favor, complete todos los campos correctamente."
   },
   "ThemeSwitcher": {
     "light": "Claro",
@@ -66,21 +34,9 @@
     "system": "Sistema"
   },
   "projectDescriptions": {
-    "markdownPreviewerShortDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
-    "markdownPreviewerLongDescription": {
-      "p1": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic."
-    },
-    "randomQuoteMachineShortDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
-    "randomQuoteMachineLongDescription": {
-      "p1": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter."
-    },
-    "githubDevfinderShortDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo",
-    "githubDevfinderLongDescription": {
-      "p1": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo"
-    },
-    "clientesCarwashShortDescription": "Este proyecto es una base de datos de clientes diseñada para el personal de un negocio de lavado de autos. Su objetivo es ayudar a los lavadores a llevar un registro de sus mejores y peores clientes, basándose en las propinas recibidas.",
-    "clientesCarwashLongDescription": {
-      "p1": "Este proyecto es una base de datos de clientes diseñada para el personal de un negocio de lavado de autos. Su objetivo es ayudar a los lavadores a llevar un registro de sus mejores y peores clientes, basándose en las propinas recibidas."
-    }
+    "markdownPreviewerDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
+    "randomQuoteMachineDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
+    "githubDevfinderDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo",
+    "clientesCarwashDescription": "Este proyecto es una base de datos de clientes diseñada para el personal de un negocio de lavado de autos. Su objetivo es ayudar a los lavadores a llevar un registro de sus mejores y peores clientes, basándose en las propinas recibidas."
   }
 }

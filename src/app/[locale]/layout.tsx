@@ -1,4 +1,4 @@
-import { routing } from "@/i18n/routing";
+import { Link, routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
@@ -11,8 +11,11 @@ import { IntlClientProvider } from "@/providers/next-intl-provider";
 import { NextThemesProvider } from "@/providers/next-themes-provider";
 
 import { ButtonBackToTop } from "@/components/button-back-to-top";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+
+import { ContactLinks } from "@/components/contact-links";
+import { Suspense } from "react";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -74,14 +77,30 @@ export default async function LocaleLayout({ children, params: { locale } }: Lay
       <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-background">
         <NextThemesProvider>
           <IntlClientProvider locale={locale} messages={messages}>
-            <Header />
-            <main className="container mx-auto space-y-16 px-4 py-8">
+            <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur transition-[top] duration-300 dark:bg-background/50">
+              <div className="mx-auto flex h-header-height max-w-app-container items-center justify-between gap-2 px-4 font-semibold">
+                <Link href="/" className="text-lg hover:underline">
+                  Mario Programador
+                </Link>
+                <div className="flex items-center justify-center gap-2">
+                  <Suspense>
+                    <LanguageSwitcher />
+                  </Suspense>
+                  <ThemeSwitcher />
+                </div>
+              </div>
+            </header>
+            <main className="relative mx-auto max-w-app-container space-y-16 px-4 py-8">
               {children}
               <Analytics />
               <SpeedInsights />
+              <ButtonBackToTop />
             </main>
-            <Footer />
-            <ButtonBackToTop />
+            <footer className="border-t">
+              <div className="mx-auto max-w-app-container py-6">
+                <ContactLinks />
+              </div>
+            </footer>
             <Toaster position="top-center" />
           </IntlClientProvider>
         </NextThemesProvider>

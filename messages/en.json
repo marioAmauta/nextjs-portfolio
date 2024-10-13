@@ -6,29 +6,14 @@
     "HeroSection": {
       "title": "I'm Mario",
       "subtitle": "Frontend Developer",
-      "description": "Always improving to make the software of your dreams come true"
-    },
-    "AboutSection": {
-      "title": "About Me",
-      "description": {
+      "aboutMe": {
         "p1": "I'm a self-taught software developer who loves learning new things and strives to improve every day.",
         "p2": "Focused on web development, working with React, Next.js, Tailwind CSS, Playwright, Cypress, and other modern technologies."
-      },
-      "buttonLabel": "More about me"
+      }
     },
     "ProjectsSection": {
       "title": "My Projects"
-    },
-    "ContactSection": {
-      "title": "Contact Me"
     }
-  },
-  "ProjectDetailPage": {
-    "title1": "Overview",
-    "title2": "Technologies Used",
-    "closeButton": "Close",
-    "codeButton": "View Code",
-    "projectButton": "View Project"
   },
   "NotFoundPage": {
     "title": "Page not found",
@@ -38,27 +23,10 @@
   "Footer": {
     "madeWithLove": "Made with ❤️ by Mario Programador"
   },
-  "ContactButtons": {
-    "description": "Find me on the following platforms"
-  },
   "ProjectCard": {
-    "viewDetailsLink": "View details",
+    "code": "Code",
+    "project": "Project",
     "closeButton": "Close"
-  },
-  "ContactForm": {
-    "nameLabel": "Name",
-    "namePlaceholder": "Your name",
-    "nameError": "Please enter your name",
-    "emailLabel": "Email",
-    "emailPlaceholder": "hello@hello.com",
-    "emailError": "Please enter a valid email",
-    "messageLabel": "Message",
-    "messagePlaceholder": "Hello Mario! I would like to talk to you about...",
-    "messageError": "Please enter a message",
-    "submit": "Send Message",
-    "success": "Message sent successfully!",
-    "error": "An error occurred while sending the message. Please try again later.",
-    "invalidData": "Please fill in all fields correctly."
   },
   "ThemeSwitcher": {
     "light": "Light",
@@ -66,21 +34,9 @@
     "system": "System"
   },
   "projectDescriptions": {
-    "markdownPreviewerShortDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",
-    "markdownPreviewerLongDescription": {
-      "p1": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click."
-    },
-    "randomQuoteMachineShortDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
-    "randomQuoteMachineLongDescription": {
-      "p1": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon."
-    },
-    "githubDevfinderShortDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following",
-    "githubDevfinderLongDescription": {
-      "p1": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following"
-    },
-    "clientesCarwashShortDescription": "This project is a customer database designed for the staff of a car wash business. Its goal is to help the washers keep track of their best and worst customers, based on the tips received.",
-    "clientesCarwashLongDescription": {
-      "p1": "This project is a customer database designed for the staff of a car wash business. Its goal is to help the washers keep track of their best and worst customers, based on the tips received."
-    }
+    "markdownPreviewerDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",
+    "randomQuoteMachineDescription": "This is a project where you can obtain a random quote by clicking the 'New Quote' button and easily share it on Twitter with just one click on the Twitter icon.",
+    "githubDevfinderDescription": "This project is a GitHub DevFinder, where you can search for developers by their GitHub username. The application displays the user's profile picture, description, username, followers, following",
+    "clientesCarwashDescription": "This project is a customer database designed for the staff of a car wash business. Its goal is to help the washers keep track of their best and worst customers, based on the tips received."
   }
 }

@@ -20,9 +20,9 @@ export function ButtonLink({ children, href, className }: LinkButtonProps) {
   );
 }
 
-export function ButtonLinkExternal({ size, children, href, className }: LinkButtonProps) {
+export function LinkExternal({ children, href, className }: LinkButtonProps) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size }), className)}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
       {children}
     </a>
   );
@@ -30,8 +30,10 @@ export function ButtonLinkExternal({ size, children, href, className }: LinkButt
 
 export function TechLinkButton({ children, href }: LinkButtonProps) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <Badge variant="outline">{children}</Badge>
-    </a>
+    <LinkExternal href={href}>
+      <Badge variant="outline" className="hover:bg-muted">
+        {children}
+      </Badge>
+    </LinkExternal>
   );
 }

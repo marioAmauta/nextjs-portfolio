@@ -1,16 +1,17 @@
-import { AppPathnames, Link } from "@/i18n/routing";
-import { ArrowRight, ZoomIn } from "lucide-react";
+import { ZoomIn } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import { ProjectCardDTO } from "@/lib/dto";
+import { ProjectData } from "@/lib/definitions";
 
-import { ButtonLink } from "@/components/link-button";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 
-export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: ProjectCardDTO) {
+import { GithubIcon, GlobeIcon } from "./icons";
+import { LinkExternal, TechLinkButton } from "./link-button";
+
+export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liveUrl, repoUrl }: ProjectData) {
   const t = useTranslations("ProjectCard");
   const tProjectDescription = useTranslations("projectDescriptions");
 
@@ -36,17 +37,18 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
             <ZoomIn className="size-6 cursor-pointer" />
           </DrawerTrigger>
           <DrawerContent className="mx-auto max-w-screen-2xl items-center justify-center gap-6 px-4 pb-4">
-            <DrawerClose>
-              <Link href={`/${slug}` as AppPathnames}>
-                <DrawerTitle className="underline">{title}</DrawerTitle>
-              </Link>
-            </DrawerClose>
+            <div className="flex w-full items-center justify-between px-4">
+              <DrawerTitle>{title}</DrawerTitle>
+              <DrawerClose>
+                <Button variant="outline">{t("closeButton")}</Button>
+              </DrawerClose>
+            </div>
             <Image
               src={imageSrc.mobile[0]}
               width={375}
               height={812}
               alt={`${title}'s mobile screenshot`}
-              className="h-[70vh] max-h-fit w-fit rounded-lg object-contain shadow-xl md:hidden"
+              className="h-[80vh] w-fit rounded-lg object-contain shadow-xl md:hidden"
             />
             <Image
               src={imageSrc.desktop[0]}
@@ -55,23 +57,35 @@ export function ProjectCard({ imageSrc, title, slug, shortDescriptionKey }: Proj
               alt={`${title}'s desktop screenshot`}
               className="hidden h-[80vh] w-fit rounded-lg object-contain shadow-xl md:block"
             />
-            <DrawerClose>
-              <Button variant="outline">{t("closeButton")}</Button>
-            </DrawerClose>
           </DrawerContent>
         </Drawer>
       </div>
       <CardHeader>
-        <div className="flex justify-between">
-          <CardTitle>{title}</CardTitle>
-        </div>
-        <CardDescription>{tProjectDescription(shortDescriptionKey as TranslationKey)}</CardDescription>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{tProjectDescription(descriptionKey)}</CardDescription>
       </CardHeader>
-      <CardFooter className="flex justify-end">
-        <ButtonLink href={`/${slug}` as AppPathnames} className="group/btn flex justify-center gap-2">
-          {t("viewDetailsLink")}
-          <ArrowRight className="size-5 transition-transform group-hover/btn:translate-x-0.5" />
-        </ButtonLink>
+      <CardContent className="flex flex-wrap gap-2">
+        {technologies.map(({ href, label }) => (
+          <TechLinkButton key={href} href={href}>
+            {label}
+          </TechLinkButton>
+        ))}
+      </CardContent>
+      <CardFooter className="flex justify-end gap-4">
+        <LinkExternal
+          href={repoUrl}
+          className="group flex items-center gap-2 rounded px-3 py-2 transition-colors hover:bg-muted"
+        >
+          <GithubIcon className="size-4 fill-muted-foreground group-hover:fill-primary" />
+          {t("code")}
+        </LinkExternal>
+        <LinkExternal
+          href={liveUrl}
+          className="group flex items-center gap-2 rounded px-3 py-2 transition-colors hover:bg-muted"
+        >
+          <GlobeIcon className="size-4 fill-muted-foreground group-hover:fill-primary" />
+          {t("project")}
+        </LinkExternal>
       </CardFooter>
     </Card>
   );

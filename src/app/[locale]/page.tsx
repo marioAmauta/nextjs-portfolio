@@ -1,11 +1,9 @@
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
-import React from "react";
 
-import { getProjectCardData } from "@/lib/data";
+import { projects } from "@/lib/data";
 
-import { ContactButtons } from "@/components/contact-buttons";
-import { ContactForm } from "@/components/contact-form";
+import { ContactLinks } from "@/components/contact-links";
 import { ProjectCard } from "@/components/project-card";
 import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
 
@@ -14,34 +12,29 @@ export default function HomePage({ params: { locale } }: NextPageProps) {
 
   const t = useTranslations("HomePage");
 
-  const projects = getProjectCardData();
-
   return (
     <>
-      <section className="-mt-10 flex h-[calc(100svh-var(--header-height))] max-h-[800px] min-h-[500px] flex-col items-center justify-evenly text-center">
-        <TypographyH1 className="text-5xl">{t("HeroSection.title")}</TypographyH1>
-        <TypographyH2>
-          <span className="bg-gradient-to-r from-cyan-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
-            {t("HeroSection.subtitle")}
-          </span>
-        </TypographyH2>
-        <TypographyP className="text-lg font-semibold italic">{t("HeroSection.description")}</TypographyP>
-        <ContactButtons />
+      <section className="grid gap-8 md:grid-cols-2 md:gap-0">
+        <div className="flex flex-col items-center space-y-8 md:space-y-4">
+          <TypographyH1>{t("HeroSection.title")}</TypographyH1>
+          <TypographyH2 className="w-fit text-center">
+            <span className="bg-gradient-to-r from-cyan-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
+              {t("HeroSection.subtitle")}
+            </span>
+          </TypographyH2>
+          <ContactLinks />
+        </div>
+        <div className="space-y-8 text-center md:space-y-4">
+          <TypographyP>{t("HeroSection.aboutMe.p1")}</TypographyP>
+          <TypographyP>{t("HeroSection.aboutMe.p2")}</TypographyP>
+        </div>
       </section>
       <TypographyH2>{t("ProjectsSection.title")}</TypographyH2>
-      <ul className="grid justify-items-center gap-16 md:grid-cols-2">
+      <ul className="grid justify-items-center gap-8 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
       </ul>
-      <TypographyH2>{t("AboutSection.title")}</TypographyH2>
-      <section>
-        <TypographyP>{t("AboutSection.description.p1")}</TypographyP>
-        <TypographyP>{t("AboutSection.description.p2")}</TypographyP>
-      </section>
-      <TypographyH2>{t("ContactSection.title")}</TypographyH2>
-      <ContactForm />
-      <ContactButtons className="pb-6" />
     </>
   );
 }

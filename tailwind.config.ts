@@ -8,6 +8,9 @@ export default {
       gridTemplateRows: {
         "pancake-stack": "auto 1fr auto"
       },
+      maxWidth: {
+        "app-container": "1000px"
+      },
       minHeight: {
         "screen-dynamic": "100dvh"
       },

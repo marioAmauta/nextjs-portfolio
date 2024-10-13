@@ -1,15 +1,6 @@
 import { LinkWithLabel, ProjectData } from "./definitions";
-import { ProjectDataDTO } from "./dto";
 
 export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
-  html: {
-    label: "HTML",
-    href: "https://developer.mozilla.org/en-US/docs/Web/HTML"
-  },
-  css: {
-    label: "CSS",
-    href: "https://developer.mozilla.org/en-US/docs/Web/CSS"
-  },
   javascript: {
     label: "JavaScript",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -95,22 +86,18 @@ export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
 export const PROJECTS_DATA: Record<string, ProjectData> = {
   randomQuoteMachine: {
     title: "Random Quote Machine",
-    shortDescriptionKey: "randomQuoteMachineShortDescription",
-    longDescriptionKey: "randomQuoteMachineLongDescription",
-    longDescriptionParagraphs: ["p1"],
+    descriptionKey: "randomQuoteMachineDescription",
     imageSrc: {
       desktop: ["/images/random-quote-machine-desktop-01.png", "/images/random-quote-machine-desktop-02.png"],
       mobile: ["/images/random-quote-machine-mobile-01.png", "/images/random-quote-machine-mobile-02.png"]
     },
-    technologies: [TECHNOLOGIES.html, TECHNOLOGIES.css, TECHNOLOGIES.javascript, TECHNOLOGIES.react, TECHNOLOGIES.vite],
+    technologies: [TECHNOLOGIES.javascript, TECHNOLOGIES.react, TECHNOLOGIES.vite],
     liveUrl: "https://random-quote-machine-marioamauta.vercel.app/",
     repoUrl: "https://github.com/marioAmauta/random-quote-machine"
   },
   markdownPreviewer: {
     title: "Markdown Previewer",
-    shortDescriptionKey: "markdownPreviewerShortDescription",
-    longDescriptionKey: "markdownPreviewerLongDescription",
-    longDescriptionParagraphs: ["p1"],
+    descriptionKey: "markdownPreviewerDescription",
     imageSrc: {
       desktop: [
         "/images/markdown-previewer-desktop-01.png",
@@ -124,8 +111,6 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       ]
     },
     technologies: [
-      TECHNOLOGIES.html,
-      TECHNOLOGIES.css,
       TECHNOLOGIES.javascript,
       TECHNOLOGIES.react,
       TECHNOLOGIES.propTypes,
@@ -138,9 +123,7 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
   },
   githubDevfinder: {
     title: "Github Devfinder",
-    shortDescriptionKey: "githubDevfinderShortDescription",
-    longDescriptionKey: "githubDevfinderLongDescription",
-    longDescriptionParagraphs: ["p1"],
+    descriptionKey: "githubDevfinderDescription",
     imageSrc: {
       desktop: [
         "/images/github-devfinder-desktop-01.png",
@@ -167,9 +150,7 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
   },
   clientesCarwash: {
     title: "Clientes Carwash",
-    shortDescriptionKey: "clientesCarwashShortDescription",
-    longDescriptionKey: "clientesCarwashLongDescription",
-    longDescriptionParagraphs: ["p1"],
+    descriptionKey: "clientesCarwashDescription",
     imageSrc: {
       desktop: [
         "/images/clientes-carwash-desktop-01.png",
@@ -213,18 +194,4 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
   }
 };
 
-const projects = Object.values(PROJECTS_DATA).map((project) => new ProjectDataDTO(project));
-
-export function getProjectCardData(): ProjectDataDTO[] {
-  return projects.map((project) => new ProjectDataDTO(project)).toReversed();
-}
-
-export function getProjectDetailData(slug: string) {
-  const foundProject = projects.find((project) => project.slug === slug);
-
-  if (!foundProject) {
-    return null;
-  }
-
-  return foundProject;
-}
+export const projects = Object.values(PROJECTS_DATA).toReversed();
