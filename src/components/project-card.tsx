@@ -110,8 +110,10 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
             href={href}
             className="group flex items-center gap-3 rounded-3xl px-4 py-2 transition-colors hover:bg-muted"
           >
-            <Icon className="size-5 fill-blue-700 dark:fill-blue-500" />
-            <span className="font-semibold text-blue-700 underline dark:text-blue-500">{label}</span>
+            <Icon className="size-5 fill-muted-foreground transition-colors group-hover:fill-primary" />
+            <span className="font-semibold text-muted-foreground underline transition-colors group-hover:text-primary">
+              {label}
+            </span>
           </LinkExternal>
         ))}
       </CardFooter>
