@@ -29,24 +29,24 @@ const CONTACT_LINKS: ContactLink[] = [
   }
 ];
 
-export function ContactLinks({ className }: ComponentProps<"div">) {
+export function ContactLinks({ className }: ComponentProps<"section">) {
   return (
-    <div className={cn("mx-auto flex w-fit gap-4", className)}>
+    <section className={cn("mx-auto flex w-fit gap-6", className)}>
       {CONTACT_LINKS.map(({ href, Icon }) => {
         if (href.includes("mailto:")) {
           return (
-            <a href={href}>
-              <Icon className="size-5 fill-muted-foreground transition-colors hover:fill-primary" />
+            <a key={href} href={href}>
+              <Icon className="size-6 fill-muted-foreground transition-colors hover:fill-primary" />
             </a>
           );
         }
 
         return (
-          <LinkExternal href={href}>
-            <Icon className="size-5 fill-muted-foreground transition-colors hover:fill-primary" />
+          <LinkExternal key={href} href={href}>
+            <Icon className="size-6 fill-muted-foreground transition-colors hover:fill-primary" />
           </LinkExternal>
         );
       })}
-    </div>
+    </section>
   );
 }

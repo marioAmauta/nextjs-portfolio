@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 import { getMessages, getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 import { Toaster } from "sonner";
 
 import { METADATA_DEFAULT } from "@/lib/constants";
@@ -11,9 +12,7 @@ import { IntlClientProvider } from "@/providers/next-intl-provider";
 import { NextThemesProvider } from "@/providers/next-themes-provider";
 
 import { ButtonBackToTop } from "@/components/button-back-to-top";
-
 import { ContactLinks } from "@/components/contact-links";
-import { Suspense } from "react";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
@@ -90,7 +89,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Lay
                 </div>
               </div>
             </header>
-            <main className="relative mx-auto max-w-app-container space-y-16 px-4 py-8">
+            <main className="mx-auto max-w-app-container space-y-16 px-4 py-8">
               {children}
               <Analytics />
               <SpeedInsights />
