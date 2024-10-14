@@ -34,14 +34,14 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
           src={imageSrc.mobile[0]}
           width={375}
           height={812}
-          alt={`${title}'s mobile screenshot`}
+          alt={t("imageMobileAlt", { title, imageNumber: 1 })}
           className="mx-auto h-72 w-fit rounded-lg object-contain lg:hidden"
         />
         <Image
           src={imageSrc.desktop[0]}
           width={1920}
           height={1080}
-          alt={`${title}'s desktop screenshot`}
+          alt={t("imageDesktopAlt", { title, imageNumber: 1 })}
           className="hidden rounded-lg object-cover lg:block"
         />
       </div>
@@ -55,17 +55,17 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>{title}</DialogTitle>
-                <DialogDescription>Project Screenshots</DialogDescription>
+                <DialogDescription>{t("projectScreenshots")}</DialogDescription>
               </DialogHeader>
               <Carousel className="lg:hidden">
                 <CarouselContent>
-                  {imageSrc.mobile.map((src) => (
+                  {imageSrc.mobile.map((src, i) => (
                     <CarouselItem key={src}>
                       <Image
                         src={src}
                         width={375}
                         height={812}
-                        alt={`${title}'s mobile screenshot`}
+                        alt={t("imageMobileAlt", { title, imageNumber: i + 1 })}
                         className="mx-auto h-[70vh] w-fit rounded-lg object-contain"
                       />
                     </CarouselItem>
@@ -76,13 +76,13 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
               </Carousel>
               <Carousel className="hidden lg:flex">
                 <CarouselContent>
-                  {imageSrc.desktop.map((src) => (
+                  {imageSrc.desktop.map((src, i) => (
                     <CarouselItem key={src}>
                       <Image
                         src={src}
                         width={1920}
                         height={1080}
-                        alt={`${title}'s desktop screenshot`}
+                        alt={t("imageDesktopAlt", { title, imageNumber: i + 1 })}
                         className="mx-auto rounded-lg object-contain"
                       />
                     </CarouselItem>

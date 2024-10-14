@@ -26,6 +26,9 @@
   "ProjectCard": {
     "code": "Code",
     "project": "Project",
+    "projectScreenshots": "Project Screenshots",
+    "imageDesktopAlt": "{title}'s desktop screenshot {imageNumber}",
+    "imageMobileAlt": "{title}'s mobile screenshot {imageNumber}",
     "closeButton": "Close"
   },
   "ThemeSwitcher": {

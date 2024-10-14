@@ -26,6 +26,9 @@
   "ProjectCard": {
     "code": "Código",
     "project": "Proyecto",
+    "projectScreenshots": "Capturas de pantalla del proyecto",
+    "imageDesktopAlt": "Captura de pantalla de escritorio de {title} {imageNumber}",
+    "imageMobileAlt": "Captura de pantalla móvil de {title} {imageNumber}",
     "closeButton": "Cerrar"
   },
   "ThemeSwitcher": {
