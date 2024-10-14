@@ -12,6 +12,8 @@ export default function HomePage({ params: { locale } }: NextPageProps) {
 
   const t = useTranslations("HomePage");
 
+  const paragraphsKeys = ["p1", "p2", "p3"] as const;
+
   return (
     <>
       <section className="grid gap-8 md:grid-cols-2 md:gap-0">
@@ -25,14 +27,17 @@ export default function HomePage({ params: { locale } }: NextPageProps) {
           <ContactLinks />
         </div>
         <div className="space-y-8 text-center md:space-y-4">
-          <TypographyP>{t("HeroSection.aboutMe.p1")}</TypographyP>
-          <TypographyP>{t("HeroSection.aboutMe.p2")}</TypographyP>
+          {paragraphsKeys.map((key) => (
+            <TypographyP key={key}>{t(`HeroSection.aboutMe.${key}`)}</TypographyP>
+          ))}
         </div>
       </section>
       <TypographyH2>{t("ProjectsSection.title")}</TypographyH2>
       <ul className="grid justify-items-center gap-8 md:grid-cols-2">
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <li key={project.title}>
+            <ProjectCard {...project} />
+          </li>
         ))}
       </ul>
     </>
