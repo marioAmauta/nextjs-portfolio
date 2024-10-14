@@ -20,9 +20,17 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: LayoutProps): Promise<Metadata> {
   const t = await getTranslations("HomePage.HeroSection.aboutMe");
   const description = t("p2");
+
+  function getOGImagePath() {
+    if (locale === "es") {
+      return METADATA_DEFAULT.ogImagePathSpanish;
+    }
+
+    return METADATA_DEFAULT.ogImagePathEnglish;
+  }
 
   return {
     title: METADATA_DEFAULT.title,
@@ -35,14 +43,14 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       siteName: METADATA_DEFAULT.title,
       url: new URL(METADATA_DEFAULT.siteUrl),
-      images: METADATA_DEFAULT.ogImagePath,
+      images: getOGImagePath(),
       alternateLocale: ["en_EN", "es_ES"]
     },
     twitter: {
       title: METADATA_DEFAULT.title,
       description,
       card: "summary_large_image",
-      images: METADATA_DEFAULT.ogImagePath
+      images: getOGImagePath()
     },
     keywords: [
       "mario programador",
