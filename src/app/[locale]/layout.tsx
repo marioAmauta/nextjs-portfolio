@@ -21,16 +21,17 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("metadata");
+  const t = await getTranslations("HomePage.HeroSection.aboutMe");
+  const description = t("p2");
 
   return {
     title: METADATA_DEFAULT.title,
-    description: t("description"),
+    description,
     metadataBase: new URL(METADATA_DEFAULT.siteUrl),
     verification: { google: "8rlBdvD_NNDqp7ZhshtEtbmcT704mAzV4ZDp-Tb1DYI" },
     openGraph: {
       title: METADATA_DEFAULT.title,
-      description: t("description"),
+      description,
       type: "website",
       siteName: METADATA_DEFAULT.title,
       url: new URL(METADATA_DEFAULT.siteUrl),
@@ -39,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       title: METADATA_DEFAULT.title,
-      description: t("description"),
+      description,
       card: "summary_large_image",
       images: METADATA_DEFAULT.ogImagePath
     },
