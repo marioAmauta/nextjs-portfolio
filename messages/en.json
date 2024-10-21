@@ -4,9 +4,9 @@
       "title": "I'm Mario",
       "subtitle": "Frontend Developer",
       "aboutMe": {
-        "p1": "I'm a self-taught software developer who loves learning new things and strives to improve every day.",
-        "p2": "I build websites using modern technologies to provide excellent user interactions and facilitate continuous business growth, always striving to deliver the best experience.",
-        "p3": "Focused on web development, working with React, Next.js, Tailwind CSS, Playwright, Cypress, and other modern technologies."
+        "p1": "I am a self-taught software developer with a passion for solving problems.",
+        "p2": "I build websites using modern technologies to provide excellent user interactions, always striving to deliver the best experience.",
+        "p3": "Focused on web development, working with React, Next.js, Tailwind CSS, Playwright and more modern technologies."
       }
     },
     "ProjectsSection": {

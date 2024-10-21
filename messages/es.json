@@ -4,9 +4,9 @@
       "title": "Soy Mario",
       "subtitle": "Desarrollador Frontend",
       "aboutMe": {
-        "p1": "Soy un desarrollador de software autodidacta que ama aprender cosas nuevas y se esfuerza por mejorar cada día.",
-        "p2": "Construyo sitios web utilizando tecnologías modernas para ofrecer excelentes interacciones con el usuario y fomentar un crecimiento empresarial continuo, siempre esforzándome por brindar la mejor experiencia.",
-        "p3": "Enfocado en el desarrollo web, trabajando con React, Next.js, Tailwind CSS, Playwright, Cypress,  y otras tecnologías modernas."
+        "p1": "Soy un desarrollador de software autodidacta con pasión por solucionar problemas.",
+        "p2": "Construyo sitios web utilizando tecnologías modernas para ofrecer excelentes interacciones con el usuario, siempre esforzándome por brindar la mejor experiencia.",
+        "p3": "Enfocado en el desarrollo web, trabajando con React, Next.js, Tailwind CSS, Playwright y más tecnologías modernas."
       }
     },
     "ProjectsSection": {
