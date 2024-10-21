@@ -26,7 +26,7 @@ export default function HomePage({ params: { locale } }: NextPageProps) {
           </TypographyH2>
           <ContactLinks />
         </div>
-        <div className="space-y-8 text-center md:space-y-4">
+        <div className="space-y-8 text-pretty text-center md:space-y-4">
           {paragraphsKeys.map((key) => (
             <TypographyP key={key}>{t(`HeroSection.aboutMe.${key}`)}</TypographyP>
           ))}
