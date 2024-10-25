@@ -4,7 +4,7 @@
       "title": "I'm Mario",
       "subtitle": "Frontend Developer",
       "aboutMe": {
-        "p1": "I am a self-taught software developer with a passion for solving problems.",
+        "p1": "I am a self-taught software developer.",
         "p2": "I build websites using modern technologies to provide excellent user interactions, always striving to deliver the best experience.",
         "p3": "Focused on web development, working with React, Next.js, Tailwind CSS, Playwright and more modern technologies."
       }
