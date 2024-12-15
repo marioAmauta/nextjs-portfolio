@@ -1,30 +1,12 @@
-type LocaleParams = {
-  params: {
-    locale: string;
-  };
-};
+type Params<T> = Promise<T>;
 
-type NextPageProps = {
-  searchParams: Record<string, string | string[] | undefined>;
-  params: {
-    locale: Languages;
-  };
-};
+type SearchParams<T = Record<string, string | string[] | undefined>> = Promise<T>;
 
 type IntlPath = Paths<IntlMessages>;
 
-type NextPage<T = object> = (props: NextPageProps & T) => ReactElement | Promise<ReactElement> | null;
-
-type LayoutProps = Readonly<{
-  children: ReactNode;
-  params: {
-    locale: string;
-  };
-}>;
-
-type ErrorFileProps = {
+interface ErrorFileProps {
   reset: () => void;
   error: Error & { digest?: string };
-};
+}
 
 type TranslationKey = MessageKeys<IntlMessages, unknown>;
