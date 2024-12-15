@@ -22,8 +22,8 @@
     "madeWithLove": "Made with ❤️ by Mario Programador"
   },
   "ProjectCard": {
-    "code": "Code",
-    "project": "Project",
+    "code": "See Code",
+    "project": "See Project",
     "projectScreenshots": "Project Screenshots",
     "imageDesktopAlt": "{title}'s desktop screenshot {imageNumber}",
     "imageMobileAlt": "{title}'s mobile screenshot {imageNumber}",

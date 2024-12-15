@@ -1,5 +1,6 @@
-import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+
+import { Locale } from "@/i18n/routing";
 
 import { projects } from "@/lib/data";
 
@@ -7,10 +8,12 @@ import { ContactLinks } from "@/components/contact-links";
 import { ProjectCard } from "@/components/project-card";
 import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
 
-export default function HomePage({ params: { locale } }: NextPageProps) {
-  unstable_setRequestLocale(locale);
+export default async function HomePage({ params }: { params: Params<{ locale: Locale }> }) {
+  const locale = (await params).locale;
 
-  const t = useTranslations("HomePage");
+  setRequestLocale(locale);
+
+  const t = await getTranslations("HomePage");
 
   const paragraphsKeys = ["p1", "p2", "p3"] as const;
 

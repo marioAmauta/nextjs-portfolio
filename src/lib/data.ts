@@ -61,9 +61,9 @@ export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
     href: "https://ui.shadcn.com/",
     label: "shadcn"
   },
-  lucia: {
-    href: "https://lucia-auth.com/",
-    label: "Lucia"
+  betterAuth: {
+    href: "https://www.better-auth.com/",
+    label: "Better-Auth"
   },
   prisma: {
     href: "https://www.prisma.io/",
@@ -159,10 +159,7 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
         "/images/clientes-carwash-desktop-04.png",
         "/images/clientes-carwash-desktop-05.png",
         "/images/clientes-carwash-desktop-06.png",
-        "/images/clientes-carwash-desktop-07.png",
-        "/images/clientes-carwash-desktop-08.png",
-        "/images/clientes-carwash-desktop-09.png",
-        "/images/clientes-carwash-desktop-10.png"
+        "/images/clientes-carwash-desktop-07.png"
       ],
       mobile: [
         "/images/clientes-carwash-mobile-01.png",
@@ -171,15 +168,12 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
         "/images/clientes-carwash-mobile-04.png",
         "/images/clientes-carwash-mobile-05.png",
         "/images/clientes-carwash-mobile-06.png",
-        "/images/clientes-carwash-mobile-07.png",
-        "/images/clientes-carwash-mobile-08.png",
-        "/images/clientes-carwash-mobile-09.png",
-        "/images/clientes-carwash-mobile-10.png"
+        "/images/clientes-carwash-mobile-07.png"
       ]
     },
     technologies: [
       TECHNOLOGIES.prisma,
-      TECHNOLOGIES.lucia,
+      TECHNOLOGIES.betterAuth,
       TECHNOLOGIES.react,
       TECHNOLOGIES.nextjs,
       TECHNOLOGIES.tailwindcss,

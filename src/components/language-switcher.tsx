@@ -1,9 +1,10 @@
 "use client";
 
-import { Locale, routing, usePathname, useRouter } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import { useParams, useSearchParams } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
+
+import { Locale, routing, usePathname, useRouter } from "@/i18n/routing";
 
 import { Select, SelectValue, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";

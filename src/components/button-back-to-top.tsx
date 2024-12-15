@@ -35,7 +35,7 @@ export function ButtonBackToTop() {
     <button
       onClick={scrollToTop}
       className={cn(
-        "bottom-14 right-8 rounded-full border bg-background/50 p-3 shadow-lg backdrop-blur md:bottom-16 md:right-16",
+        "bottom-20 right-4 rounded-full border bg-background/50 p-3 shadow-lg backdrop-blur md:bottom-16 xl:right-[10%]",
         isVisible ? "fixed" : "hidden"
       )}
     >

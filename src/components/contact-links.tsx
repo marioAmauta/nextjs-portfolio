@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 import { EmailIcon, GithubIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons";
 import { LinkExternal } from "@/components/link-button";
 
-type ContactLink = {
+interface ContactLink {
   href: string;
   label: string;
   Icon: ComponentType<{ className: string }>;
-};
+}
 
 const CONTACT_LINKS: ContactLink[] = [
   {
