@@ -16,10 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/providers/*": ["./src/providers/*"],
+      "@/app/*": ["./src/app/[locale]/*"],
+      "@/i18n/*": ["./src/i18n/*"],
       "@/lib/*": ["./src/lib/*"],
-      "@/app/*": ["./src/app/[locale]/*"]
+      "@/providers/*": ["./src/providers/*"],
+      "@/components/*": ["./src/components/*"]
     },
     "plugins": [
       {
