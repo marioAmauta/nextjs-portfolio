@@ -1,5 +1,4 @@
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -92,7 +91,6 @@ export default async function LocaleLayout({
             <main className="mx-auto max-w-app-container space-y-16 px-4 py-8">
               {children}
               <Analytics />
-              <SpeedInsights />
               <ButtonBackToTop />
             </main>
             <footer className="border-t">
