@@ -1,24 +1,17 @@
 import { FlatCompat } from "@eslint/eslintrc";
-import eslint from "@eslint/js";
 import importHelpers from "eslint-plugin-import-helpers";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-import path from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import tsEslint from "typescript-eslint";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: eslint.configs.recommended,
-  allConfig: eslint.configs.all
+  baseDirectory: __dirname
 });
 
-export default tsEslint.config(
-  eslint.configs.recommended,
-  ...tsEslint.configs.recommended,
-  ...compat.extends("next", "next/core-web-vitals"),
+export default [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     plugins: {
       "import-helpers": importHelpers
@@ -49,6 +42,5 @@ export default tsEslint.config(
       "@typescript-eslint/no-empty-object-type": "off",
       "no-console": "warn"
     }
-  },
-  eslintPluginPrettierRecommended
-);
+  }
+];
