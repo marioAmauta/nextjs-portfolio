@@ -23,13 +23,13 @@ export default async function HomePage({ params }: { params: Params<{ locale: Lo
         <div className="flex flex-col items-center space-y-8 md:space-y-4">
           <TypographyH1>{t("HeroSection.title")}</TypographyH1>
           <TypographyH2 className="w-fit text-center">
-            <span className="bg-gradient-to-r from-cyan-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-500 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
               {t("HeroSection.subtitle")}
             </span>
           </TypographyH2>
           <ContactLinks />
         </div>
-        <div className="space-y-8 text-pretty text-center md:space-y-4">
+        <div className="space-y-8 text-center text-pretty md:space-y-4">
           {paragraphsKeys.map((key) => (
             <TypographyP key={key}>{t(`HeroSection.aboutMe.${key}`)}</TypographyP>
           ))}

@@ -2,9 +2,7 @@ import { PropsWithChildren } from "react";
 
 import { cn } from "@/lib/utils";
 
-type TypographyProps = PropsWithChildren<{
-  className?: string;
-}>;
+type TypographyProps = PropsWithChildren<{ className?: string }>;
 
 export function TypographyH1({ children, className }: TypographyProps) {
   return (
@@ -25,9 +23,9 @@ export function TypographyH3({ children }: TypographyProps) {
 }
 
 export function TypographyLead({ children }: TypographyProps) {
-  return <p className="text-xl text-muted-foreground">{children}</p>;
+  return <p className="text-muted-foreground text-xl">{children}</p>;
 }
 
 export function TypographyP({ children, className }: TypographyProps) {
-  return <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>{children}</p>;
+  return <p className={cn("leading-7 not-first:mt-6", className)}>{children}</p>;
 }

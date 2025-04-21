@@ -43,10 +43,10 @@ export function ContactLinks({ className }: ComponentProps<"section">) {
             <a
               key={href}
               href={href}
-              className="group flex flex-col items-center fill-muted-foreground text-muted-foreground"
+              className="group fill-muted-foreground text-muted-foreground flex flex-col items-center"
             >
-              <Icon className="size-6 transition-colors group-hover:fill-primary" />
-              <span className="transition-colors group-hover:text-primary">{label}</span>
+              <Icon className="group-hover:fill-primary size-6 transition-colors" />
+              <span className="group-hover:text-primary transition-colors">{label}</span>
             </a>
           );
         }
@@ -55,10 +55,10 @@ export function ContactLinks({ className }: ComponentProps<"section">) {
           <LinkExternal
             key={href}
             href={href}
-            className="group flex flex-col items-center fill-muted-foreground text-muted-foreground"
+            className="group fill-muted-foreground text-muted-foreground flex flex-col items-center"
           >
-            <Icon className="size-6 transition-colors group-hover:fill-primary" />
-            <span className="transition-colors group-hover:text-primary">{label}</span>
+            <Icon className="group-hover:fill-primary size-6 transition-colors" />
+            <span className="group-hover:text-primary transition-colors">{label}</span>
           </LinkExternal>
         );
       })}

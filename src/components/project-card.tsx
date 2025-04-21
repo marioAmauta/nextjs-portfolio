@@ -31,7 +31,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
 
   return (
     <Card className="flex h-full w-full max-w-lg flex-col overflow-hidden">
-      <div className="relative bg-gradient-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
+      <div className="relative bg-linear-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
         <Image
           src={imageSrc.mobile[0]}
           width={375}
@@ -53,10 +53,10 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
                 variant: "outline",
                 size: "icon"
               }),
-              "absolute bottom-4 right-4 rounded-lg"
+              "absolute right-4 bottom-4 rounded-lg"
             )}
           >
-            <ImagesStackIcon className="size-6 fill-primary transition-transform hover:scale-110" />
+            <ImagesStackIcon className="fill-primary size-6 transition-transform hover:scale-110" />
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -122,11 +122,11 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
               buttonVariants({
                 variant: "outline"
               }),
-              "group flex items-center gap-2 rounded-3xl px-4 py-2 transition-colors hover:bg-muted"
+              "group hover:bg-muted flex items-center gap-2 rounded-3xl px-4 py-2 transition-colors"
             )}
           >
-            <Icon className="size-5 fill-muted-foreground transition-colors group-hover:fill-primary" />
-            <span className="font-semibold text-muted-foreground transition-colors group-hover:text-primary">
+            <Icon className="fill-muted-foreground group-hover:fill-primary size-5 transition-colors" />
+            <span className="text-muted-foreground group-hover:text-primary font-semibold transition-colors">
               {label}
             </span>
           </LinkExternal>
