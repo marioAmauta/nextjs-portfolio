@@ -3,10 +3,11 @@ import { PropsWithChildren } from "react";
 
 import { AppPathnames, Link } from "@/i18n/routing";
 
+import { ButtonProps } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-import { Badge } from "./ui/badge";
-import { ButtonProps, buttonVariants } from "./ui/button";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 
 type LinkButtonProps = PropsWithChildren<{
   href: string;
