@@ -30,9 +30,9 @@
     "closeButton": "Cerrar"
   },
   "ThemeSwitcher": {
-    "light": "Claro",
-    "dark": "Oscuro",
-    "system": "Sistema"
+    "lightLabel": "Claro",
+    "darkLabel": "Oscuro",
+    "systemLabel": "Sistema"
   },
   "projectDescriptions": {
     "markdownPreviewerDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",

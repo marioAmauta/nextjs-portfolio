@@ -1,6 +1,5 @@
+import { Locale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-
-import { Locale } from "@/i18n/routing";
 
 import { projects } from "@/lib/data";
 
@@ -8,8 +7,12 @@ import { ContactLinks } from "@/components/contact-links";
 import { ProjectCard } from "@/components/project-card";
 import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
 
-export default async function HomePage({ params }: { params: Params<{ locale: Locale }> }) {
-  const locale = (await params).locale;
+type HomePageProps = {
+  params: Params<{ locale: Locale }>;
+};
+
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
 
   setRequestLocale(locale);
 

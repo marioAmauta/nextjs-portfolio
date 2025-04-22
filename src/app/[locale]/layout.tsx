@@ -1,12 +1,15 @@
+import "./styles.css";
+
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { PropsWithChildren, Suspense } from "react";
 import { Toaster } from "sonner";
 
-import { Link, Locale, routing } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
 import { METADATA_DEFAULT } from "@/lib/constants";
 
@@ -21,14 +24,14 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Params<{ locale: Locale }> }): Promise<Metadata> {
-  const locale = (await params).locale;
+export async function generateMetadata({ params }: LocaleLayoutProps): Promise<Metadata> {
+  const { locale } = await params;
 
   const t = await getTranslations("HomePage.HeroSection.aboutMe");
 
   const { title, ogImageSrc, url, keywords } = METADATA_DEFAULT;
   const description = t("p2");
-  const images = ogImageSrc[locale];
+  const images = ogImageSrc[locale as keyof typeof ogImageSrc];
 
   return {
     title,
@@ -56,25 +59,24 @@ export async function generateMetadata({ params }: { params: Params<{ locale: Lo
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params
-}: PropsWithChildren<{ params: Params<{ locale: Locale }> }>) {
-  const locale = (await params).locale;
+type LocaleLayoutProps = PropsWithChildren<{
+  params: Params<{ locale: Locale }>;
+}>;
 
-  if (!routing.locales.includes(locale)) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
   setRequestLocale(locale);
 
-  const messages = await getMessages();
-
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className="min-h-screen-dynamic grid-rows-pancake-stack bg-background grid">
         <NextThemesProvider>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider>
             <header className="bg-background/80 dark:bg-background/50 sticky top-0 z-30 border-b backdrop-blur-sm transition-[top] duration-300">
               <div className="h-header-height max-w-app-container mx-auto flex items-center justify-between gap-2 px-4 font-semibold">
                 <Link href="/" className="text-lg hover:underline">

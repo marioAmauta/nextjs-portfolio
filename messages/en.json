@@ -30,9 +30,9 @@
     "closeButton": "Close"
   },
   "ThemeSwitcher": {
-    "light": "Light",
-    "dark": "Dark",
-    "system": "System"
+    "lightLabel": "Light",
+    "darkLabel": "Dark",
+    "systemLabel": "System"
   },
   "projectDescriptions": {
     "markdownPreviewerDescription": "In this project, you can input Markdown code and instantly receive both a Preview and HTML code, which you can easily copy to your clipboard with a single click.",

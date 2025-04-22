@@ -1,50 +1,34 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { useParams, useSearchParams } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { Locale, useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
+import { startTransition } from "react";
 
-import { Locale, routing, usePathname, useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
-import { Select, SelectValue, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 
 export function LanguageSwitcher() {
-  const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();
-  const params = useParams();
+  const router = useRouter();
   const searchParams = useSearchParams();
-  const searchParamsObject = Object.fromEntries(searchParams);
-  const [, startTransition] = useTransition();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   function handleChange(value: Locale) {
     startTransition(() => {
-      router.replace(
-        // @ts-expect-error -- TypeScript will validate that only known `params`
-        // are used in combination with a given `pathname`. Since the two will
-        // always match for the current route, we can skip runtime checks.
-        { pathname, params, query: { ...searchParamsObject } },
-        { locale: value, scroll: false }
-      );
-    });
-  }
+      const params = new URLSearchParams(searchParams);
 
-  if (!mounted) {
-    return <Skeleton className="h-10 w-16" />;
+      const url = `${pathname}${params.size ? `?${params}` : ""}`;
+
+      router.replace(url, { locale: value, scroll: false });
+    });
   }
 
   return (
     <Select defaultValue={locale} onValueChange={handleChange}>
-      <SelectTrigger className="h-10 w-16 bg-transparent">
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent align="center" className="min-w-max">
+      <SelectTrigger className="h-full w-16 cursor-pointer font-normal">{locale.toUpperCase()}</SelectTrigger>
+      <SelectContent align="center">
         {routing.locales.map((locale) => (
           <SelectItem key={locale} value={locale} className="cursor-pointer">
             {locale.toUpperCase()}

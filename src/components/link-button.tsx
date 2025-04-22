@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { PropsWithChildren } from "react";
 
-import { AppPathnames, Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 import { ButtonProps } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,7 @@ type LinkButtonProps = PropsWithChildren<{
 
 export function ButtonLink({ children, href, className }: LinkButtonProps) {
   return (
-    <Link href={href as AppPathnames} className={cn(buttonVariants(), className)}>
+    <Link href={href} className={cn(buttonVariants(), className)}>
       {children}
     </Link>
   );

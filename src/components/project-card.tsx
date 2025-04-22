@@ -30,7 +30,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
   ];
 
   return (
-    <Card className="flex h-full w-full max-w-lg flex-col overflow-hidden">
+    <Card className="flex h-full w-full max-w-lg flex-col overflow-hidden pt-0">
       <div className="relative bg-linear-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
         <Image
           src={imageSrc.mobile[0]}
