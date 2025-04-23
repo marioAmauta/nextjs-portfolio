@@ -23,7 +23,7 @@ export function TypographyH3({ children }: TypographyProps) {
 }
 
 export function TypographyLead({ children }: TypographyProps) {
-  return <p className="text-muted-foreground text-xl">{children}</p>;
+  return <p className="text-xl text-muted-foreground">{children}</p>;
 }
 
 export function TypographyP({ children, className }: TypographyProps) {

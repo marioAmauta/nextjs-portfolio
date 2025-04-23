@@ -43,7 +43,7 @@ export function ThemeSwitcher() {
     <Select defaultValue={theme} onValueChange={setTheme}>
       <SelectTrigger className="h-full w-16 cursor-pointer">
         {themes.map(({ Icon, value }) =>
-          theme === value ? <Icon key={`${value}-icon`} className="stroke-primary size-4" /> : null
+          theme === value ? <Icon key={`${value}-icon`} className="size-4 stroke-primary" /> : null
         )}
       </SelectTrigger>
       <SelectContent align="center">

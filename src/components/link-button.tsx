@@ -34,7 +34,7 @@ export function LinkExternal({ children, href, className }: LinkButtonProps) {
 export function TechLinkButton({ children, href }: LinkButtonProps) {
   return (
     <LinkExternal href={href}>
-      <Badge variant="outline" className="hover:bg-muted flex items-center justify-center gap-2">
+      <Badge variant="outline" className="flex items-center justify-center gap-2 hover:bg-muted">
         <ExternalLink className="size-3.5" />
         {children}
       </Badge>

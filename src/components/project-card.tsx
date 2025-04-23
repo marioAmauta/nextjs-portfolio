@@ -56,7 +56,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
               "absolute right-4 bottom-4 rounded-lg"
             )}
           >
-            <ImagesStackIcon className="fill-primary size-6 transition-transform hover:scale-110" />
+            <ImagesStackIcon className="size-6 fill-primary transition-transform hover:scale-110" />
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -122,11 +122,11 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
               buttonVariants({
                 variant: "outline"
               }),
-              "group hover:bg-muted flex items-center gap-2 rounded-3xl px-4 py-2 transition-colors"
+              "group flex items-center gap-2 rounded-3xl px-4 py-2 transition-colors hover:bg-muted"
             )}
           >
-            <Icon className="fill-muted-foreground group-hover:fill-primary size-5 transition-colors" />
-            <span className="text-muted-foreground group-hover:text-primary font-semibold transition-colors">
+            <Icon className="size-5 fill-muted-foreground transition-colors group-hover:fill-primary" />
+            <span className="font-semibold text-muted-foreground transition-colors group-hover:text-primary">
               {label}
             </span>
           </LinkExternal>

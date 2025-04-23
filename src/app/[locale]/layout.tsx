@@ -74,11 +74,11 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="min-h-screen-dynamic grid-rows-pancake-stack bg-background grid">
+      <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-background">
         <NextThemesProvider>
           <NextIntlClientProvider>
-            <header className="bg-background/80 dark:bg-background/50 sticky top-0 z-30 border-b backdrop-blur-sm transition-[top] duration-300">
-              <div className="h-header-height max-w-app-container mx-auto flex items-center justify-between gap-2 px-4 font-semibold">
+            <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur-sm transition-[top] duration-300 dark:bg-background/50">
+              <div className="mx-auto flex h-header-height max-w-app-container items-center justify-between gap-2 px-4 font-semibold">
                 <Link href="/" className="text-lg hover:underline">
                   Mario Programador
                 </Link>
@@ -90,13 +90,13 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
                 </div>
               </div>
             </header>
-            <main className="max-w-app-container mx-auto space-y-16 px-4 py-8">
+            <main className="mx-auto max-w-app-container space-y-16 px-4 py-8">
               {children}
               <Analytics />
               <ButtonBackToTop />
             </main>
             <footer className="border-t">
-              <div className="max-w-app-container mx-auto py-6">
+              <div className="mx-auto max-w-app-container py-6">
                 <ContactLinks />
               </div>
             </footer>

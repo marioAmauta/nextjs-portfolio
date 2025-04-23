@@ -2,5 +2,6 @@
   "printWidth": 120,
   "trailingComma": "none",
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["clsx", "cn", "twMerge"]
+  "tailwindFunctions": ["clsx", "cn", "twMerge"],
+  "tailwindStylesheet": "./src/app/[locale]/styles.css"
 }
