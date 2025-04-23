@@ -25,8 +25,8 @@
     "code": "Ver Código",
     "project": "Ver Proyecto",
     "projectScreenshots": "Capturas de pantalla del proyecto",
-    "imageDesktopAlt": "Captura de pantalla de escritorio de {title} {imageNumber}",
-    "imageMobileAlt": "Captura de pantalla móvil de {title} {imageNumber}",
+    "imageDesktopAlt": "Captura de pantalla de escritorio de {title} {imageNumber, number}",
+    "imageMobileAlt": "Captura de pantalla móvil de {title} {imageNumber, number}",
     "closeButton": "Cerrar"
   },
   "ThemeSwitcher": {

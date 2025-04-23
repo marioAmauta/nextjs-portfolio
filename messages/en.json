@@ -25,8 +25,8 @@
     "code": "See Code",
     "project": "See Project",
     "projectScreenshots": "Project Screenshots",
-    "imageDesktopAlt": "{title}'s desktop screenshot {imageNumber}",
-    "imageMobileAlt": "{title}'s mobile screenshot {imageNumber}",
+    "imageDesktopAlt": "{title}'s desktop screenshot {imageNumber, number}",
+    "imageMobileAlt": "{title}'s mobile screenshot {imageNumber, number}",
     "closeButton": "Close"
   },
   "ThemeSwitcher": {
