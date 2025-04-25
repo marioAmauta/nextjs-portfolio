@@ -41,10 +41,10 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
       </AnimatedHeroSection>
       <AnimatedProjectsSection>
-        <TypographyH2 className="mb-12">{t("HeroSection.title")}</TypographyH2>
+        <TypographyH2 className="mb-12">{t("ProjectsSection.title")}</TypographyH2>
         <ul className="grid justify-items-center gap-8 md:grid-cols-2">
           {projects.map((project) => (
-            <AnimatedProjectsSectionItem key={project.title}>
+            <AnimatedProjectsSectionItem key={project.title} className="size-full">
               <ProjectCard {...project} />
             </AnimatedProjectsSectionItem>
           ))}
