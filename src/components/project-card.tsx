@@ -59,7 +59,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
                 variant: "outline",
                 size: "icon"
               }),
-              "absolute right-4 bottom-4 rounded-lg"
+              "absolute right-4 bottom-4 cursor-pointer rounded-lg"
             )}
           >
             <ImagesStackIcon className="size-6 fill-primary transition-transform hover:scale-110" />
