@@ -4,12 +4,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 @theme {
-  --grid-template-rows-pancake-stack: auto 1fr auto;
+  --animate-rotate-border: border-rotate 3s linear infinite;
 
-  --container-app-container: 1000px;
+  @keyframes border-rotate {
+    to {
+      --border-angle: 360deg;
+    }
+  }
 
-  --min-height-screen-dynamic: 100dvh;
+  --container-app-container: 64rem;
 
   --height-header-height: var(--header-height);
 

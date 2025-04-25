@@ -4,20 +4,19 @@ import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
 import { PropsWithChildren, Suspense } from "react";
-import { Toaster } from "sonner";
 
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 import { METADATA_DEFAULT } from "@/lib/constants";
 
-import { NextThemesProvider } from "@/providers/next-themes-provider";
-
 import { ButtonBackToTop } from "@/components/button-back-to-top";
 import { ContactLinks } from "@/components/contact-links";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderHider } from "@/components/layout/header-hider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function generateStaticParams() {
@@ -74,35 +73,32 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="grid min-h-screen-dynamic grid-rows-pancake-stack bg-background">
-        <NextThemesProvider>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider>
-            <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur-sm transition-[top] duration-300 dark:bg-background/50">
+            <HeaderHider className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur-sm transition-[top] duration-300 dark:bg-background/50">
               <div className="mx-auto flex h-header-height max-w-app-container items-center justify-between gap-2 px-4 font-semibold">
                 <Link href="/" className="text-lg hover:underline">
                   Mario Programador
                 </Link>
                 <div className="flex items-center justify-center gap-2">
+                  <ThemeSwitcher />
                   <Suspense>
                     <LanguageSwitcher />
                   </Suspense>
-                  <ThemeSwitcher />
                 </div>
               </div>
-            </header>
+            </HeaderHider>
             <main className="mx-auto max-w-app-container space-y-16 px-4 py-8">
               {children}
               <Analytics />
               <ButtonBackToTop />
             </main>
-            <footer className="border-t">
-              <div className="mx-auto max-w-app-container py-6">
-                <ContactLinks />
-              </div>
+            <footer className="border-t py-6">
+              <ContactLinks />
             </footer>
-            <Toaster position="top-center" />
           </NextIntlClientProvider>
-        </NextThemesProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

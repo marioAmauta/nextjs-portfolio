@@ -4,13 +4,19 @@ import Image from "next/image";
 import { ProjectData } from "@/lib/definitions";
 import { cn } from "@/lib/utils";
 
+import { GithubIcon, GlobeIcon, ImagesStackIcon } from "@/components/icons";
+import { LinkExternal, TechLinkButton } from "@/components/link-button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-
-import { GithubIcon, GlobeIcon, ImagesStackIcon } from "./icons";
-import { LinkExternal, TechLinkButton } from "./link-button";
-import { buttonVariants } from "./ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
-import { DialogDescription, DialogTitle, Dialog, DialogContent, DialogHeader, DialogTrigger } from "./ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  DialogDescription,
+  DialogTitle,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger
+} from "@/components/ui/dialog";
 
 export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liveUrl, repoUrl }: ProjectData) {
   const t = useTranslations("ProjectCard");
@@ -30,7 +36,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
   ];
 
   return (
-    <Card className="flex h-full w-full max-w-lg flex-col overflow-hidden pt-0">
+    <Card className="group size-full overflow-hidden pt-0 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
       <div className="relative bg-linear-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
         <Image
           src={imageSrc.mobile[0]}
@@ -118,17 +124,14 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
           <LinkExternal
             key={href}
             href={href}
-            className={cn(
-              buttonVariants({
-                variant: "outline"
-              }),
-              "group flex items-center gap-2 rounded-3xl px-4 py-2 transition-colors hover:bg-muted"
-            )}
+            className="group/button animate-rotate-border rounded-3xl from-background from-80% via-cyan-500 via-90% to-background to-100% p-px transition-transform group-hover:bg-conic/[from_var(--border-angle)] hover:-translate-y-0.5 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950"
           >
-            <Icon className="size-5 fill-muted-foreground transition-colors group-hover:fill-primary" />
-            <span className="font-semibold text-muted-foreground transition-colors group-hover:text-primary">
-              {label}
-            </span>
+            <div className="flex items-center gap-2 rounded-3xl border bg-background px-4 py-2 hover:bg-muted">
+              <Icon className="size-5 fill-muted-foreground transition-colors group-hover/button:fill-primary" />
+              <span className="font-semibold text-muted-foreground transition-colors group-hover/button:text-primary">
+                {label}
+              </span>
+            </div>
           </LinkExternal>
         ))}
       </CardFooter>

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+import { Button } from "@/components/ui/button";
+
 export function ButtonBackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -32,14 +34,16 @@ export function ButtonBackToTop() {
   }, []);
 
   return (
-    <button
+    <Button
       onClick={scrollToTop}
+      variant="outline"
+      size="icon"
       className={cn(
-        "right-4 bottom-20 rounded-full border bg-background/50 p-3 shadow-lg backdrop-blur-sm md:bottom-16 xl:right-[10%]",
+        "right-4 bottom-20 rounded-full border bg-background/50 p-6 shadow-lg backdrop-blur-sm md:bottom-16 xl:right-[10%]",
         isVisible ? "fixed" : "hidden"
       )}
     >
       <ArrowUp className="size-6" />
-    </button>
+    </Button>
   );
 }

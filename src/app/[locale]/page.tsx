@@ -4,6 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { projects } from "@/lib/data";
 
 import { ContactLinks } from "@/components/contact-links";
+import { AnimatedHeroSection } from "@/components/layout/animated-hero-section";
+import { AnimatedProjectsSection, AnimatedProjectsSectionItem } from "@/components/layout/animated-projects-section";
 import { ProjectCard } from "@/components/project-card";
 import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
 
@@ -22,7 +24,7 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <>
-      <section className="grid gap-8 md:grid-cols-2 md:gap-0">
+      <AnimatedHeroSection className="grid gap-8 md:grid-cols-2 md:gap-0">
         <div className="flex flex-col items-center space-y-8 md:space-y-4">
           <TypographyH1>{t("HeroSection.title")}</TypographyH1>
           <TypographyH2 className="w-fit text-center">
@@ -37,15 +39,17 @@ export default async function HomePage({ params }: HomePageProps) {
             <TypographyP key={key}>{t(`HeroSection.aboutMe.${key}`)}</TypographyP>
           ))}
         </div>
-      </section>
-      <TypographyH2>{t("ProjectsSection.title")}</TypographyH2>
-      <ul className="grid justify-items-center gap-8 md:grid-cols-2">
-        {projects.map((project) => (
-          <li key={project.title}>
-            <ProjectCard {...project} />
-          </li>
-        ))}
-      </ul>
+      </AnimatedHeroSection>
+      <AnimatedProjectsSection>
+        <TypographyH2 className="mb-12">{t("HeroSection.title")}</TypographyH2>
+        <ul className="grid justify-items-center gap-8 md:grid-cols-2">
+          {projects.map((project) => (
+            <AnimatedProjectsSectionItem key={project.title}>
+              <ProjectCard {...project} />
+            </AnimatedProjectsSectionItem>
+          ))}
+        </ul>
+      </AnimatedProjectsSection>
     </>
   );
 }
