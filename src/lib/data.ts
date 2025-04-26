@@ -1,4 +1,4 @@
-import { LinkWithLabel, ProjectData } from "./definitions";
+import { LinkWithLabel, ProjectData } from "@/lib/definitions";
 
 export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
   javascript: {
@@ -101,7 +101,7 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
     imageSrc: {
       desktop: [
         "/images/markdown-previewer-desktop-01.png",
-        "/images/markdown-previewer-desktop-03.png",
+        "/images/markdown-previewer-desktop-02.png",
         "/images/markdown-previewer-desktop-03.png"
       ],
       mobile: [

@@ -27,7 +27,9 @@
     "projectScreenshots": "Project Screenshots",
     "imageDesktopAlt": "{title}'s desktop screenshot {imageNumber, number}",
     "imageMobileAlt": "{title}'s mobile screenshot {imageNumber, number}",
-    "closeButton": "Close"
+    "closeButton": "Close",
+    "mobileTab": "Mobile",
+    "desktopTab": "Desktop"
   },
   "ThemeSwitcher": {
     "lightLabel": "Light",

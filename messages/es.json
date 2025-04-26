@@ -27,7 +27,9 @@
     "projectScreenshots": "Capturas de pantalla del proyecto",
     "imageDesktopAlt": "Captura de pantalla de escritorio de {title} {imageNumber, number}",
     "imageMobileAlt": "Captura de pantalla móvil de {title} {imageNumber, number}",
-    "closeButton": "Cerrar"
+    "closeButton": "Cerrar",
+    "mobileTab": "Móvil",
+    "desktopTab": "Escritorio"
   },
   "ThemeSwitcher": {
     "lightLabel": "Claro",

@@ -2,21 +2,12 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { ProjectData } from "@/lib/definitions";
-import { cn } from "@/lib/utils";
 
-import { GithubIcon, GlobeIcon, ImagesStackIcon } from "@/components/icons";
+import { GithubIcon, GlobeIcon } from "@/components/icons";
 import { LinkExternal, TechLinkButton } from "@/components/link-button";
-import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import {
-  DialogDescription,
-  DialogTitle,
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTrigger
-} from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liveUrl, repoUrl }: ProjectData) {
   const t = useTranslations("ProjectCard");
@@ -35,77 +26,57 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
     }
   ];
 
+  const tabsValues = {
+    mobile: t("mobileTab"),
+    desktop: t("desktopTab")
+  };
+
   return (
     <Card className="group size-full overflow-hidden pt-0 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="relative bg-linear-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
-        <Image
-          src={imageSrc.mobile[0]}
-          width={375}
-          height={812}
-          alt={t("imageMobileAlt", { title, imageNumber: 1 })}
-          className="mx-auto h-72 w-fit rounded-lg object-contain lg:hidden"
-        />
-        <Image
-          src={imageSrc.desktop[0]}
-          width={1920}
-          height={1080}
-          alt={t("imageDesktopAlt", { title, imageNumber: 1 })}
-          className="hidden rounded-lg object-cover lg:block"
-        />
-        <Dialog>
-          <DialogTrigger
-            className={cn(
-              buttonVariants({
-                variant: "outline",
-                size: "icon"
-              }),
-              "absolute right-4 bottom-4 cursor-pointer rounded-lg"
-            )}
-          >
-            <ImagesStackIcon className="size-6 fill-primary transition-transform hover:scale-110" />
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>{title}</DialogTitle>
-              <DialogDescription>{t("projectScreenshots")}</DialogDescription>
-            </DialogHeader>
-            <Carousel className="lg:hidden">
-              <CarouselContent>
-                {imageSrc.mobile.map((src, i) => (
-                  <CarouselItem key={src}>
-                    <Image
-                      src={src}
-                      width={375}
-                      height={812}
-                      alt={t("imageMobileAlt", { title, imageNumber: i + 1 })}
-                      className="mx-auto h-[70vh] w-fit rounded-lg object-contain"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-            <Carousel className="hidden lg:flex">
-              <CarouselContent>
-                {imageSrc.desktop.map((src, i) => (
-                  <CarouselItem key={src}>
-                    <Image
-                      src={src}
-                      width={1920}
-                      height={1080}
-                      alt={t("imageDesktopAlt", { title, imageNumber: i + 1 })}
-                      className="mx-auto rounded-lg object-contain"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </DialogContent>
-        </Dialog>
-      </div>
+      <Tabs defaultValue={tabsValues.mobile}>
+        <TabsContent value={tabsValues.mobile}>
+          <Carousel className="bg-linear-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
+            <CarouselContent>
+              {imageSrc.mobile.map((src, i) => (
+                <CarouselItem key={src}>
+                  <Image
+                    src={src}
+                    width={375}
+                    height={812}
+                    alt={t("imageMobileAlt", { title, imageNumber: i + 1 })}
+                    className="mx-auto h-72 w-fit rounded-lg"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
+        </TabsContent>
+        <TabsContent value={tabsValues.desktop}>
+          <Carousel className="bg-linear-to-r from-slate-300 via-slate-800 to-slate-300 p-4 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950">
+            <CarouselContent>
+              {imageSrc.desktop.map((src, i) => (
+                <CarouselItem key={src}>
+                  <Image
+                    src={src}
+                    width={1920}
+                    height={1080}
+                    alt={t("imageDesktopAlt", { title, imageNumber: i + 1 })}
+                    className="rounded-lg"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
+        </TabsContent>
+        <TabsList className="mx-auto dark:bg-slate-900">
+          <TabsTrigger value={tabsValues.mobile}>{tabsValues.mobile}</TabsTrigger>
+          <TabsTrigger value={tabsValues.desktop}>{tabsValues.desktop}</TabsTrigger>
+        </TabsList>
+      </Tabs>
       <CardHeader className="space-y-4">
         <CardTitle>{title}</CardTitle>
         <CardDescription>{tProjectDescription(descriptionKey)}</CardDescription>
