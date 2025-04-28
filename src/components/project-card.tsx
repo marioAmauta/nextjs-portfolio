@@ -79,7 +79,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
       </Tabs>
       <CardHeader className="space-y-4">
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{tProjectDescription(descriptionKey)}</CardDescription>
+        <CardDescription className="text-pretty">{tProjectDescription(descriptionKey)}</CardDescription>
       </CardHeader>
       <CardContent>
         <ul className="flex flex-wrap gap-2">

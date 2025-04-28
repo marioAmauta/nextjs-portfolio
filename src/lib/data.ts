@@ -1,6 +1,26 @@
 import { LinkWithLabel, ProjectData } from "@/lib/definitions";
 
 export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
+  nextIntl: {
+    label: "Next Intl",
+    href: "https://next-intl.dev/"
+  },
+  eslint: {
+    label: "ESLint",
+    href: "https://eslint.org/"
+  },
+  sendgrid: {
+    label: "Sendgrid",
+    href: "https://sendgrid.com/"
+  },
+  mongoDb: {
+    label: "MongoDB",
+    href: "https://www.mongodb.com/"
+  },
+  uploadthing: {
+    label: "Uploadthing",
+    href: "https://uploadthing.com/"
+  },
   javascript: {
     label: "JavaScript",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -180,11 +200,49 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       TECHNOLOGIES.shadcn,
       TECHNOLOGIES.reactHookForm,
       TECHNOLOGIES.zod,
+      TECHNOLOGIES.sendgrid,
+      TECHNOLOGIES.mongoDb,
       TECHNOLOGIES.typescript,
+      TECHNOLOGIES.eslint,
       TECHNOLOGIES.playwright
     ],
     repoUrl: "https://github.com/marioAmauta/clientes-carwash",
     liveUrl: "https://clientes-carwash.vercel.app/iniciar-sesion?email=marioamauta@hello.com&password=hello123"
+  },
+  saxSheets: {
+    title: "Sax Sheet",
+    descriptionKey: "saxSheetDescription",
+    imageSrc: {
+      desktop: [
+        "/images/sax-sheet-desktop-01.png",
+        "/images/sax-sheet-desktop-02.png",
+        "/images/sax-sheet-desktop-03.png",
+        "/images/sax-sheet-desktop-04.png"
+      ],
+      mobile: [
+        "/images/sax-sheet-mobile-01.png",
+        "/images/sax-sheet-mobile-02.png",
+        "/images/sax-sheet-mobile-03.png",
+        "/images/sax-sheet-mobile-04.png"
+      ]
+    },
+    technologies: [
+      TECHNOLOGIES.nextjs,
+      TECHNOLOGIES.tailwindcss,
+      TECHNOLOGIES.mongoDb,
+      TECHNOLOGIES.prisma,
+      TECHNOLOGIES.shadcn,
+      TECHNOLOGIES.uploadthing,
+      TECHNOLOGIES.betterAuth,
+      TECHNOLOGIES.sendgrid,
+      TECHNOLOGIES.nextIntl,
+      TECHNOLOGIES.zod,
+      TECHNOLOGIES.reactHookForm,
+      TECHNOLOGIES.eslint,
+      TECHNOLOGIES.typescript
+    ],
+    liveUrl: "https://saxsheet.vercel.app/",
+    repoUrl: "https://github.com/marioAmauta/saxophone-sheet-music"
   }
 };
 
