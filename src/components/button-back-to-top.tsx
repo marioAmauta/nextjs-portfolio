@@ -39,7 +39,7 @@ export function ButtonBackToTop() {
       variant="outline"
       size="icon"
       className={cn(
-        "right-4 bottom-20 rounded-full border bg-background/50 p-6 shadow-lg backdrop-blur-sm md:bottom-16 xl:right-[10%]",
+        "right-4 bottom-20 cursor-pointer rounded-full border bg-background/50 p-6 shadow-lg backdrop-blur-sm md:bottom-16 xl:right-[10%]",
         isVisible ? "fixed" : "hidden"
       )}
     >

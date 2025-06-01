@@ -49,8 +49,8 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-4 cursor-pointer" />
+            <CarouselNext className="right-4 cursor-pointer" />
           </Carousel>
         </TabsContent>
         <TabsContent value={tabsValues.desktop}>
@@ -68,13 +68,17 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-4 cursor-pointer" />
+            <CarouselNext className="right-4 cursor-pointer" />
           </Carousel>
         </TabsContent>
         <TabsList className="mx-auto dark:bg-slate-900">
-          <TabsTrigger value={tabsValues.mobile}>{tabsValues.mobile}</TabsTrigger>
-          <TabsTrigger value={tabsValues.desktop}>{tabsValues.desktop}</TabsTrigger>
+          <TabsTrigger value={tabsValues.mobile} className="cursor-pointer">
+            {tabsValues.mobile}
+          </TabsTrigger>
+          <TabsTrigger value={tabsValues.desktop} className="cursor-pointer">
+            {tabsValues.desktop}
+          </TabsTrigger>
         </TabsList>
       </Tabs>
       <CardHeader className="space-y-4">
