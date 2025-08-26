@@ -73,7 +73,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body>
+      <body className="flex min-h-dvh flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider>
             <HeaderHider className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur-sm transition-[top] duration-300 dark:bg-background/50">
@@ -89,7 +89,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
                 </div>
               </div>
             </HeaderHider>
-            <main className="mx-auto max-w-app-container space-y-16 px-4 py-8">
+            <main className="mx-auto max-w-app-container grow space-y-16 px-4 py-8">
               {children}
               <Analytics />
               <ButtonBackToTop />
