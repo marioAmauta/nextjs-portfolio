@@ -1,5 +1,5 @@
 import { ExternalLink } from "lucide-react";
-import { PropsWithChildren } from "react";
+import { ComponentProps, PropsWithChildren } from "react";
 
 import { Link } from "@/i18n/navigation";
 
@@ -9,11 +9,12 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 
-type LinkButtonProps = PropsWithChildren<{
-  href: string;
-  size?: ButtonProps["size"];
-  className?: string;
-}>;
+type LinkButtonProps = ComponentProps<typeof Link> &
+  PropsWithChildren<{
+    size?: ButtonProps["size"];
+  }>;
+
+type LinkExternalButtonProps = ComponentProps<"a">;
 
 export function ButtonLink({ children, href, className }: LinkButtonProps) {
   return (
@@ -23,17 +24,17 @@ export function ButtonLink({ children, href, className }: LinkButtonProps) {
   );
 }
 
-export function LinkExternal({ children, href, className }: LinkButtonProps) {
+export function LinkExternal({ children, href, className, ...props }: LinkExternalButtonProps) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className} {...props}>
       {children}
     </a>
   );
 }
 
-export function TechLinkButton({ children, href }: LinkButtonProps) {
+export function TechLinkButton({ children, href, ...props }: LinkExternalButtonProps) {
   return (
-    <LinkExternal href={href}>
+    <LinkExternal href={href} {...props}>
       <Badge variant="outline" className="flex items-center justify-center gap-2 hover:bg-muted">
         <ExternalLink className="size-3.5" />
         {children}

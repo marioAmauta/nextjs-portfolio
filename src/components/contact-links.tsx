@@ -1,9 +1,11 @@
+import { Github, Linkedin, Mail } from "lucide-react";
 import { ComponentProps, ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { EmailIcon, GithubIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons";
 import { LinkExternal } from "@/components/link-button";
+
+import { ButtonCV } from "./button-cv";
 
 interface ContactLink {
   href: string;
@@ -15,22 +17,17 @@ const CONTACT_LINKS: ContactLink[] = [
   {
     href: "https://github.com/marioAmauta",
     label: "Github",
-    Icon: GithubIcon
+    Icon: Github
   },
   {
     href: "https://www.linkedin.com/in/marioamauta/",
     label: "Linkedin",
-    Icon: LinkedinIcon
-  },
-  {
-    href: "https://x.com/marioAmauta",
-    label: "Twitter",
-    Icon: XTwitterIcon
+    Icon: Linkedin
   },
   {
     href: "mailto:mariodevcl@gmail.com",
     label: "Email",
-    Icon: EmailIcon
+    Icon: Mail
   }
 ];
 
@@ -45,7 +42,7 @@ export function ContactLinks({ className }: ComponentProps<"section">) {
               href={href}
               className="group flex flex-col items-center fill-muted-foreground text-muted-foreground"
             >
-              <Icon className="size-6 transition-colors group-hover:fill-primary" />
+              <Icon className="size-6 transition-colors" />
               <span className="transition-colors group-hover:text-primary">{label}</span>
             </a>
           );
@@ -57,11 +54,12 @@ export function ContactLinks({ className }: ComponentProps<"section">) {
             href={href}
             className="group flex flex-col items-center fill-muted-foreground text-muted-foreground"
           >
-            <Icon className="size-6 transition-colors group-hover:fill-primary" />
+            <Icon className="size-6 transition-colors" />
             <span className="transition-colors group-hover:text-primary">{label}</span>
           </LinkExternal>
         );
       })}
+      <ButtonCV />
     </section>
   );
 }

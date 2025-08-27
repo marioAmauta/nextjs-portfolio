@@ -1,9 +1,9 @@
+import { Github, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { ProjectData } from "@/lib/definitions";
 
-import { GithubIcon, GlobeIcon } from "@/components/icons";
 import { LinkExternal, TechLinkButton } from "@/components/link-button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -17,12 +17,12 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
     {
       label: t("code"),
       href: repoUrl,
-      Icon: GithubIcon
+      Icon: Github
     },
     {
       label: t("project"),
       href: liveUrl,
-      Icon: GlobeIcon
+      Icon: Globe
     }
   ];
 
@@ -102,7 +102,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
             className="group/button animate-rotate-border rounded-3xl from-background from-80% via-cyan-500 via-90% to-background to-100% p-px transition-transform group-hover:bg-conic/[from_var(--border-angle)] hover:-translate-y-0.5 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950"
           >
             <div className="flex items-center gap-2 rounded-3xl border bg-background px-4 py-2 hover:bg-muted">
-              <Icon className="size-5 fill-muted-foreground transition-colors group-hover/button:fill-primary" />
+              <Icon className="size-5 text-muted-foreground transition-colors group-hover/button:fill-accent" />
               <span className="font-semibold text-muted-foreground transition-colors group-hover/button:text-primary">
                 {label}
               </span>
