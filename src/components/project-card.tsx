@@ -102,7 +102,7 @@ export function ProjectCard({ imageSrc, title, descriptionKey, technologies, liv
             className="group/button animate-rotate-border rounded-3xl from-background from-80% via-cyan-500 via-90% to-background to-100% p-px transition-transform group-hover:bg-conic/[from_var(--border-angle)] hover:-translate-y-0.5 dark:from-slate-950 dark:via-slate-400 dark:to-slate-950"
           >
             <div className="flex items-center gap-2 rounded-3xl border bg-background px-4 py-2 hover:bg-muted">
-              <Icon className="size-5 text-muted-foreground transition-colors group-hover/button:fill-accent" />
+              <Icon className="size-5 text-muted-foreground transition-colors group-hover/button:text-primary" />
               <span className="font-semibold text-muted-foreground transition-colors group-hover/button:text-primary">
                 {label}
               </span>

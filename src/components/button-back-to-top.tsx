@@ -39,11 +39,11 @@ export function ButtonBackToTop() {
       variant="outline"
       size="icon"
       className={cn(
-        "right-4 bottom-20 cursor-pointer rounded-full border bg-background/50 p-6 shadow-lg backdrop-blur-sm md:bottom-16 xl:right-[10%]",
+        "group right-4 bottom-20 cursor-pointer rounded-full border bg-background/50 p-6 shadow-lg backdrop-blur-sm md:bottom-16 xl:right-[10%]",
         isVisible ? "fixed" : "hidden"
       )}
     >
-      <ArrowUp className="size-6" />
+      <ArrowUp className="size-6 text-muted-foreground transition-colors group-hover:text-primary" />
     </Button>
   );
 }

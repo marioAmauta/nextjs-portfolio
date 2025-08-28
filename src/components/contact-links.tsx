@@ -1,65 +1,66 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FileDown, Github, Linkedin, Mail } from "lucide-react";
+import { Locale } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ComponentProps, ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
 
 import { LinkExternal } from "@/components/link-button";
 
-import { ButtonCV } from "./button-cv";
-
 interface ContactLink {
   href: string;
   label: string;
   Icon: ComponentType<{ className: string }>;
+  isMail?: boolean;
 }
 
-const CONTACT_LINKS: ContactLink[] = [
-  {
-    href: "https://github.com/marioAmauta",
-    label: "Github",
-    Icon: Github
-  },
-  {
-    href: "https://www.linkedin.com/in/marioamauta/",
-    label: "Linkedin",
-    Icon: Linkedin
-  },
-  {
-    href: "mailto:mariodevcl@gmail.com",
-    label: "Email",
-    Icon: Mail
-  }
-];
+export async function ContactLinks({ className }: ComponentProps<"section">) {
+  const locale = await getLocale();
 
-export function ContactLinks({ className }: ComponentProps<"section">) {
+  const cvTranslation = await getTranslations("ButtonCV");
+
+  const cvs: Record<Locale, string> = {
+    en: "/files/cv-en-mario-poblete-ortiz.pdf",
+    es: "/files/cv-es-mario-poblete-ortiz.pdf"
+  };
+
+  const CONTACT_LINKS: ContactLink[] = [
+    {
+      href: "https://github.com/marioAmauta",
+      label: "Github",
+      Icon: Github
+    },
+    {
+      href: "https://www.linkedin.com/in/marioamauta/",
+      label: "Linkedin",
+      Icon: Linkedin
+    },
+    {
+      href: "mailto:mariodevcl@gmail.com",
+      label: "Email",
+      Icon: Mail,
+      isMail: true
+    },
+    {
+      href: cvs[locale],
+      label: cvTranslation("label"),
+      Icon: FileDown
+    }
+  ];
+
   return (
     <section className={cn("mx-auto flex w-fit gap-6", className)}>
-      {CONTACT_LINKS.map(({ href, label, Icon }) => {
-        if (href.includes("mailto:")) {
-          return (
-            <a
-              key={href}
-              href={href}
-              className="group flex flex-col items-center fill-muted-foreground text-muted-foreground"
-            >
-              <Icon className="size-6 transition-colors" />
-              <span className="transition-colors group-hover:text-primary">{label}</span>
-            </a>
-          );
-        }
-
-        return (
-          <LinkExternal
-            key={href}
-            href={href}
-            className="group flex flex-col items-center fill-muted-foreground text-muted-foreground"
-          >
-            <Icon className="size-6 transition-colors" />
-            <span className="transition-colors group-hover:text-primary">{label}</span>
-          </LinkExternal>
-        );
-      })}
-      <ButtonCV />
+      {CONTACT_LINKS.map(({ href, label, Icon, isMail }) => (
+        <LinkExternal
+          key={href}
+          href={href}
+          isMail={isMail}
+          className="group flex flex-col items-center text-muted-foreground"
+        >
+          <Icon className="size-6 transition-colors group-hover:text-primary" />
+          <span className="transition-colors group-hover:text-primary">{label}</span>
+        </LinkExternal>
+      ))}
     </section>
   );
 }

@@ -1,40 +1,36 @@
 import { ExternalLink } from "lucide-react";
-import { ComponentProps, PropsWithChildren } from "react";
+import { ComponentProps } from "react";
 
 import { Link } from "@/i18n/navigation";
 
-import { ButtonProps } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 
-type LinkButtonProps = ComponentProps<typeof Link> &
-  PropsWithChildren<{
-    size?: ButtonProps["size"];
-  }>;
+type ButtonLinkProps = ComponentProps<typeof Link>;
 
-type LinkExternalButtonProps = ComponentProps<"a">;
-
-export function ButtonLink({ children, href, className }: LinkButtonProps) {
+export function ButtonLink({ children, className, ...props }: ButtonLinkProps) {
   return (
-    <Link href={href} className={cn(buttonVariants(), className)}>
+    <Link className={cn(buttonVariants(), className)} {...props}>
       {children}
     </Link>
   );
 }
 
-export function LinkExternal({ children, href, className, ...props }: LinkExternalButtonProps) {
+type LinkExternalProps = ComponentProps<"a"> & { isMail?: boolean };
+
+export function LinkExternal({ children, isMail, ...props }: LinkExternalProps) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className} {...props}>
+    <a target={!isMail ? "_blank" : undefined} rel={!isMail ? "noopener noreferrer" : undefined} {...props}>
       {children}
     </a>
   );
 }
 
-export function TechLinkButton({ children, href, ...props }: LinkExternalButtonProps) {
+export function TechLinkButton({ children, ...props }: LinkExternalProps) {
   return (
-    <LinkExternal href={href} {...props}>
+    <LinkExternal {...props}>
       <Badge variant="outline" className="flex items-center justify-center gap-2 hover:bg-muted">
         <ExternalLink className="size-3.5" />
         {children}
