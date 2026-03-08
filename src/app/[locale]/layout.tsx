@@ -2,7 +2,7 @@ import "./styles.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
-import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
 }
 
 type LocaleLayoutProps = PropsWithChildren<{
-  params: Params<{ locale: Locale }>;
+  params: Params<{ locale: string }>;
 }>;
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {

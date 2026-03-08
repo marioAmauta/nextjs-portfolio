@@ -1,5 +1,5 @@
-import { Locale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Locale, useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
 import { projects } from "@/lib/data";
 
@@ -8,17 +8,18 @@ import { AnimatedHeroSection } from "@/components/layout/animated-hero-section";
 import { AnimatedProjectsSection, AnimatedProjectsSectionItem } from "@/components/layout/animated-projects-section";
 import { ProjectCard } from "@/components/project-card";
 import { TypographyH1, TypographyH2, TypographyP } from "@/components/ui/typography";
+import { use } from "react";
 
 type HomePageProps = {
   params: Params<{ locale: Locale }>;
 };
 
-export default async function HomePage({ params }: HomePageProps) {
-  const { locale } = await params;
+export default function HomePage({ params }: HomePageProps) {
+  const { locale } = use(params);
 
   setRequestLocale(locale);
 
-  const t = await getTranslations("HomePage");
+  const t = useTranslations("HomePage");
 
   const paragraphsKeys = ["p1", "p2", "p3"] as const;
 

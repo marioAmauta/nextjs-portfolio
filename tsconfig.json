@@ -2,7 +2,11 @@
   "compilerOptions": {
     "allowArbitraryExtensions": true,
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,16 +16,28 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/app/*": ["./src/app/[locale]/*"],
-      "@/i18n/*": ["./src/i18n/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/providers/*": ["./src/providers/*"],
-      "@/components/*": ["./src/components/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/app/*": [
+        "./src/app/[locale]/*"
+      ],
+      "@/i18n/*": [
+        "./src/i18n/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/providers/*": [
+        "./src/providers/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ]
     },
     "plugins": [
       {
@@ -29,6 +45,14 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

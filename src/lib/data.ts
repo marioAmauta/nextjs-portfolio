@@ -104,17 +104,6 @@ export const TECHNOLOGIES: Record<string, LinkWithLabel> = {
 };
 
 export const PROJECTS_DATA: Record<string, ProjectData> = {
-  randomQuoteMachine: {
-    title: "Random Quote Machine",
-    descriptionKey: "randomQuoteMachineDescription",
-    imageSrc: {
-      desktop: ["/images/random-quote-machine-desktop-01.png", "/images/random-quote-machine-desktop-02.png"],
-      mobile: ["/images/random-quote-machine-mobile-01.png", "/images/random-quote-machine-mobile-02.png"]
-    },
-    technologies: [TECHNOLOGIES.javascript, TECHNOLOGIES.react, TECHNOLOGIES.vite],
-    liveUrl: "https://random-quote-machine-marioamauta.vercel.app/",
-    repoUrl: "https://github.com/marioAmauta/random-quote-machine"
-  },
   markdownPreviewer: {
     title: "Markdown Previewer",
     descriptionKey: "markdownPreviewerDescription",

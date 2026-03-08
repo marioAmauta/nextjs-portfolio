@@ -38,7 +38,6 @@
   },
   "projectDescriptions": {
     "markdownPreviewerDescription": "En este proyecto, puedes ingresar código Markdown y recibir al instante tanto una vista previa como el código HTML, que puedes copiar fácilmente a tu portapapeles con un solo clic.",
-    "randomQuoteMachineDescription": "Este es un proyecto en el que puedes obtener una cita al azar haciendo clic en el botón 'New Quote' y compartirla fácilmente en Twitter con solo un clic en el icono de Twitter.",
     "githubDevfinderDescription": "Este proyecto es un buscador de usuarios de GitHub, donde puedes buscar desarrolladores por su nombre de usuario de GitHub. La aplicación muestra la foto de perfil del usuario, la descripción, el nombre de usuario, seguidores, siguiendo",
     "clientesCarwashDescription": "Este proyecto es una base de datos de clientes diseñada para el personal de un negocio de lavado de autos. Su objetivo es ayudar a los lavadores a llevar un registro de sus mejores y peores clientes, basándose en las propinas recibidas.",
     "saxSheetDescription": "Saxophone Sheet Music es una aplicación web moderna que permite a los saxofonistas encontrar, dar me gusta, descargar y compartir sus partituras favoritas con facilidad. Ya sea que estés practicando para un concierto, enseñando a estudiantes o simplemente tocando por diversión, esta aplicación te ayuda a construir una biblioteca personal de partituras de saxofón de alta calidad, todo en un solo lugar."
